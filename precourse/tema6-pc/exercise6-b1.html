@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			* {
+				/* Reset. Best Practice */
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				/* Specify base font. Best practice. Define the other rules with the "em" unit of mesure */
+				font-size: 18px;
+			}
+
+			.page {
+				margin: 0 auto;
+				width: 800px;
+			}
+
+			a:link {
+			  color: blue;
+			  text-decoration: none;
+			}
+			a:visited {
+			  color: purple;
+			}
+			a:hover {
+			  color: aqua;
+			  text-decoration: underline;
+			}
+			a:active {
+			  color: red;
+			}
+			a:visited:active {
+			  color: red;
+			}
+			
+			p {
+				text-align: justify;
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				color: #275D19;
+				margin: 10px 0;
+			}
+
+			header img {
+				margin: 10px 0;
+			}
+
+			.emphasis-low {
+				font-style: italic;
+				color: #F8AE51;
+			}
+			.emphasis-high {
+				font-weight: bold;
+				color: #F8AE51;
+			}
+
+			section {
+				margin-bottom: 28px;
+			}
+
+			ul {
+				margin-left: 44px;
+			}
+
+			table tr:first-child td {
+				/* selector para la primera fila de una tabla */
+				font-weight: bold;
+				text-align: center;
+			}
+
+			label, textarea {
+				display: block;
+			}
+			fieldset {
+				padding: 10px 10px 16px 16px;
+				margin-bottom: 20px;
+			}
+			fieldset > label {
+				display: inline-block;
+				margin-right: 14px;
+			}
+
+			footer {
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+<body>
+	<!-- https://github.com/agandia9/Subjects-PreCourse/blob/master/CSS.md#exercises -->
+	<div class="page">
+		<header>
+			<img src="http://fpoimg.com/350x150" title="logos" alt="logos" />
+		</header>
+		<section>
+			<h1>About</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor <span class="emphasis-high">incididunt ut labore</span> et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud <span class="emphasis-high">exercitation ullamco</span> laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in <span class="emphasis-low">reprehenderit in voluptate velit esse
+			cillum dolore</span>.</p>
+		</section>
+		<section>
+			<h2>Our Locations</h2>
+			<ul>
+				<li>USA
+					<ul>
+						<li><a href="#">New York</a></li>
+						<li><a href="#">Columbus</a></li>
+						<li><a href="#">Austin</a></li>
+						<li><a href="#">Philly</a></li>
+					</ul>
+				</li>
+				<li>World
+					<ul>
+						<li><a href="#">Ottawa</a></li>
+						<li><a href="#">Sydney</a></li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Upcoming Classes</h2>
+			<table border="1" width="">
+				<tr>
+					<td>Location</td>
+					<td>Topic</td>
+				</tr>
+				<tr>
+					<td>New York</td>
+					<td>JavaScript & jQuery</td>
+				</tr>
+				<tr>
+					<td>San Francisco</td>
+					<td>HTML & CSS</td>
+				</tr>
+			</table>
+		</section>
+		<section>
+			<h2>Sign Up!</h2>
+			<form action="#" method="POST">
+				<label>Name:
+					<input type="text" name="name">
+				</label>
+				<label>Email:
+					<input type="email" name="email">
+				</label>
+				<label>Location:
+					<select name="location">
+						<option value="San Francisco">San Francisco</option>
+						<option value="New York">New York</option>
+					</select>
+				</label>
+				<fieldset>
+					<legend>Gender:</legend>
+					<label>Female:
+						<input type="radio" name="Gender" value="female">
+					</label>
+					<label>Male:
+						<input type="radio" name="Gender" value="male">
+					</label>
+				</fieldset>
+				<label>Experience:
+					<textarea name="experience" cols="24" rows="3">
+					</textarea>
+				</label>
+				<input type="submit" name="submit" value="Sign Up">
+			</form>
+		</section>
+		<footer>
+			<a href="#">Twitter</a> | <a href="#">Facebook</a> | <a href="#">Flickr</a>
+		</footer>
+	</div>
+</body>
+</html>

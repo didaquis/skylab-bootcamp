@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			* {
+				/* Reset. Best Practice */
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				/* Specify base font. Best practice. Define the other rules with the "em" unit of mesure */
+				font-size: 18px;
+				font-family: sans-serif;
+			}
+
+			.page {
+				margin: 0 auto;
+				width: 960px;
+			}
+
+			nav	{
+				background-color: #3480BB;
+				padding: 4px 24px 12px 24px;
+			}
+
+			.navcontent {
+				width: 960px;
+				margin: 0 auto;
+			}
+
+			nav h1 {
+				color: #9C9C9C;
+				display: inline-block;
+				margin-right: 60px;
+				margin-top: 2px;
+			}
+
+			nav h1 span {
+				color: #F86800;
+			}
+
+			nav ul {
+				display: inline-block;
+			}
+
+			nav ul li {
+				list-style: none;
+				display: inline-block;
+				color: white;
+				text-transform: uppercase;
+				margin-right: 20px;
+				font-size: 0.9em;
+				font-weight: bold;
+			}
+
+			nav ul li:last-child {
+				color: #BFBFBF;
+				font-size: 0.8em;
+			}
+
+			nav form {
+				float: right;
+			}
+
+			nav form button {
+				min-width: 80px;
+				min-height: 24px;
+				background-color: #CECECE;
+				border: 1px solid #666666;
+				border-radius: 0;
+				margin-top: 4px;
+				position: relative;
+				top: 5px;
+			}
+
+			nav form input {
+				font-size: 4em;
+			}
+
+			.icone.lupa {
+			  width: 16px;
+			  height: 16px;
+			  border: 3px solid white;
+			  border-radius: 50%;
+			  position: relative;
+			  margin: auto;
+			  left: -4px;
+			  top: -2px;
+			}
+			.icone.lupa:after {
+			  position: absolute;
+			  width: 70%;
+			  height: 3px;
+			  background-color: white;
+			  display: block;
+			  content: "";
+			  transform: rotate(45deg);
+			  transform-origin: -6px 19px;
+			}
+
+			section, aside {
+				margin: 12px;
+			}
+
+			h2 {
+				background-color: #5B88B6;
+				color: white;
+				text-align: center;
+				font-size: 0.9em;
+				padding: 6px 0 4px 0;
+				margin: 0 4px 8px 4px;
+			}
+
+			.section-destacadas figure {
+				width: 25%;
+				float: left;
+				margin-bottom: 20px;
+			}
+
+			.section-destacadas figure img {
+				width: 100%;
+				padding: 0 4px;
+			}
+
+			.section-destacadas figure figcaption {
+				font-size: 0.7em;
+				text-align: center;
+			}
+			
+			.section-ultimas {
+				width: 60%;
+				float: left;
+			}
+
+			.section-ultimas article {
+				clear: both;
+				margin-bottom: 40px
+			}
+
+			.section-ultimas article img {
+				padding: 0 4px;
+				margin-right: 40px; 
+				float: left;
+			}
+
+			.section-ultimas article h3 {
+				width: 100%;
+				padding: 0 4px;
+				font-size: 0.7em;
+				color: #467395;
+			}
+
+			.section-ultimas article p {
+				font-size: 0.7em;
+			}
+
+			.clearfix {
+				clear: both;
+			}
+
+			aside {
+				overflow: auto;
+			}
+
+			aside article {
+				clear: both;
+				margin-bottom: 40px;
+			}
+
+			aside img {
+				float: left;
+				margin-right: 10px;
+				padding: 0 4px 10px 4px;
+			}
+
+			aside h3 {
+				font-size: 0.7em;
+				color: #467395;
+			}
+
+			aside p {
+				font-size: 0.7em;
+			}
+
+			/* h3, pc, article */
+		</style>
+	</head>
+<body>
+	<!-- https://github.com/agandia9/Subjects-PreCourse/blob/master/CSS.md#exercises -->
+	<nav>
+		<div class="navcontent">
+			<h1>Élite<span>guias</span></h1>
+			<ul>
+				<li>guías</li>
+				<li>Trucos</li>
+				<li>Logros</li>
+				<li>Trofeos</li>
+				<li>Foro</li>
+			</ul>
+			<form>
+				<input type="search" name="search" />
+				<button>
+					<div class="icone lupa"></div>
+				</button>
+			</form>
+		</div>
+	</nav>
+	<div class="page">
+
+		<section class="section-destacadas">
+			<h2>Guías destacadas</h2>
+			<figure>
+  				<img src="https://picsum.photos/400/300" alt="lorem">
+ 				<figcaption>Dark Souls III</figcaption>
+			</figure>
+			<figure>
+  				<img src="https://picsum.photos/400/300" alt="lorem">
+ 				<figcaption>Xenoblade Chronicles X</figcaption>
+			</figure>
+			<figure>
+  				<img src="https://picsum.photos/400/300" alt="lorem">
+ 				<figcaption>Fallout 4</figcaption>
+			</figure>
+			<figure>
+  				<img src="https://picsum.photos/400/300" alt="lorem">
+ 				<figcaption>The Witcher 3: Wild Hunt</figcaption>
+			</figure>
+			<figure>
+  				<img src="https://picsum.photos/400/300" alt="lorem">
+ 				<figcaption>Bloodborne</figcaption>
+			</figure>
+			<figure>
+  				<img src="https://picsum.photos/400/300" alt="lorem">
+ 				<figcaption>Dragon Age</figcaption>
+			</figure>
+			<figure>
+  				<img src="https://picsum.photos/400/300" alt="lorem">
+ 				<figcaption>Lightning Returns: Final Fantasy XII</figcaption>
+			</figure>
+			<figure>
+  				<img src="https://picsum.photos/400/300" alt="lorem">
+ 				<figcaption>The Elder Scrolls V: Skyrim</figcaption>
+			</figure>
+		</section>
+		<div class="clearfix"></div>
+		<section class="section-ultimas">
+			<h2>Últimas guías</h2>
+			<article>
+				<img src="https://picsum.photos/75/60" alt="lorem">
+				<h3>XCOM 2</h3>
+				<p>Pc, PlayStation 4, Xbox One</p>
+			</article>
+			<article>
+				<img src="https://picsum.photos/75/60" alt="lorem">
+				<h3>Rise of the Tomb Raider</h3>
+				<p>Pc, PlayStation 4, Xbox One, Xbox 360</p>
+			</article>
+			<article>
+				<img src="https://picsum.photos/75/60" alt="lorem">
+				<h3>BioShock: The Collection</h3>
+				<p>Pc, PlayStation 4, Xbox One</p>
+			</article>
+			<article>
+				<img src="https://picsum.photos/75/60" alt="lorem">
+				<h3>Fallout 4 - Nuka-World</h3>
+				<p>Pc, PlayStation 4, Xbox One</p>
+			</article>
+			<article>
+				<img src="https://picsum.photos/75/60" alt="lorem">
+				<h3>Minecraft Java Edition</h3>
+				<p>Pc, Mac, Linux</p>
+			</article>
+		</section>
+		<aside>
+			<h2>Trucos</h2>
+			<article>
+				<img src="https://picsum.photos/60/80" alt="lorem">
+				<h3>Tokyo Mirage Sessions #FE</h3>
+				<p>Wii U</p>
+			</article>
+			<article>
+				<img src="https://picsum.photos/60/60" alt="lorem">
+				<h3>Picross 3D: Round 2</h3>
+				<p>Nintendo 3DS</p>
+			</article>
+			<article>
+				<img src="https://picsum.photos/60/80" alt="lorem">
+				<h3>The King of Fighters XIV</h3>
+				<p>PlayStation 4</p>
+			</article>
+			<article>
+				<img src="https://picsum.photos/60/80" alt="lorem">
+				<h3>Metroid Prime: Federation Force</h3>
+				<p>Nintendo 3DS</p>
+			</article>
+		</aside>
+	</div>
+</body>
+</html>

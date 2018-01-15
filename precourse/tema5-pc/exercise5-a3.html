@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+<body>
+	<!-- https://github.com/agandia9/Subjects-PreCourse/blob/master/HTML.md -->
+	<h1 id="title">Forms</h1>
+	<ol>
+		<li><br>
+			First Name:<br>
+			<input type="text" name="name">
+		</li>
+		<li><br>
+			First Name:<br>
+			<input type="text" name="name_bis" id="name_bis"><br>
+			<button onclick="javascript:alert(document.getElementById('name_bis').value);">Send Name</button>
+		</li>
+		<li><br>
+			<form>
+			    <input type="radio" name="lorem" value="male" checked>Dolor?<br>
+			    <input type="radio" name="lorem" value="female">Sit!<br>
+			</form>
+		</li>
+		<li><ins onclick="javascript:location.href='https://www.google.com'">Go to google!</ins><br>
+			<a href="exercise5-a2.html" target="_self" title="Go to other local html">Go to other local html</a><br>
+			<a href="#title" target="_self" title="Go to other section in this document">Go to other section in this document</a><br>
+			<form action="https://google.com">
+				<input type="submit" name="submit" value="Go to google by button">
+			</form>
+		</li>
+	</ol>
+</body>
+</html>

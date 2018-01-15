@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			* {
+				/* Reset. Best Practice */
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				/* Specify base font. Best practice. Define the other rules with the "em" unit of mesure */
+				font-size: 18px;
+				font-family: sans-serif;
+			}
+
+			.page {
+				margin: 0 auto;
+				width: 960px;
+			}
+
+			header {
+				background: linear-gradient(#467518, #79AA20);
+				padding: 12px 36px;
+				color: white;
+				overflow: auto;
+				border-bottom: 1px solid #4A5F25;
+			}
+
+			#logo {
+				max-width: 180px;
+				display: inline-block;
+				float: left;
+				margin-top: 10px;
+				margin-right: 150px;
+			}
+
+			header section {
+				width: 270px;
+				float: left;
+			}
+
+			header section img {
+				float: left;
+				margin-right: 12px;
+			}
+
+			header section h3 {
+				margin-top: 12px;
+				font-size: 1em;
+			}
+
+			header section p {
+				font-size: 1em;
+			}
+
+			nav {
+				clear: both;
+				border-top: 1px solid #0C0E06;
+				border-bottom: 1px solid #0C0E06;
+				background-color: #383E35;
+				padding: 0 38px;
+			}
+
+			nav ul {
+				display: inline-block;
+			}
+
+			nav ul li {
+				display: inline-block;
+				background-color: #F6F8F7;
+				border-radius: 2px 2px 0 0;
+				padding: 2px 12px;
+				font-size: 0.8em;
+				position: relative;
+				top: 1px;
+				border-top: 1px solid #84C337;
+			}
+
+			.nav-active {
+				font-weight: bold;
+				border-top: 1px solid #AEFD38;
+			}
+
+			.lead-image {
+				border-top: 1px solid #7A7D76;
+				width: 960px;
+				text-align: center;
+			}
+
+			.lead-image img {
+				margin: 20px 0;
+			}
+
+			.lead-image div {
+				background-color: black;
+				background: rgba(0, 0, 0, 0.7); /* Fíjate que no he usado la regla "opacity", ya que esta afecta también a los elementos hijos. Opacity hubiera afectado al contenido que hay en el interior del div y no solo al div. */
+				padding: 4px 8px;
+				width: 886px;
+				margin: 0 auto;
+				position: relative;
+				top: -276px;
+				margin-bottom: -64px;
+			}
+
+			.lead-image div p {
+				font-size: 2.4em;
+				font-family: times, serif;
+				font-weight: bold;
+				color: white;
+				text-align: left;
+			}
+
+			.lead-cards {
+				width: 78%;
+				padding: 0 26px;
+			}
+
+			.cards:not(:first-child) {
+				border-left: 1px solid #E5E5E5;
+			}
+
+			.cards {
+				width: 33%;
+				float: left;
+				padding: 0 10px 0 12px;
+				margin-bottom: 24px;
+			}
+
+			.cards p {
+				clear: both;
+				font-size: 0.8em;
+				line-height: 1.4em;
+			}
+
+			.cards img {
+				float: left;
+				margin-right: 10px;
+				margin-bottom: 10px;
+				border-radius: 60px;
+			}
+
+			.lead-text {
+				border-top: 1px solid #E5E5E5;
+				border-bottom: 1px solid #E5E5E5;
+				padding: 24px 36px;
+				width: 78%;
+				float: left;
+				overflow: auto;
+				font-size: 0.8em;
+				line-height: 1.4em;
+			}
+
+			aside {
+				overflow: auto;
+				padding: 0 36px 0 12px;
+			}
+
+			aside section {
+				border-bottom: 1px solid #E5E5E5;
+			}
+
+			aside section:not(:first-child) {
+				/* Fíjate en el selector, todos menos el primero. */
+				padding-top: 12px;
+			}
+
+			aside h4 {
+				color: #795E20;
+				font-size: 0.8em;
+			}
+
+			.select-jurisdiction a {
+				display: block;
+				font-size: 0.7em;
+				text-align: right;
+				margin: 4px 0;
+				text-decoration: none;
+				font-weight: bold;
+			}
+
+			.aside-nav ul {
+				list-style: none;
+			}
+
+			.aside-nav ul li {
+				margin: 12px 0;
+				list-style: none;
+				color: #54218C;
+				font-size: 0.7em;
+				font-weight: bold;
+			}
+
+			.the-commons {
+				padding-bottom: 10px;
+			}
+
+			.the-commons h4 {
+				margin-bottom: 10px;
+			}
+
+			.the-commons img {
+				float: left;
+				border-radius: 10px;
+				margin-right: 6px;
+			}
+
+			.the-commons p {
+				font-size: 0.7em;
+				color: #54218C;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+<body>
+	<!-- https://github.com/agandia9/Subjects-PreCourse/blob/master/CSS.md#exercises -->
+	<div class="page">
+		<header>
+			<a href="#"><img src="exercise6-b6_logo.png" title="logo" alt="logo" id="logo"/></a>
+			<section>
+  				<img src="https://picsum.photos/70/70" alt="lorem">
+ 				<h3>Search</h3>
+				<p>CC Licensed Work</p>
+			</section>
+			<section>
+  				<img src="https://picsum.photos/70/70" alt="lorem">
+ 				<h3>License</h3>
+				<p>Your Work</p>
+			</section>
+		</header>
+		<nav>
+			<ul>
+				<li>Home</li>
+				<li>About</li>
+				<li class="nav-active">Support</li>
+				<li>Projects</li>
+				<li>Participate</li>
+				<li>International</li>
+				<li>Contact</li>
+			</ul>
+		</nav>
+		<div class="lead-image">
+  				<img src="https://picsum.photos/886/252" alt="lorem">
+  				<div>
+  					<p>Support the Commons</p>
+  				</div>
+		</div>
+		<section class="lead-cards">
+			<section class="cards">
+  				<img src="https://picsum.photos/70/70" alt="lorem">
+ 				<h3>Donate</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+			</section>
+			<section class="cards">
+  				<img src="https://picsum.photos/70/70" alt="lorem">
+ 				<h3>Store</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt.</p>
+			</section>
+			<section class="cards">
+  				<img src="https://picsum.photos/70/70" alt="lorem">
+ 				<h3>Supporters</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+			</section>
+		</section>
+		<section class="lead-text">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</section>
+		<aside>
+			<section class="select-jurisdiction">
+				<h4>International</h4>
+				<select name ="jurisdiction">
+					<option value="">Select a jurisdiction</option>
+				</select>
+				<a href="#">More information</a>
+			</section>
+			<section class="aside-nav">
+				<h4>Support</h4>
+				<ul>
+					<li>Home</li>
+					<li>Donate</li>
+					<li>Store</li>
+					<li>Supporters</li>
+					<li>Contest</li>
+					<li>Commoner Letters</li>
+				</ul>
+			</section>
+			<section class="the-commons">
+				<h4>The Commons</h4>
+				<img src="https://picsum.photos/16/16" alt="lorem">
+ 				<p>Science Commons</p>
+			</section>
+		</aside>
+	</div>
+</body>
+</html>

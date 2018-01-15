@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+
+			body {
+				font-size: 160%;
+				line-height: 150%;
+			}
+
+			#wrapper {
+				margin: 0 auto;
+				width: 900px;
+			}
+
+			section:hover {
+				background-color: #EEEEEE;
+				cursor: pointer;
+			}
+
+			.left {
+				float: left;
+				margin: 20px;
+			}
+
+			.right {
+				margin-right: 10px;	
+			}
+
+			p {
+				margin-top: -16px;
+			}
+
+			h1 {
+				padding-top: 24px;
+			}
+
+			article:after {
+				/* Esto es un "clearfix" que permite a los divs que contienen elementos flotantes tomar en consideración (y por tanto expandirse) la altura y anchura de dichos elementos*/
+			    content:"";
+			    clear:both;
+			    display:block;
+			}
+		</style>
+	</head>
+<body>
+	<!-- https://github.com/agandia9/Subjects-PreCourse/blob/master/CSS.md#exercises -->
+	<div id="wrapper">
+		<section>
+			<div class="left">
+				<img src="https://picsum.photos/200" />
+			</div>
+			<div class="right">
+				<article>
+					<h1>The Grasslands</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+				</article>
+			</div>
+		</section>
+		<section>
+			<div class="left">
+				<img src="https://picsum.photos/g/200/?image=666" />
+			</div>
+			<div class="right">
+				<article>
+					<h1>Paradise Found</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+				</article>
+			</div>
+		</section>
+		<section>
+			<div class="left">
+				<img src="https://picsum.photos/200/?image=1078" />
+			</div>
+			<div class="right">
+				<article>
+					<h1>Smoke On The Water</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+				</article>
+			</div>
+		</section>
+		<section>
+			<div class="left">
+				<img src="https://picsum.photos/200//?image=1072" />
+			</div>
+			<div class="right">
+				<article>
+					<h1>Line Of Trees</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+				</article>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

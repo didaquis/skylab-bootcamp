@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			* {
+				/* Reset. Best Practice */
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				/* Specify base font. Best practice. Define the other rules with the "em" unit of mesure */
+				font-size: 18px;
+				background-color: #232343;
+				font-family: sans-serif;
+			}
+
+			.page {
+				margin: 0 auto;
+				width: 960px;
+			}
+
+			.content {
+				background-color: white;
+				overflow: auto;
+			}
+
+			header {
+				background-color: #444565;
+				color: white;
+				border-radius: 32px 32px 0 0;
+				margin-top: 30px;
+				min-height: 160px;
+				padding: 40px;
+			}
+
+			header img {
+				float: left;
+				margin-right: 60px;
+			}
+
+			header h1 {
+				font-size: 4em;
+				font-style: italic;
+			}
+
+			aside {
+				width: 25%;
+				float: left;
+			}
+
+			aside ul li:first-child {
+				margin-top: 16px;
+			}
+
+			aside ul li {
+				list-style: none;
+				margin-bottom: 12px;
+				border-bottom: 1px dotted #808080;
+				padding-bottom: 12px;
+				padding-left: 30px;
+				max-width: 90%;
+			}
+
+			aside > section {
+				padding: 20px 30px;
+			}
+
+			aside > section > p {
+				font-size: 0.7em;
+				text-align: justify;
+				line-height: 1.4em;
+			}
+
+			article {
+				margin-top: 36px;
+				padding: 0 20px 20px 0;
+			}
+
+			.content > section {
+				overflow: auto;
+			}
+
+			section article h2 {
+				color: #443333;
+				margin-bottom: 12px;
+			}
+
+			section article p {
+				margin-bottom: 16px;
+				line-height: 1.3em;
+				color: #43344F;
+			}
+
+			.clearfix {
+				clear: both;
+			}
+
+			footer {
+				clear: both;
+				background-color: #654444;
+				color: #C4BD9C;
+				text-align: center;
+				font-size: 0.8em;
+				border-radius: 0 0 32px 32px;
+				padding: 16px 0 24px 0;
+			}
+		</style>
+	</head>
+<body>
+	<!-- https://github.com/agandia9/Subjects-PreCourse/blob/master/CSS.md#exercises -->
+	<div class="page">
+		<header>
+			<img src="https://picsum.photos/90" title="lorem" alt="lorem"/>
+			<h1>My Website!</h1>
+		</header>
+		<div class="content">
+			<aside>
+				<ul>
+					<li>Home</li>
+					<li>About</li>
+					<li>Interesting Things</li>
+					<li>Boring Things</li>
+					<li>Contact</li>
+				</ul>
+				<section>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit.</p>
+				</section>
+			</aside>
+			<section>
+				<article>
+					<h2>Lorem Ipsum</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</article>
+			</section>
+		</div>
+		<footer>
+			<p>@Foobar inc.</p>
+		</footer>
+	</div>
+</body>
+</html>

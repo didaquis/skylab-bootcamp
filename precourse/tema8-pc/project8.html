@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<script src="main.js"></script>
+		<script src="chrono.js"></script>
+		<title>Pasapalabra</title>
+</head>
+<body>
+	<!-- https://github.com/agandia9/Subjects-PreCourse/blob/master/final.md -->
+	<main>
+		<header>
+			<h1>Pasapalabra!</h1>
+			<p class="gameRules">
+				Debes responder a las preguntas en el menor tiempo posible.<br>
+				Si completas una partida o más, se mostrará un ranking de puntuaciones.<br>
+				Si no conoces la respuesta, pulsa 'Pasapalabra' para responderla más adelante.<br>
+				Si quieres salir del juego, pulsa 'Finalizar partida' y la partida terminará.<br>
+			</p>
+		</header>
+
+		<section class="letter_box">
+			<div id="letter_a">A</div>
+			<div id="letter_b">B</div>
+			<div id="letter_c">C</div>
+			<div id="letter_d">D</div>
+			<div id="letter_e">E</div>
+			<div id="letter_f">F</div>
+			<div id="letter_g">G</div>
+			<div id="letter_h">H</div>
+			<div id="letter_i">I</div>
+			<div id="letter_j">J</div>
+			<div id="letter_k">K</div>
+			<div id="letter_l">L</div>
+			<div id="letter_m">M</div>
+			<div id="letter_n">N</div>
+			<div id="letter_ñ">Ñ</div>
+			<div id="letter_o">O</div>
+			<div id="letter_p">P</div>
+			<div id="letter_q">Q</div>
+			<div id="letter_r">R</div>
+			<div id="letter_s">S</div>
+			<div id="letter_t">T</div>
+			<div id="letter_u">U</div>
+			<div id="letter_v">V</div>
+			<div id="letter_w">W</div>
+			<div id="letter_x">X</div>
+			<div id="letter_y">Y</div>
+			<div id="letter_z">Z</div>
+		</section>
+
+		<section class="status">
+			<span id="chronotime">0:00:00:00</span>	
+		</section>
+
+		<section class="ranking" id="ranking_section">
+			<h2>Ranking de puntuaciones:</h2>
+			<p id="ranking"></p>
+		</section>
+	</main>
+
+	<!-- The Modal -->
+	<div id="questionModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2>Pregunta:</h2>
+			</div>
+			<div class="modal-body">
+				<p id="question"></p>
+				<input type="text" name="input_answer" id="input_answer" />
+				<input type="hidden" name="input_question" id="input_question" />
+			</div>
+			<div class="modal-footer">
+				<div>
+					<button onclick="userAskQuestion( $('input_question').value, $('input_answer').value );">Enviar respuesta</button>
+					<button onclick="userSaidPasapalabra();">Pasapalabra</button>
+					<button onclick="userEndsGame();">Finalizar partida</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- The Modal -->
+	<div id="nameModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<!-- <span class="close">&times;</span> -->
+				<h2>Indica tu nombre:</h2>
+			</div>
+			<div class="modal-body">
+				<input type="text" name="name" id="name" autofocus>
+			</div>
+			<div class="modal-footer">
+				<div>
+					<button id="nameConfirm" onclick="checkNameOfPlayer($('name').value);">Confirmar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">init();</script>
+</body>
+</html>

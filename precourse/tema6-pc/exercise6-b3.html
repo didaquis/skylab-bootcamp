@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			* {
+				/* Reset. Best Practice */
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				/* Specify base font. Best practice. Define the other rules with the "em" unit of mesure */
+				font-size: 18px;
+				background-color: #16588B;
+			}
+
+			.page {
+				margin: 0 auto;
+				width: 960px;
+			}
+
+			header {
+				width: 600px;
+				background-color: #282828;
+				color: white;
+				padding: 36px 0 24px 24px;
+				margin-bottom: 24px;
+			}
+
+			h1 {
+				text-transform: uppercase;
+			}
+
+			h1 > span {
+				color: #DFB17A;
+			}
+
+			.emphasis-high {
+				font-family: sans-serif;
+			}
+
+			aside {
+				width: 20%;
+				float: left;
+				color: white;
+				text-align: center;
+			}
+
+			aside ul li:first-child {
+				margin-top: 16px;
+			}
+
+			aside ul li {
+				list-style: none;
+				max-width: 100px;
+				margin: auto;
+				margin-bottom: 16px;
+			}
+
+			aside ul li:hover {
+				background-color: #033055;
+			}
+
+			aside ul li.active {
+				background-color: #033055;
+			}
+
+			section {
+				width: 80%;
+				background-color: white;
+				max-height: 600px;
+				overflow-x: auto;
+				padding: 16px 20px;
+			}
+
+			section article h2 {
+				color: #758597;
+				margin-bottom: 12px;
+			}
+
+			section article p {
+				margin-bottom: 12px;
+				line-height: 1.3em;
+			}
+
+			section article p:last-child {
+				margin-bottom: 24px;
+			}
+
+			p.poem {
+				margin-left: 32px;
+				margin-bottom: 16px;
+				font-family: sans-serif;
+				color: #6384A3;
+			}
+
+			.emphasis-low {
+				font-weight: bold;
+			}
+		</style>
+	</head>
+<body>
+	<!-- https://github.com/agandia9/Subjects-PreCourse/blob/master/CSS.md#exercises -->
+	<div class="page">
+		<header>
+			<h1>My <span>personal</span> Website</h1>
+			<p class="emphasis-high">Lorem ipsum dolor sit amet...</p>
+		</header>
+		<aside>
+			<ul>MENU
+				<li class="active">Home</li>
+				<li>About me</li>
+				<li>Portfolio</li>
+				<li>Contact</li>
+			</ul>
+		</aside>
+		<section>
+			<article>
+				<h2>Welcome to my website</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</article>
+			<article>
+				<h2>Lorem ipsum dolor</h2>
+				<p class="poem">Mauris viverra, <span class="emphasis-low">tellus sed eusimod</span> auctor</p>
+				<p class="poem">Mauris viverra, <span class="emphasis-low">tellus sed eusimod</span> auctor</p>
+				<p class="poem">Mauris viverra, <span class="emphasis-low">tellus sed eusimod</span> auctor</p>
+				<p class="poem">Mauris viverra, <span class="emphasis-low">tellus sed eusimod</span> auctor</p>
+				<p class="poem">Mauris viverra, <span class="emphasis-low">tellus sed eusimod</span> auctor</p>
+			</article>
+		</section>
+	</div>
+</body>
+</html>
