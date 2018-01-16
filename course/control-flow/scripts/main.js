@@ -156,3 +156,23 @@ function asterisct(){
 asterisct();
 
 
+
+// ### under_1000
+function under_1000(){
+	var multipliers = [];
+	var result = 1;
+	for (var i = 1; i < 1000; i++) {
+		if( (i % 3 == 0) || (i % 5 == 0) ){
+			multipliers.push(i);
+		}
+	}
+
+	for (var i = 0; i < multipliers.length; i++) {
+		result += multipliers[i];
+	}
+
+	console.log(result);
+}
+
+under_1000();
+
