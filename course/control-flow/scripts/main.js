@@ -3,16 +3,14 @@
 
 
 // ### larger_integer
-
 function largeNumber(num1, num2){
-	return (num1 >= num2) ? num1 : num2;
+	return (num1 > num2) ? num1 : num2;
 }
 
 console.log(largeNumber(3,6));
 
 
 // ### sign_product
-
 function signOfNumber(num1, num2, num3){
 	switch(true){
 		case ((num1 * num2 * num3) == 0):
@@ -28,8 +26,18 @@ function signOfNumber(num1, num2, num3){
 			break;
 	}
 }
-
 signOfNumber(3, -7, 2);
+
+
+// solución alternativa
+function signOfNumber_bis(a, b, c){
+	if(a * b * c > 0){
+		console.log("Positive sign!");
+	}else{
+		console.log("Negative sign!");
+	}
+}
+signOfNumber_bis(3, -7, 2);
 
 
 // ### sort_numbers
@@ -72,9 +80,8 @@ function sortNumbers(a, b, c){
 			break;
 
 		default:
-			alert("los números no son distintos");
+			alert("los números no son distintos entre sí");
 	}
-
 }
 
 sortNumbers(0, -1, 4);
@@ -82,8 +89,7 @@ sortNumbers(0, -1, 4);
 
 
 // ###  largest_number
-
-function largestNumbers(a,b,c,d,e){
+function largestNumbers(){
 	var largestNumber = arguments[0];
 	for (var i = 0; i < arguments.length; i++) {
 		if(arguments[i] > largestNumber){
@@ -98,15 +104,12 @@ console.log(largestNumbers(-5, -2, -6, 0, -1)); // Output : 0
 
 
 // ### odd_or_even
-
 function oddOrEven(){
 	var count = 0;
+	var result;
 	while(count <= 15){
-		if(count % 2 == 0){
-			console.log(count + " is even");
-		}else{
-			console.log(count + " is odd");
-		}
+		result = (count % 2 == 0)? ' is even' : ' is odd';
+		console.log(count + result);
 		count++;
 	}
 }
@@ -116,7 +119,6 @@ oddOrEven();
 
 
 // ### FizzBuzz
-
 function fizz_buzz(){
 	for (var i = 1; i <= 100; i++) {
 		if ( (i % 3 == 0) && (i % 5 == 0) ){
@@ -142,7 +144,6 @@ fizz_buzz();
 
 
 // ### contruct_pattern
-
 //Write a JavaScript program to construct the following pattern, using a nested for loop. Go to the editor
 function asterisct(){
 	var asterisc = result = "*";
@@ -153,14 +154,5 @@ function asterisct(){
 }
 
 asterisct();
-
-
-
-
-
-
-
-
-
 
 
