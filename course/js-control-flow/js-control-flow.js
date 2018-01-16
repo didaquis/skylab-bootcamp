@@ -99,8 +99,6 @@ console.log(largestNumbers(-5, -2, -6, 0, -1)); // Output : 0
 
 // ### odd_or_even
 
-Write a JavaScript for loop that will iterate from 0 to 15. For each iteration, it will check if the current number is odd or even, and display a message to the screen.
-
 function oddOrEven(){
 	var count = 0;
 	while(count <= 15){
@@ -114,6 +112,55 @@ function oddOrEven(){
 }
 
 oddOrEven();
+
+
+
+// ### FizzBuzz
+
+function fizz_buzz(){
+	for (var i = 1; i <= 100; i++) {
+		if ( (i % 3 == 0) && (i % 5 == 0) ){
+			// divisible entre 3 y 5
+			console.log("FizzBuzz");
+			continue;
+		}else if (i % 3 == 0){
+			// divisible entre 3
+			console.log("Fizz");
+			continue;
+		}else if (i % 5 == 0){
+			// divisible entre 5
+			console.log("Buzz");
+			continue;
+		}else{
+			console.log(i);
+		}
+	}
+}
+
+fizz_buzz();
+
+
+
+// ### contruct_pattern
+
+//Write a JavaScript program to construct the following pattern, using a nested for loop. Go to the editor
+function asterisct(){
+	var asterisc = result = "*";
+	for (var i = 0; i < 7; i++) {
+		console.log(result);
+		result += asterisc;
+	}
+}
+
+asterisct();
+
+
+
+
+
+
+
+
 
 
 
