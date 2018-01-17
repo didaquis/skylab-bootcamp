@@ -192,3 +192,30 @@ function findDuplicates(arr){
 console.log( findDuplicates(["A", "B", "C", "B", "D", "D"]) ); // ["B", "D"]
 
 
+
+
+// ### mergeArrays
+function mergeArrays(array1, array2){
+	var concatenated = array1.concat(array2);
+	var result = [];
+	for (var i = 0; i < concatenated.length; i++) {
+		if(result.indexOf(concatenated[i]) === -1){
+			result.push(concatenated[i]);
+		}else{
+			var indexToDelete = result.indexOf(concatenated[i]);
+			result.splice(indexToDelete,1); // Quito la duplicidad del array.
+		}
+	}
+	return result;
+}
+
+var array1 = [1, 2, 3];
+var array2 = [2, 30, 1];
+console.log(mergeArrays(array1, array2)); // [3, 30]
+console.log(mergeArrays([2,3,4,5,6,7], [4,5,6,7,8,9])); // [2, 3, 8, 9]
+
+
+
+
+
+
