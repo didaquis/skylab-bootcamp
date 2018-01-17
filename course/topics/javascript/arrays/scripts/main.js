@@ -27,21 +27,70 @@ console.log(joinElements(beatles));
 
 // ### array_Clone
 function array_Clone(source){
-	var array_result = [];
+	var result = [];
 
 	for (var i = 0; i < source.length; i++) {
 		if( isArray(source[i]) ){
 			// Ejemplo de recursividad
-			array_result.push( array_Clone(source[i]) );
+			result.push( array_Clone(source[i]) );
 		}else{
-			array_result.push(source[i]);
+			result.push(source[i]);
 		}
 	}
-	return array_result;
+	return result;
 }
 
-//console.log(array_Clone([1, 2, 4, 0])); // [1, 2, 4, 0]
+console.log(array_Clone([1, 2, 4, 0])); // [1, 2, 4, 0]
 console.log(array_Clone([1, 2, [4, 0]])); // [1, 2, [4, 0]]
+
+
+
+// ### findDifferences
+function simplefiedArray(source){
+	// Esta función es recursiva. Retorna un array simple (de un solo nivel), a partir de cualquier array complejo (incluído matrices de n niveles)
+	var result = []
+	for (var i = 0; i < source.length; i++) {
+		if( isArray(source[i]) ){
+			result = result.concat( simplefiedArray(source[i]) ); // Recursividad + concat!
+		}else{
+			result.push(source[i]);
+		}
+	}
+	return result;
+}
+
+function difference(a, b){
+	var a_Fixed = b_Fixed = [];
+	a_Fixed = simplefiedArray(a); // Do the magic!
+	b_Fixed = simplefiedArray(b);
+
+	var concatenated = a_Fixed.concat(b_Fixed);
+
+	var result = [];
+
+	for (var i = 0; i < concatenated.length; i++) {
+		if(result.indexOf(concatenated[i]) === -1){
+			result.push(concatenated[i]);
+		}else{
+			var indexToDelete = result.indexOf(concatenated[i]);
+			result.splice(indexToDelete,1); // Quito la duplicidad del array.
+		}
+	}
+
+	return result;
+}
+console.log(difference([1, 2, 3], [100, 2, 1, 10])); // ["3", "10", "100"]
+console.log(difference( [1, 2, 3, 4, 5] , [1, [2], [3, [[4]]], [5,6]] ));  // ["6"]
+console.log(difference([1, 2, 3], [100, 2, 1, 10])); // ["3", "10", "100"]
+
+
+
+
+
+
+
+
+
 
 
 
