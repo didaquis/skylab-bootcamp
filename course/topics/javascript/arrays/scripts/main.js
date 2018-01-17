@@ -9,9 +9,14 @@ function isArray(element){
 	return (result == "Array")? true : false;
 }
 
-console.log(isArray('Skylab'));    // this should returns false
-console.log(isArray([3, 5]));      // this should returns true
+console.log(isArray('Skylab'));    // false
+console.log(isArray([3, 5]));      // true
 
+/*
+Solución alternativa: `console.log( Array.isArray([1, 2, 3]) );  // true`
+
+Solución alternativa: `console.log( [1, 2, 3] instanceof Array );  // true`
+*/
 
 
 // ### joinElements
@@ -24,15 +29,14 @@ console.log(joinElements(beatles));
 
 
 
-
 // ### array_Clone
-function array_Clone(source){
+function recursiveArrayClone(source){
 	var result = [];
 
 	for (var i = 0; i < source.length; i++) {
 		if( isArray(source[i]) ){
 			// Ejemplo de recursividad
-			result.push( array_Clone(source[i]) );
+			result.push( recursiveArrayClone(source[i]) );
 		}else{
 			result.push(source[i]);
 		}
@@ -40,8 +44,8 @@ function array_Clone(source){
 	return result;
 }
 
-console.log(array_Clone([1, 2, 4, 0])); // [1, 2, 4, 0]
-console.log(array_Clone([1, 2, [4, 0]])); // [1, 2, [4, 0]]
+console.log(recursiveArrayClone([1, 2, 4, 0])); // [1, 2, 4, 0]
+console.log(recursiveArrayClone([1, 2, [4, 0]])); // [1, 2, [4, 0]]
 
 
 
@@ -85,11 +89,15 @@ console.log(difference([1, 2, 3], [100, 2, 1, 10])); // ["3", "10", "100"]
 
 
 
+// ### Sum and Product
 
+//Write a JavaScript program to compute the sum and product of an array of integers.
 
+function sum_and_product(){
 
+}
 
-
+sum_and_product([2,3,4]);
 
 
 
