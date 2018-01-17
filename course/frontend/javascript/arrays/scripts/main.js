@@ -151,3 +151,44 @@ console.log( last([7, 9, 0, -2],6) ); // [7, 9, 0, -2]
 
 
 
+// ### sortItems
+function sortItems(arr){
+	arr.sort(function(a, b) {
+		return a - b;
+	});
+	console.log(arr);
+}
+
+sortItems( [ 3, 8, 7, 6, 5, -4, 3, 2, 1 ] ); // -4,-3,1,2,3,5,6,7,8
+
+
+
+// ### getRandom
+function getRandomItemFromArray(arr){
+	randomIndex = Math.floor(Math.random() * arr.length);
+	return arr[randomIndex];
+}
+
+console.log( getRandomItemFromArray(["A", "B", "C", "D"]) );
+
+
+
+// ### findDuplicates
+Write a JavaScript program to find duplicate values in a JavaScript array.
+function findDuplicates(arr){
+	var revisedItems = [], duplicatedItems = [];
+
+	for (var i = 0; i < arr.length; i++) {
+		if(revisedItems.indexOf(arr[i]) === -1){
+			revisedItems.push(arr[i]);
+		}else{
+			duplicatedItems.push(arr[i]);
+		}
+	}
+
+	return duplicatedItems;
+}
+
+console.log( findDuplicates(["A", "B", "C", "B", "D", "D"]) ); // ["B", "D"]
+
+
