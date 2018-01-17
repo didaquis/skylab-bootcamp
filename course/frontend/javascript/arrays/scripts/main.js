@@ -52,7 +52,7 @@ console.log(recursiveArrayClone([1, 2, [4, 0]])); // [1, 2, [4, 0]]
 // ### findDifferences
 function simplefiedArray(source){
 	// Esta función es recursiva. Retorna un array simple (de un solo nivel), a partir de cualquier array complejo (incluído matrices de n niveles)
-	var result = []
+	var result = [];
 	for (var i = 0; i < source.length; i++) {
 		if( isArray(source[i]) ){
 			result = result.concat( simplefiedArray(source[i]) ); // Recursividad + concat!
@@ -105,6 +105,117 @@ function sum_and_product(arr){
 }
 
 sum_and_product([2,3,4]);
+
+
+
+// ### addItems
+function addItems(){
+	var items = [];
+	for (var i = 0; i < arguments.length; i++) {
+		items.push(arguments[i]);
+		console.log(arguments[i]);
+	}
+}
+
+addItems("item!", "another item");
+
+
+
+// ### generateArrayLength
+function arrayRange(firstValue, expectedPositions){
+	var result = [];
+	for (var i = 0; i < expectedPositions; i++) {
+		result.push(firstValue++);
+	}
+
+	return result;
+}
+
+console.log(arrayRange(1, 4)); // [1, 2, 3, 4]
+console.log(arrayRange(-6, 4)); // [-6, -5, -4, -3]
+
+
+
+
+// ### last
+function last(arr, numberOfItemsToReturn = 1){
+	if(numberOfItemsToReturn >= arr.length){
+		return arr;
+	}
+	return arr.splice( (arr.length - numberOfItemsToReturn), numberOfItemsToReturn );
+}
+
+console.log( last([7, 9, 0, -2]) ); // -2
+console.log( last([7, 9, 0, -2],3) ); // [9, 0, -2]
+console.log( last([7, 9, 0, -2],6) ); // [7, 9, 0, -2]
+
+
+
+// ### sortItems
+function sortItems(arr){
+	arr.sort(function(a, b) {
+		return a - b;
+	});
+	console.log(arr);
+}
+
+sortItems( [ 3, 8, 7, 6, 5, -4, 3, 2, 1 ] ); // -4,-3,1,2,3,5,6,7,8
+
+
+
+// ### getRandom
+function getRandomItemFromArray(arr){
+	randomIndex = Math.floor(Math.random() * arr.length);
+	return arr[randomIndex];
+}
+
+console.log( getRandomItemFromArray(["A", "B", "C", "D"]) );
+
+
+
+// ### findDuplicates
+Write a JavaScript program to find duplicate values in a JavaScript array.
+function findDuplicates(arr){
+	var revisedItems = [], duplicatedItems = [];
+
+	for (var i = 0; i < arr.length; i++) {
+		if(revisedItems.indexOf(arr[i]) === -1){
+			revisedItems.push(arr[i]);
+		}else{
+			duplicatedItems.push(arr[i]);
+		}
+	}
+
+	return duplicatedItems;
+}
+
+console.log( findDuplicates(["A", "B", "C", "B", "D", "D"]) ); // ["B", "D"]
+
+
+
+
+// ### mergeArrays
+function mergeArrays(array1, array2){
+	var concatenated = array1.concat(array2);
+	var result = [];
+	for (var i = 0; i < concatenated.length; i++) {
+		if(result.indexOf(concatenated[i]) === -1){
+			result.push(concatenated[i]);
+		}else{
+			var indexToDelete = result.indexOf(concatenated[i]);
+			result.splice(indexToDelete,1); // Quito la duplicidad del array.
+		}
+	}
+	return result;
+}
+
+var array1 = [1, 2, 3];
+var array2 = [2, 30, 1];
+console.log(mergeArrays(array1, array2)); // [3, 30]
+console.log(mergeArrays([2,3,4,5,6,7], [4,5,6,7,8,9])); // [2, 3, 8, 9]
+
+
+
 
 
 

@@ -65,6 +65,8 @@ function Teacher(firstName, lastName, age, gender, interests, subject){
 	this.subject = subject;
 }
 
+Teacher.prototype = new Person();
+
 var paula = new Teacher('Paula','Martínez','34','female',['watch TV', 'read books'],'Technology');
 
 console.log(paula);
