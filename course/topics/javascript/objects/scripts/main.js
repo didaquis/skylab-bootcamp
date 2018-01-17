@@ -14,7 +14,7 @@ console.log(is_object({}));
 
 
 // ### Create object car
-var car1 = {
+var seat_leon = {
 	"brand": "Seat",
 	"model": "León",
 	"color": "black",
@@ -22,26 +22,36 @@ var car1 = {
 		return "My " + this.color + " " + this.brand + " " + this.model + " is great!";
 	}
 }
-console.log(car1.description());
+console.log( seat_leon.description() );
 
 
 function Car(brand, model, color) {
+	// definimos las propiedades del objeto
 	this.brand = brand;
 	this.model = model;
 	this.color = color;
+/*
+
+	* Realizar esto aquí no es una buena práctica, es mejor hacerlo en el prototype!
 
 	this.description = function(){
 		return "My " + this.color + " " + this.brand + " " + this.model + " is great!";
 	}
+*/
 }
-var car2 = new Car("Fiat", "Punto", "yellow");
-console.log(car2.description());
+
+Car.prototype.description = function(){
+	return "My " + this.color + " " + this.brand + " " + this.model + " is great!";
+}
+
+var fiat_punto = new Car("Fiat", "Punto", "yellow");
+console.log(fiat_punto.description());
 
 
 
-// car2.constructor;  // retorna el constructor con el que se construyó este objeto
+// fiat_punto.constructor;  // retorna el constructor con el que se construyó este objeto
 
 // Modifico el prototipo objeto "Car"
 Car.prototype.run = function() { console.log("rrrrrr..."); };
-car2.run(); // "rrrrrr..."
+fiat_punto.run(); // "rrrrrr..."
 

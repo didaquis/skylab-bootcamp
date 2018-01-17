@@ -49,3 +49,9 @@ console.log( "esto es un ejemplo".hashtag() ); // #EstoEsUnEjemplo
 
 
 
+// Ahora fíjate en este ejemplo: los dos "delete" hacen el mismo efecto. Ya que "__proto__" de cualquier string apunta a los mismo que "prototype" de la clase "String".
+var texto = "foo";
+delete texto.__proto__.hashtag;
+delete String.prototype.hashtag;
+
+
