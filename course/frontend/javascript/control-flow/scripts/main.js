@@ -124,15 +124,12 @@ function fizz_buzz(){
 		if ( (i % 3 == 0) && (i % 5 == 0) ){
 			// divisible entre 3 y 5
 			console.log("FizzBuzz");
-			continue;
 		}else if (i % 3 == 0){
 			// divisible entre 3
 			console.log("Fizz");
-			continue;
 		}else if (i % 5 == 0){
 			// divisible entre 5
 			console.log("Buzz");
-			continue;
 		}else{
 			console.log(i);
 		}
