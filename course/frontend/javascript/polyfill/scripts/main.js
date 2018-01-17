@@ -1,23 +1,23 @@
 // # Polyfill
 
-// Creamos una nueva propiedad para los arrays
+// Creamos un nuevo metodo para los arrays
 Array.prototype.nyancat = function(){console.log("nyan!")};
 a = new Array;
 a.nyancat(); // "nyan!"
 
 
-// Creamos una nueva propiedad para los arrays
+// Creamos un nuevo metodo para los arrays
 a.__proto__.happy = function() { console.log(this); };
 a[0] = "foo"; // establezco una valor para visualizar el ejemplo
 a.happy(); // ["foo"]
 
 
-//modifico una propiedad nativa
+//modifico un metodo nativa
 Array.prototype.forEach = " destruida!";
 
 // a.forEach(function(n){console.log(n)}); // ERROR! "forEach" ya no es una función.
 
-// Redefinir una propiedad para tener mi propia implementación (en este caso, reescribo "forEach" para añadirle un "console.log()")
+// Redefinir un metodo para tener mi propia implementación (en este caso, reescribo "forEach" para añadirle un "console.log()")
 Array.prototype.forEach = function(func) {
 	console.log("Mi propia implementación!");
 	for (var i = 0; i < this.length; i++) {
@@ -29,7 +29,7 @@ a.forEach(function(n){console.log(n)}); // "Mi propia implementación!"  \n   "f
 
 
 
-// Creamos una nueva propiedad para que los strings se conviertan en hashtags de Twitter
+// Creamos un nuevo metodo para que los strings se conviertan en hashtags de Twitter
 /*
    * String.prototype.hashtag
    *

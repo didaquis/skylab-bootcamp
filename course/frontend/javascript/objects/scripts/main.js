@@ -32,7 +32,7 @@ function Car(brand, model, color) {
 	this.color = color;
 /*
 
-	* Realizar esto aquí no es una buena práctica, es mejor hacerlo en el prototype!
+	* Realizar esto aquí no es una buena práctica, es mejor hacerlo en el prototype! (más abajo tienes el código)
 
 	this.description = function(){
 		return "My " + this.color + " " + this.brand + " " + this.model + " is great!";
