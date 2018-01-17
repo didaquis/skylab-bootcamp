@@ -30,6 +30,11 @@ a.forEach(function(n){console.log(n)}); // "Mi propia implementación!"  \n   "f
 
 
 // Creamos una nueva propiedad para que los strings se conviertan en hashtags de Twitter
+/*
+   * String.prototype.hashtag
+   *
+   * @returns {String} Formated string like hashtag.
+*/
 String.prototype.hashtag = function(){
 	var text = this.trim();
 	text = text.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}); // Capitalizo todas las primeras letras del string
@@ -39,6 +44,7 @@ String.prototype.hashtag = function(){
 
 var s = 'Skylab rocks';
 console.log( s.hashtag() ); // SkylabRocks
+
 console.log( "esto es un ejemplo".hashtag() ); // #EstoEsUnEjemplo
 
 

@@ -37,3 +37,11 @@ function Car(brand, model, color) {
 var car2 = new Car("Fiat", "Punto", "yellow");
 console.log(car2.description());
 
+
+
+// car2.constructor;  // retorna el constructor con el que se construyó este objeto
+
+// Modifico el prototipo objeto "Car"
+Car.prototype.run = function() { console.log("rrrrrr..."); };
+car2.run(); // "rrrrrr..."
+
