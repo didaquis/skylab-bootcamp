@@ -52,7 +52,7 @@ console.log(recursiveArrayClone([1, 2, [4, 0]])); // [1, 2, [4, 0]]
 // ### findDifferences
 function simplefiedArray(source){
 	// Esta función es recursiva. Retorna un array simple (de un solo nivel), a partir de cualquier array complejo (incluído matrices de n niveles)
-	var result = []
+	var result = [];
 	for (var i = 0; i < source.length; i++) {
 		if( isArray(source[i]) ){
 			result = result.concat( simplefiedArray(source[i]) ); // Recursividad + concat!
@@ -105,6 +105,49 @@ function sum_and_product(arr){
 }
 
 sum_and_product([2,3,4]);
+
+
+
+// ### addItems
+function addItems(){
+	var items = [];
+	for (var i = 0; i < arguments.length; i++) {
+		items.push(arguments[i]);
+		console.log(arguments[i]);
+	}
+}
+
+addItems("item!", "another item");
+
+
+
+// ### generateArrayLength
+function arrayRange(firstValue, expectedPositions){
+	var result = [];
+	for (var i = 0; i < expectedPositions; i++) {
+		result.push(firstValue++);
+	}
+
+	return result;
+}
+
+console.log(arrayRange(1, 4)); // [1, 2, 3, 4]
+console.log(arrayRange(-6, 4)); // [-6, -5, -4, -3]
+
+
+
+
+// ### last
+function last(arr, numberOfItemsToReturn = 1){
+	if(numberOfItemsToReturn >= arr.length){
+		return arr;
+	}
+	return arr.splice( (arr.length - numberOfItemsToReturn), numberOfItemsToReturn );
+}
+
+console.log( last([7, 9, 0, -2]) ); // -2
+console.log( last([7, 9, 0, -2],3) ); // [9, 0, -2]
+console.log( last([7, 9, 0, -2],6) ); // [7, 9, 0, -2]
 
 
 
