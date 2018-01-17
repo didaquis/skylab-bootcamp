@@ -1,13 +1,12 @@
+// # Object practice
+
 // ### is_object
 function is_object(element){
-    if(element === null){
-        return "Null";
-    }
-    if(element === undefined){
-        return "Undefined";
-    }
-    var result = Object.prototype.toString.call(element).slice(8,-1);
-    return (result == "Object")? true : false;  
+	if(element === null || element === undefined){
+		return false;
+	}
+	var result = Object.prototype.toString.call(element).slice(8,-1);
+	return (result == "Object")? true : false;
 }
 
 console.log(is_object({}));
@@ -31,7 +30,7 @@ function Car(brand, model, color) {
 	this.model = model;
 	this.color = color;
 
-  	this.description = function(){
+	this.description = function(){
 		return "My " + this.color + " " + this.brand + " " + this.model + " is great!";
 	}
 }
