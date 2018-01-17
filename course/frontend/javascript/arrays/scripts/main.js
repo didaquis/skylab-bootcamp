@@ -90,17 +90,21 @@ console.log(difference([1, 2, 3], [100, 2, 1, 10])); // ["3", "10", "100"]
 
 
 // ### Sum and Product
+function sum_and_product(arr){
+	var resultOfSum = 0;
+	for (var i = 0; i < arr.length; i++) {
+		resultOfSum += arr[i];
+	}
+	console.log("La suma de los enteros es: " + resultOfSum);
 
-//Write a JavaScript program to compute the sum and product of an array of integers.
-
-function sum_and_product(){
-
+	var resultOfProduct = 1;
+	for (var i = 0; i < arr.length; i++) {
+		resultOfProduct *= arr[i];
+	}
+	console.log("La multiplicación de los enteros es: " + resultOfProduct);
 }
 
 sum_and_product([2,3,4]);
-
-
-
 
 
 
