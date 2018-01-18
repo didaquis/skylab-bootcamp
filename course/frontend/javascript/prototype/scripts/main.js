@@ -23,22 +23,14 @@ Person.prototype.bio = function(){
 	var result = this.first_name + " is " + this.age + " years old. ";
 	result += (this.gender === "male")? "He" : "She";
 	result += " likes ";
-	result += this.interests.join(", ");
-
-/*	
-	*
-	* TODO. Implementar esta mejora y comentar la linea anterior.
-	*
-
-	result += this.interests.forEach(function(el, idx, interests){
-		result += el + (idx < (interests.length -2) ? ", " : ( idx < (interests.length -1) ? "and " : " ") );
+	this.interests.forEach(function(el, idx, arr){
+		result += el + (idx < (arr.length -2) ? ", " : ( idx < (arr.length -1) ? " and " : "") );
 	});
-*/
 	result += ".";
 	return result;
 };
 
-var javi = new Person('Javier','García','23','male',['videogames', 'play guitar']);
+var javi = new Person('Javier','García','23','male',['videogames', 'play guitar', 'listen music']);
 
 console.log( javi.greeting() );
 console.log( javi.farewell() );
