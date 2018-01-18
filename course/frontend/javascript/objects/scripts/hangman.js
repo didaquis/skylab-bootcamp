@@ -19,10 +19,6 @@ function Hangman(mysteriousWord, attemps){
 		this.gameStatus.underscoreToPrint = newUnderscore;
 	};
 
-	this.print = function(){
-		console.log( this.gameStatus.underscoreToPrint );
-	}
-
 	this.initGame = function (){
 
 		this.gameStatus = {
@@ -30,7 +26,7 @@ function Hangman(mysteriousWord, attemps){
 			"lettersAlreadyAppeared": []
 		};
 
-		console.log("Playing...");
+		console.log("Playing to hangman...");
 
 		var underscores = "";
 		for (var i = 0; i < mysteriousWord.length; i++) {
@@ -38,14 +34,14 @@ function Hangman(mysteriousWord, attemps){
 		}
 		this.gameStatus.underscoreToPrint = underscores;
 
-		this.print();
+		console.log( this.gameStatus.underscoreToPrint );
 	};
 
 	this.initGame(); // inicializo el juego (este método es invocado cada vez que se genera una instancia)
 
 	this.try = function(userSayLetter){
 		if(mysteriousWord.indexOf(userSayLetter) === -1){
-			console.log("Fallaste");
+			console.log("Dijiste la letra '" + userSayLetter + "' y... FALLASTE!");
 			attemps--;
 			console.log("Te quedan " + attemps + " intentos.");
 
@@ -55,7 +51,7 @@ function Hangman(mysteriousWord, attemps){
 			}
 
 		}else{
-			console.log("Acertaste");
+			console.log("Dijiste la letra '" + userSayLetter + "' y... ACERTASTE!");
 			this.gameStatus.lettersAlreadyAppeared.push(userSayLetter);
 			
 			this.updateUnderscoreToPrint(); // Actualizamos los guiones bajos para mostrarselos al usuario
@@ -67,7 +63,7 @@ function Hangman(mysteriousWord, attemps){
 			}
 		}
 
-		this.print();
+		console.log( this.gameStatus.underscoreToPrint );
 	};
 
 }
