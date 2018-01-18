@@ -211,9 +211,22 @@ var array2 = [2, 30, 1];
 console.log(mergeArrays(array1, array2)); // [3, 2, 30, 1]
 
 
+// ### separateEven
 
+// Write a JavaScript program which accept a number (type String) as input and insert dashes (-) between each two even numbers. For example if you accept "025468" the output should be "0-254-6-8".
+/*
+	*
+	* TODO
+	*
 
+function separateEven(input){
+	return input;
+}
 
+console.log( separateEven("025468") ); // "0-254-6-8"
+console.log( separateEven("033") ); // "033"
+
+*/
 
 
 
