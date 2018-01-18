@@ -1,15 +1,17 @@
-# 🚀 Curso de programación de Skylab Coders. Enero 2018.  
+![Skylab Coders Academy](skylab.png "Skylab Coders Academy")
 
-## Changelog && Roadmap  
+🚀 Full-Stack Web-Development Bootcamp 
+======================================
+
+## Changelog && progress  
 
 
 |   Fecha    | Día  |   Changelog     |
 |------------|------|-----------------|
-| 2018-01-15 | 1/55 | Primer proyecto creado en el terminal para repasar los comandos básicos en **CLI** (command line interface). Repaso de Markdown y Git & GitFlow |
-| 2018-01-15 | 1/55 | Primer proyecto creado en el terminal para repasar los comandos básicos en **CLI** (command line interface). Repaso de Markdown y Git & GitFlow |
-| 2018-01-16 | 2/55 | Repaso de Git & GitFlow & GitHub. Introducción teórica a JavaScript (variables, estructuras de control, arrays, funciones, objetos, etc) |
-| 2018-01-17 | 3/55 | Teoría de JavaScript (objetos y prototype) |
-| 2018-01-18 | 4/55 | Repaso de objetos, prototype y polyfill en JavaScript. Challenges "secret.js" & "hangman.js" |
+| 2018-01-15 | 1/55 | Comandos básicos en **CLI** (command line interface). Repaso de Markdown y Git & GitFlow |
+| 2018-01-16 | 2/55 | Repaso de Git & GitFlow & GitHub. JavaScript: variables, estructuras de contro, arrays, funciones |
+| 2018-01-17 | 3/55 | JavaScript: objetos, prototype y polyfill |
+| 2018-01-18 | 4/55 | JavaScript: objetos, prototype y polyfill. Challenges "secret.js" & "hangman.js" |
 | 2018-01-19 | 5/55 |                 |
 | 2018-01-22 | 6/55 |                 |
 | 2018-01-23 | 7/55 |                 |
@@ -20,12 +22,12 @@
 | 2018-01-30 | 12/55 |                 |
 | 2018-01-31 | 13/55 |                 |
 | 2018-02-01 | 14/55 |                 |
-| 2018-      | 15/55 |                 |
-| 2018-      | 16/55 |                 |
-| 2018-      | 17/55 |                 |
-| 2018-      | 18/55 |                 |
-| 2018-      | 19/55 |                 |
-| 2018-      | 20/55 |                 |
+| 2018-02-02 | 15/55 |                 |
+| 2018-02-05 | 16/55 |                 |
+| 2018-02-06 | 17/55 |                 |
+| 2018-02-07 | 18/55 |                 |
+| 2018-02-08 | 19/55 |                 |
+| 2018-02-09 | 20/55 |                 |
 | 2018-      | 21/55 |                 |
 | 2018-      | 22/55 |                 |
 | 2018-      | 23/55 |                 |
