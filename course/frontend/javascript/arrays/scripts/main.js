@@ -220,7 +220,13 @@ console.log(mergeArrays(array1, array2)); // [3, 2, 30, 1]
 	*
 
 function separateEven(input){
-	return input;
+	var arr = input.split("");
+	for (var i = 0; i < arr.length -1; i++) {
+		if( (arr[i] % 2 == 0) && (arr[i+1] % 2 == 0) ){
+			//arr.splice(i, 0, '-'); // esto me genera loops infinitos
+		}
+	}
+	return arr;
 }
 
 console.log( separateEven("025468") ); // "0-254-6-8"
