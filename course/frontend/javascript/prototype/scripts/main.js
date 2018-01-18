@@ -13,11 +13,11 @@ function Person(firstName, lastName, age, gender, interests){
 // b)
 Person.prototype.greeting = function(){
 	return "Hi! I'm " + this.first_name + ".";
-}
+};
 
 Person.prototype.farewell = function(){
 	return this.first_name + " has left the building. Bye for now!";
-}
+};
 
 Person.prototype.bio = function(){
 	var result = this.first_name + " is " + this.age + " years old. ";
@@ -26,7 +26,7 @@ Person.prototype.bio = function(){
 	result += this.interests.join(", ");
 	result += ".";
 	return result;
-}
+};
 
 var javi = new Person('Javier','García','23','male',['videogames', 'play guitar']);
 
