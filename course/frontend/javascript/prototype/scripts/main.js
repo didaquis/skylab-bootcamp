@@ -84,4 +84,3 @@ Teacher.prototype.greeting = function() {
 
 console.log( paula.greeting() );
 
-
