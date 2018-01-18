@@ -222,7 +222,6 @@ console.log(mergeArrays(array1, array2)); // [3, 2, 30, 1]
 // ### separateEven
 function separateEven(input){
 	var arr = input.split(""); // convierto el string en un array
-	//var arr_result = arr.slice(); // copio el array
 	var arr_result = [];
 
 	for (var i = 0; i < arr.length; i++) {
@@ -234,7 +233,6 @@ function separateEven(input){
 		}
 		if( (arr[i] % 2 == 0) && (arr[i+1] % 2 == 0) ){
 			arr_result.push('-');
-
 		}
 
 	}
