@@ -74,7 +74,7 @@ delete String.prototype.hashtag;
 
 delete Array.prototype.forEach; // Elimino el comportamiento nativo al inicio de mi programa.
 
-// Ahora redefino el método.
+// Acto seguido, redefino el método:
 Array.prototype.forEach = function(){
 	// your code...
 }
@@ -86,5 +86,6 @@ if(typeof Array.prototype.forEach === "undefined" ){
 
 	// your code...
 }
+// teniendo en cuenta esto, podrías no eliminar la implementación nativa y considerar la posibilidad de implementar el nuevo comportamiento solo para los intérpretes que no lo soportan.
 
 
