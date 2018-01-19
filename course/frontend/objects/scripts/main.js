@@ -15,6 +15,7 @@ console.log(is_object({}));
 
 // ### Create object car
 var seat_leon = {
+	/* Esto se llama, crear un objeto de manera literal */
 	"brand": "Seat",
 	"model": "León",
 	"color": "black",

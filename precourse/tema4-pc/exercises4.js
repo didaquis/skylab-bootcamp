@@ -768,7 +768,7 @@ function funnyLoremBis(loremText){
 		// un pequeño hack para arreglar la regular expression para el punto y la coma: 
 		stringToBeARegex = propertie;
 		if(stringToBeARegex.length == 1){
-			// areglo la regular expression para el "." y la ","
+			// arreglo la regular expression para el "." y la ","
 			stringToBeARegex = "\\" + stringToBeARegex;
 		}
 		dinamicRegex = new RegExp(stringToBeARegex, "ig");

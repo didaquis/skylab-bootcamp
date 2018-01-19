@@ -117,11 +117,11 @@ Write a JavaScript function to merge two arrays and removes all duplicates eleme
     var array1 = [1, 2, 3]; 
     var array2 = [2, 30, 1]; 
     console.log(merge_array(array1, array2));
-    [3, 30]
+    [3, 2, 30, 1]
 
 ### separateEven
 
-Write a JavaScript program which accept a number as input and insert dashes (-) between each two even numbers. For example if you accept 025468 the output should be 0-254-6-8.
+Write a JavaScript program which accept a number (type String) as input and insert dashes (-) between each two even numbers. For example if you accept "025468" the output should be "0-254-6-8".
 
 ### mostFrequentItem
 

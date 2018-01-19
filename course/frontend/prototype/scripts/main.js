@@ -13,22 +13,24 @@ function Person(firstName, lastName, age, gender, interests){
 // b)
 Person.prototype.greeting = function(){
 	return "Hi! I'm " + this.first_name + ".";
-}
+};
 
 Person.prototype.farewell = function(){
 	return this.first_name + " has left the building. Bye for now!";
-}
+};
 
 Person.prototype.bio = function(){
 	var result = this.first_name + " is " + this.age + " years old. ";
 	result += (this.gender === "male")? "He" : "She";
 	result += " likes ";
-	result += this.interests.join(", ");
+	this.interests.forEach(function(el, idx, arr){
+		result += el + (idx < (arr.length -2) ? ", " : ( idx < (arr.length -1) ? " and " : "") );
+	});
 	result += ".";
 	return result;
-}
+};
 
-var javi = new Person('Javier','García','23','male',['videogames', 'play guitar']);
+var javi = new Person('Javier','García','23','male',['videogames', 'play guitar', 'listen music']);
 
 console.log( javi.greeting() );
 console.log( javi.farewell() );
@@ -41,6 +43,8 @@ console.log( javi.bio() );
 function Student(firstName, lastName, age, gender, interests){
 	// esta clase hereda de la clase Person
 	Person.call(this,firstName, lastName, age, gender, interests);
+	// La anterior linea se entiende así: 
+		// Cuando tratamos de crear una instancia de un objeto de tipo "Student", invocamos al constructor "Person" y le pasamos los argumentos: "firstName, lastName, age, gender, interests". Person genera una instancia y ésta retorna a través de "call" y se asigna a "this". Ahora Student ha generado una instancia de tipo Student gracias a Person.
 }
 
 Student.prototype = new Person();
@@ -62,6 +66,8 @@ console.log( lorena.greeting() );
 // a)
 function Teacher(firstName, lastName, age, gender, interests, subject){
 	Person.call(this,firstName, lastName, age, gender, interests);
+	// Person.apply(this, arguments); // Esta es otra manera de hacerlo, las dos son válidas en este caso!
+
 	this.subject = subject;
 }
 
@@ -83,5 +89,4 @@ Teacher.prototype.greeting = function() {
 // observa que estoy redefiniendo el método "greeting" de Teacher, pero el de "Person" y "Student" se mantiene.
 
 console.log( paula.greeting() );
-
 

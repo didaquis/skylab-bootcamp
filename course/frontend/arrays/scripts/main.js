@@ -89,6 +89,7 @@ console.log(difference([1, 2, 3], [100, 2, 1, 10])); // ["3", "10", "100"]
 
 
 
+
 // ### Sum and Product
 function sum_and_product(arr){
 	var resultOfSum = 0;
@@ -108,6 +109,7 @@ sum_and_product([2,3,4]);
 
 
 
+
 // ### addItems
 function addItems(){
 	var items = [];
@@ -118,6 +120,7 @@ function addItems(){
 }
 
 addItems("item!", "another item");
+
 
 
 
@@ -151,6 +154,7 @@ console.log( last([7, 9, 0, -2],6) ); // [7, 9, 0, -2]
 
 
 
+
 // ### sortItems
 function sortItems(arr){
 	arr.sort(function(a, b) {
@@ -163,6 +167,7 @@ sortItems( [ 3, 8, 7, 6, 5, -4, 3, 2, 1 ] ); // -4,-3,1,2,3,5,6,7,8
 
 
 
+
 // ### getRandom
 function getRandomItemFromArray(arr){
 	randomIndex = Math.floor(Math.random() * arr.length);
@@ -170,6 +175,7 @@ function getRandomItemFromArray(arr){
 }
 
 console.log( getRandomItemFromArray(["A", "B", "C", "D"]) );
+
 
 
 
@@ -201,9 +207,6 @@ function mergeArrays(array1, array2){
 	for (var i = 0; i < concatenated.length; i++) {
 		if(result.indexOf(concatenated[i]) === -1){
 			result.push(concatenated[i]);
-		}else{
-			var indexToDelete = result.indexOf(concatenated[i]);
-			result.splice(indexToDelete,1); // Quito la duplicidad del array.
 		}
 	}
 	return result;
@@ -211,9 +214,34 @@ function mergeArrays(array1, array2){
 
 var array1 = [1, 2, 3];
 var array2 = [2, 30, 1];
-console.log(mergeArrays(array1, array2)); // [3, 30]
-console.log(mergeArrays([2,3,4,5,6,7], [4,5,6,7,8,9])); // [2, 3, 8, 9]
+console.log(mergeArrays(array1, array2)); // [3, 2, 30, 1]
 
+
+
+
+// ### separateEven
+function separateEven(input){
+	var arr = input.split(""); // convierto el string en un array
+	var arr_result = [];
+
+	for (var i = 0; i < arr.length; i++) {
+
+		arr_result.push(arr[i]);
+
+		if(arr[i+1] === undefined){
+			continue;
+		}
+		if( (arr[i] % 2 == 0) && (arr[i+1] % 2 == 0) ){
+			arr_result.push('-');
+		}
+
+	}
+
+	return arr_result.join("");
+}
+
+console.log( separateEven("025468") ); // "0-254-6-8"
+console.log( separateEven("033") ); // "033"
 
 
 
