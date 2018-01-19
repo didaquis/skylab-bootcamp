@@ -1,10 +1,10 @@
 /*
-	* 
-	* Challenge: generar un secreto, el cual solo puede ser accesible con el password correcto.
-	*
-	* No debemos poder acceder de ninguna otra manera.
-	*
-*/
+ * 
+ * Challenge: generar un secreto, el cual solo puede ser accesible con el password correcto.
+ *
+ * No debemos poder acceder de ninguna otra manera.
+ *
+ */
 
 function Box(secret, password){
 	/* Fíjate que las siguientes dos lineas no son una propiedad, sino una variable. Si fueran una propiedad, no conseguiríamos ocultar su valor. Al ser variables, si podemos hacerlo

@@ -1,8 +1,8 @@
 /*
-	* 
-	* Challenge: Un juego del ahorcado!
-	*
-*/
+ * 
+ * Challenge: Un juego del ahorcado!
+ *
+ */
 
 function Hangman(mysteriousWord, attemps){
 
