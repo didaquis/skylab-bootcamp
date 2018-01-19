@@ -11,9 +11,9 @@ function Hangman(mysteriousWord, attemps){
 		var newUnderscore = "";
 		for (var i = 0; i < mysteriousWord.length; i++) {
 			if(lettersAppeared.indexOf(mysteriousWord[i]) === -1 ){
-				newUnderscore += "_";
+				newUnderscore += " _";
 			}else{
-				newUnderscore += mysteriousWord[i];
+				newUnderscore +=  " " + mysteriousWord[i].toUpperCase();
 			}
 		}
 		this.gameStatus.underscoreToPrint = newUnderscore;
@@ -30,11 +30,11 @@ function Hangman(mysteriousWord, attemps){
 
 		var underscores = "";
 		for (var i = 0; i < mysteriousWord.length; i++) {
-			underscores += "_";
+			underscores += " _";
 		}
 		this.gameStatus.underscoreToPrint = underscores;
 
-		console.log( this.gameStatus.underscoreToPrint );
+		console.log(attemps + this.gameStatus.underscoreToPrint );
 	};
 
 	this.initGame(); // inicializo el juego (este método es invocado cada vez que se genera una instancia)
@@ -63,7 +63,7 @@ function Hangman(mysteriousWord, attemps){
 			}
 		}
 
-		console.log( this.gameStatus.underscoreToPrint );
+		console.log(attemps + this.gameStatus.underscoreToPrint );
 	};
 
 }
