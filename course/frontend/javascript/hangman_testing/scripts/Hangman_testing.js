@@ -20,7 +20,6 @@ function Hangman(mysteriousWord, attemps){
 	};
 
 	this.initGame = function (){
-
 		this.gameStatus = {
 			"underscoreToPrint": "",
 			"lettersAlreadyAppeared": []
@@ -31,7 +30,6 @@ function Hangman(mysteriousWord, attemps){
 			underscores += " _";
 		}
 		this.gameStatus.underscoreToPrint = underscores;
-
 	};
 
 	this.initGame(); // inicializo el juego (este método es invocado cada vez que se genera una instancia)
@@ -46,13 +44,12 @@ function Hangman(mysteriousWord, attemps){
 			if(mysteriousWord.indexOf(userSayLetter) === -1){
 				attemps--;
 
-				/* Comprobamos si el juego ha terminado */
 				if(attemps === 0){
+					return 'GAME OVER.';
 				}
-
 			}else{
 				this.gameStatus.lettersAlreadyAppeared.push(userSayLetter);
-				
+
 				this.updateUnderscoreToPrint(); // Actualizamos los guiones bajos para mostrarselos al usuario
 
 				/* Comprobamos si el jugador ha acertado la palabra */
@@ -61,9 +58,7 @@ function Hangman(mysteriousWord, attemps){
 					attemps = 0;
 				}
 			}
-
 			return (attemps + this.gameStatus.underscoreToPrint );
-
 		}else{
 			// el usuario trata de adivinar la palabra entera
 
@@ -71,11 +66,8 @@ function Hangman(mysteriousWord, attemps){
 				attemps = 0;
 				return 'You have guessed the word, well done!';
 			}
-				attemps = 0;
-				return 'Sorry, you have not guessed... the correct word is HELLO.';
+			attemps = 0;
+			return 'Sorry, you have not guessed... the correct word is HELLO.';
 		}
 	};
-
 }
-
-
