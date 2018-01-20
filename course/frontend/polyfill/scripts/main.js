@@ -35,10 +35,10 @@ a.forEach(function(n){console.log(n)}); // "Mi propia implementación!"  \n   "f
 
 // Creamos un nuevo metodo para que los strings se conviertan en hashtags de Twitter
 /*
-   * String.prototype.hashtag
-   *
-   * @returns {String} Formated string like hashtag.
-*/
+ * String.prototype.hashtag
+ *
+ * @returns {String} Formated string like hashtag.
+ */
 String.prototype.hashtag = function(){
 	var text = this.trim();
 	text = text.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}); // Capitalizo todas las primeras letras del string
@@ -47,7 +47,7 @@ String.prototype.hashtag = function(){
 }
 
 var s = 'Skylab rocks';
-console.log( s.hashtag() ); // SkylabRocks
+console.log( s.hashtag() ); // #SkylabRocks
 
 console.log( "esto es un ejemplo".hashtag() ); // #EstoEsUnEjemplo
 
@@ -65,12 +65,12 @@ delete String.prototype.hashtag;
 // ******************************************************************************
 
 /*
-	*
-	* RECUERDA: puedes usar prototype para dar compatibilidad de tu código en navegadores antiguos! (esto se llama polyfill)
-	* 
-	* Por ejemplo, imagina que quieres usar "Array.forEach()" y el intérprete del navegador no lo soporta. Puedes comprobar si es así y redefinirlo para que el intérprete pueda funcionar.
-	*
-*/
+ *
+ * RECUERDA: puedes usar prototype para dar compatibilidad de tu código en navegadores antiguos! (esto se llama polyfill)
+ * 
+ * Por ejemplo, imagina que quieres usar "Array.forEach()" y el intérprete del navegador no lo soporta. Puedes comprobar si es así y redefinirlo para que el intérprete pueda funcionar.
+ *
+ */
 
 delete Array.prototype.forEach; // Elimino el comportamiento nativo al inicio de mi programa.
 
@@ -83,7 +83,7 @@ Array.prototype.forEach = function(){
 
 
 // Existe una manera de comprobar si el intérprete soporta el método:
-if(typeof Array.prototype.forEach === "undefined" ){
+if(typeof Array.prototype.forEach === "undefined"){
 	// si el intérprete no tiene el método "forEach"...
 
 	// your code...
@@ -92,3 +92,24 @@ if(typeof Array.prototype.forEach === "undefined" ){
 
 
 // ******************************************************************************
+
+
+
+/*
+ *
+ * Si quieres que una función pase a ser un método del objeto Window, puedes hacerlo así:
+ *
+ */
+
+// Creo la función que deseo:
+function foo() {
+	console.log("foo, bar, biz!");
+}
+
+// La añado al prototype de Function:
+Function.prototype.foo = function() {
+    return foo(this.name);
+}
+
+
+
