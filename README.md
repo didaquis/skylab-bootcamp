@@ -8,11 +8,11 @@
 
 |   Fecha    | Día  |   Changelog     |
 |------------|------|-----------------|
-| 2018-01-15 | 1/55 | Comandos básicos en **CLI** (command line interface). Repaso de Markdown y Git & GitFlow |
-| 2018-01-16 | 2/55 | Git, GitFlow y GitHub. JavaScript: variables, estructuras de contro, arrays, funciones |
+| 2018-01-15 | 1/55 | Comandos básicos en CLI (command line interface). Repaso de Markdown y Git & GitFlow |
+| 2018-01-16 | 2/55 | Git, GitFlow y GitHub. JavaScript: variables, estructuras de control, arrays, funciones |
 | 2018-01-17 | 3/55 | JavaScript: objetos, prototype y polyfill |
 | 2018-01-18 | 4/55 | JavaScript: objetos, prototype y polyfill. Challenges "secret.js" y "hangman.js" |
-| 2018-01-19 | 5/55 | Javascript: introducción al unit testing. Introducción a Jasmine |
+| 2018-01-19 | 5/55 | Javascript: introducción al unit testing. Uso de Jasmine |
 | 2018-01-22 | 6/55 |                 |
 | 2018-01-23 | 7/55 |                 |
 | 2018-01-24 | 8/55 |                 |
