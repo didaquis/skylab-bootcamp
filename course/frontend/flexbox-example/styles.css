@@ -1,0 +1,119 @@
+/* Global rules */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Menu rules */
+
+.menu-container {
+  color: #fff;
+  background-color: #5995DA;  /* Blue */
+  padding: 20px 0;
+  display: flex; /* Gracias a esta propiedad, permitimos a los elementos hijos usar las técnicas de Flexbox. */
+  justify-content: center; /* Es el equivalente a aplicar "margin: 0 auto" a su elemento hijo. */
+}
+
+.menu {
+  width: 900px;
+  display: flex;
+  justify-content: space-between; /* Recuerda que las propiedades están afectando a los hijos que contiene este elemento. */
+}
+
+.login {
+  margin-left: 20px;
+}
+
+.signup {
+  margin-left: auto; /* Los márgenes automáticos consumen todo el espacio adicional en un contenedor flexible, por lo que en lugar de distribuir los artículos por igual, esto mueve el .signup y los siguientes elementos (.login) hacia el lado derecho del contenedor. */
+}
+
+/* Header rules */
+
+.header-container {
+  color: #5995DA;
+  background-color: #D6E9FE;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  width: 900px;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Nos permite centrar verticalmente a los hijos de este elemento. Ten en cuenta que si hubiera la regla "flex-direction: column;" se girarían 90 grados los ejes de "align-items" y "justify-content". */
+}
+
+.social,
+.subscribe {
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+/* Photo grid rules */
+
+.photo-grid-container {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-grid {
+  width: 900px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Gracias a esta propiedad y la anterior, podemos crear una cuadrícula de items. */
+  flex-direction: row;
+  align-items: center;
+}
+
+.photo-grid-item {
+  border: 1px solid #fff;
+  width: 300px;
+  height: 300px;
+}
+
+.first-item {
+  order: 1; /* Esta propiedad si que afecta al elemento del selector. Nos permite reordenar un item respecto a sus elementos hermanos. */
+}
+
+.last-item {
+  order: -1;
+}
+
+/* Footer rules */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-item {
+  border: 1px solid #fff;
+  background-color: #D6E9FE;
+  height: 200px;
+  flex: 1;
+}
+
+.footer-one,
+.footer-three {
+  background-color: #5995DA;
+  flex: initial; /* Especificamos que el elemento se ajuste a la altura y anchura descrita en esta regla (ignorando las reglas de posicionamiento del elemento padre) . Equivalente a "flex: 0 0 auto;" */
+  width: 300px;
+}
+
+/* 
+ * # Remember:
+ *
+ *	Use display: flex; to create a flex container.
+ *	Use justify-content to define the horizontal alignment of items.
+ *	Use align-items to define the vertical alignment of items.
+ *	Use flex-direction if you need columns instead of rows.
+ *	Use the row-reverse or column-reverse values to flip item order.
+ *	Use order to customize the order of individual elements.
+ *	Use align-self to vertically align individual items.
+ *	Use flex to create flexible boxes that can stretch and shrink.
+ *
+  */
