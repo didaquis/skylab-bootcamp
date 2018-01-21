@@ -18,7 +18,7 @@ describe("Shuffle method", function() {
 		}
 	}
 
-	it("arraysAreNotTheSame", arraysAreNotTheSame);
+	it("arrays are not the same", arraysAreNotTheSame);
 
 
 
@@ -45,5 +45,21 @@ describe("Shuffle method", function() {
 		}
 	}
 
-	it("newArrayIsShuffle", newArrayIsShuffle);
+	it("new array is shuffle", newArrayIsShuffle);
+
+
+
+	it("result contains correct all items from orginal array", function() {
+		newArray = originalArray.shuffle();
+
+		expect(newArray).toContain(1);
+		expect(newArray).toContain(2);
+		expect(newArray).toContain(3);
+		expect(newArray).toContain('a');
+		expect(newArray).toContain('b');
+		expect(newArray).toContain('c');
+		expect(newArray).toContain('NyanCat');
+
+		expect(newArray).not.toContain('anything else');
+	});
 });
