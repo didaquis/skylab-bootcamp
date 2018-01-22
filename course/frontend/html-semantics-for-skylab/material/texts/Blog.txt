@@ -1,0 +1,169 @@
+
+  Skylab Coders Academy - Escuela de desarrollo web
+  <http://www.skylabcoders.com/es>Skylab Coders Academy
+
+  * *es <http://www.skylabcoders.com/es/blog_1565>*
+  * en <http://www.skylabcoders.com/en/blog_1565>
+  * ca <http://www.skylabcoders.com/ca/blog_1565>
+
+info@skylabcoders.com <mailto:info@skylabcoders.com>
+
+93 176 02 20 <tel:+34931760220>
+esMenú SkyLab Coders Academy
+
+
+Menú principal
+
+  * Inicio <http://www.skylabcoders.com/es>
+  * Quiénes somos <http://www.skylabcoders.com/es/qui%C3%A9nes-somos_3803>
+  * ¿Por qué? <http://www.skylabcoders.com/es/-por-qu%C3%A9-_4139>
+  * Cursos <http://www.skylabcoders.com/es/cursos_3574>
+      o Curso desarrollo web
+        <http://www.skylabcoders.com/es/curso-desarrollo-web_5278>
+  * Empresas <http://www.skylabcoders.com/es/empresas_4434>
+  * Comunidad <http://www.skylabcoders.com/es/comunidad_4573>
+  * *Blog <http://www.skylabcoders.com/es/blog_1565>*
+  * Contacto <http://www.skylabcoders.com/es/contacto_4078>
+
+
+Blog
+
+
+Blog
+
+Blog
+
+Blog|
+
+
+      Títulos o hechos
+<http://www.skylabcoders.com/es/t%C3%ADtulos-o-hechos_11421>
+
+7 · Jul · 2016
+
+Estudiar Informática en tal o cual facultad era (es) una forma de salir
+al mercado con unos conocimientos. Actualmente, pero, los conocimientos
+por si solos no son garante de haber conseguido las habilidades
+necesarias para resolver los problemas que la programación web plantea.
+Es precisamente en el mundo de la programación donde más herramientas
+disponibles hay para que un programador pueda demostrar lo que es capaz
+de hacer.
+
+Seguir leyendo <http://www.skylabcoders.com/es/t%C3%ADtulos-o-hechos_11421>
+
+
+      Inmersión en Javascript (callbacks, closures y más)
+<http://www.skylabcoders.com/es/inmersi%C3%B3n-en-javascript-callbacks-closures-y-m%C3%A1s-_11314>
+
+5 · Jul · 2016
+
+*
+
+En el segundo día de nuestro curso, los estudiantes descubren algunas de
+las particularidades de Javascript: objetos, callbacks o closures.
+
+Seguir leyendo
+<http://www.skylabcoders.com/es/inmersi%C3%B3n-en-javascript-callbacks-closures-y-m%C3%A1s-_11314>
+
+
+      Bootcamp de desarrollo web en verano
+<http://www.skylabcoders.com/es/bootcamp-de-desarrollo-web-en-verano_11215>
+
+4 · Jul · 2016
+
+Los alumnos han empezado esta mañana el curso de verano de *Web
+Development con Javascript*. Les esperan nueve semanas de inmersión en
+las técnicas y herramientas necesarias para convertirse en
+desarrolladores web. Esta promoción la forman siete estudiantes con
+experiencias y procedencias distintas. Todos interesados en adquirir
+fundamentos sólidos de programación con Javascript.
+
+Seguir leyendo
+<http://www.skylabcoders.com/es/bootcamp-de-desarrollo-web-en-verano_11215>
+
+
+      Programar o ser programador
+<http://www.skylabcoders.com/es/programar-o-ser-programador_11131>
+
+29 · Jun · 2016
+
+*
+
+Para ser un programador según los estándares modernos de la industria
+online exige más que sólo programar. Hay algunos hábitos no técnicos que
+te hacen un mejor programador.
+
+Seguir leyendo
+<http://www.skylabcoders.com/es/programar-o-ser-programador_11131>
+
+
+      Programación orientada a SEO
+<http://www.skylabcoders.com/es/programaci%C3%B3n-orientada-a-seo_10991>
+
+16 · Jun · 2016
+
+  * Programación y SEO
+
+En 2010 Google introdujo en su algoritmo la velocidad de carga en el
+navegador como factor para modificar el ranking de las páginas web. Así
+pues, trabajar por posicionar palabras clave no es el único factor que
+afectará a como una página web se posiciona.
+
+Como experto en SEO puedes mejorar la velocidad de carga si consigues
+optimizar el tiempo de carga del código HTML, Javascript, los
+servidores, etc.
+
+Seguir leyendo
+<http://www.skylabcoders.com/es/programaci%C3%B3n-orientada-a-seo_10991>
+
+1 <http://www.skylabcoders.com/es/blog_1565?block1572.page=0>2
+<http://www.skylabcoders.com/es/blog_1565?block1572.page=1>3
+<http://www.skylabcoders.com/es/blog_1565?block1572.page=2>4
+<http://www.skylabcoders.com/es/blog_1565?block1572.page=3>5
+<http://www.skylabcoders.com/es/blog_1565?block1572.page=4>6
+<http://www.skylabcoders.com/es/blog_1565?block1572.page=5>
+Noticias anteriores >>
+
+<http://www.skylabcoders.com/es/blog_1565?block1572.page=1>»
+<http://www.skylabcoders.com/es/blog_1565?block1572.page=5>
+
+SkyLab Escuela de programaciónSkylab Coders Academy
+<http://www.skylabcoders.com/>
+Impact Hub - Plaça Reial 18, Barcelona-08001BarcelonaCatalunyaEspaña
+Tel+34931760220
+info@skylabcoders.com <mailto:info@skylabcoders.com>
+
+  * Inicio <http://www.skylabcoders.com/es>
+  * Quiénes somos <http://www.skylabcoders.com/es/qui%C3%A9nes-somos_3803>
+  * ¿Por qué? <http://www.skylabcoders.com/es/-por-qu%C3%A9-_4139>
+  * Cursos <http://www.skylabcoders.com/es/cursos_3574>
+  * Empresas <http://www.skylabcoders.com/es/empresas_4434>
+  * Comunidad <http://www.skylabcoders.com/es/comunidad_4573>
+  * *Blog <http://www.skylabcoders.com/es/blog_1565>*
+  * Contacto <http://www.skylabcoders.com/es/contacto_4078>
+
+Skylab Coders Academy <http://www.skylabcoders.com/en>
+
+Impact Hub - Plaça Reial 18, Barcelona
+<https://www.google.com/maps/place/Impact+Hub+Barcelona/@41.3797263,2.1753233,19z/data=!4m7!1m4!3m3!1s0x12a4a257ee0c6631:0xb7357781ad11537d!2sPla%C3%A7a+Reial,+18,+08002+Barcelona,+Spain!3b1!3m1!1s0x0000000000000000:0x19b92298b891af28>
+
++34 93 176 02 20
+<tel:+34931760220>
+
+info@skylabcoders.com <mailto:info@skylabcoders.com>
+
+ 
+
+<https://www.facebook.com/skylabcoders/>
+
+ 
+
+<https://twitter.com/skylabcoders>
+
+ 
+
+<http://www.linkedin.com/company/10579714>
+
+Diseño web <http://www.whads.com/es/> | Aviso legal
+<http://www.skylabcoders.com/>
+
