@@ -10,8 +10,8 @@ describe("Shuffle method", function() {
 
 
 	function arraysAreNotTheSame(){
+		newArray = originalArray.shuffle();
 		if(originalArray.length <= 1){
-			newArray = originalArray.shuffle();
 			expect( newArray ).toEqual( originalArray );
 		}else{
 			expect( newArray ).not.toEqual( originalArray );
@@ -39,6 +39,7 @@ describe("Shuffle method", function() {
 
 				if( newArrayToText !== originalArrayToText ){
 					shuffled = true;
+					break;
 				}
 			}
 			expect( shuffled ).toBeTruthy();
@@ -52,6 +53,7 @@ describe("Shuffle method", function() {
 	it("result contains correct all items from orginal array", function() {
 		newArray = originalArray.shuffle();
 
+		/*
 		expect(newArray).toContain(1);
 		expect(newArray).toContain(2);
 		expect(newArray).toContain(3);
@@ -59,6 +61,11 @@ describe("Shuffle method", function() {
 		expect(newArray).toContain('b');
 		expect(newArray).toContain('c');
 		expect(newArray).toContain('NyanCat');
+		*/
+
+		for(var val in originalArray){
+			expect(newArray).toContain(originalArray[val]);
+		}
 
 		expect(newArray).not.toContain('anything else');
 	});
