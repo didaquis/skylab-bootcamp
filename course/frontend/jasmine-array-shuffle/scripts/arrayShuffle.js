@@ -9,11 +9,7 @@
  * @return {array} newArray. Retorna un nuevo array.
  */
 Array.prototype.shuffle = function (){
-	var newArray = [];
-	for (var i = 0; i < this.length; i++) {
-		newArray.push(this[i]);
-	}
-	// newArray == just a clone of "this" (the original array)!
+	var newArray = this.slice(); // newArray == just a clone of "this" (the original array)!
 	var currentIndex = newArray.length;
 	var tempValue, randomIndex;
 	while (0 !== currentIndex) {
@@ -25,3 +21,6 @@ Array.prototype.shuffle = function (){
 	}
 	return newArray;
 }
+
+// Establecemos que el método sea no "enumerable", de lo contrario no podríamos usar el operador 'in' durante las pruebas de unit testing en Jasmine.
+Object.defineProperty(Array.prototype, 'shuffle', {enumerable: false});

@@ -1,0 +1,84 @@
+/* */
+
+ul {
+	background-color: #6DFBFB;
+	max-width: 100px;
+	font-size: 1.6em;
+}
+
+li {
+	background-color: #FFFFFF;
+	list-style-type: square;
+	text-align: center;
+	text-decoration: underline;
+}
+
+/* */
+
+h1 {
+	display: inline-block;
+	text-shadow: 10px -10px 3px #868686;
+	text-decoration: underline #ED3833;
+}
+
+/* */
+
+.green-rounded-button {
+	border: 2px solid black;
+	border-radius: 14px;
+	padding: 30px 60px;
+	color: white;
+	font-size: 1.6em;
+	background-color: #3A831E;
+	box-shadow: 0 8px 1px #868686;
+}
+
+.green-rounded-button:hover {
+	color: black;
+	background-color: white;
+}
+
+/* */
+
+img {
+	border-radius: 50%;
+	border: 3px dotted #202020;
+	padding: 2px;
+	filter: grayscale(100%);
+}
+
+/* CSS Shapes */
+
+#triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 100px solid #ED3833;
+}
+
+
+#shape_01 {
+	margin: 20px;
+	width: 0;
+	height: 50px;
+	border-left: 50px solid yellow;
+	border-right: 50px solid blue;
+	border-top: 100px solid black;
+}
+
+#shape_02 {
+	margin: 20px;
+	width: 200px;
+	height: 40px;
+	border-top: 20px solid lime;
+	border-right: 20px solid yellow;
+	border-bottom: 20px solid green;
+	border-left: 20px solid yellow;
+	
+	text-align: center;
+	padding: 4px;
+	font-weight: bold;
+	font-size: 2em;
+}
+

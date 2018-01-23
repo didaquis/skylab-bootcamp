@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercise Selectors</title>
+
+	<style>
+
+	/* No debo usar #id ni .classes */
+
+	* {
+		/* Reset. Best Practice */
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		/* Specify base font. Best practice. Define the other rules with the "em" unit of mesure */
+		font-size: 14px;
+		font-family: Helvetica, Arial, sans-serif;
+		padding: 20px;
+		max-width: 960px;
+		margin: 0 auto;
+	}
+
+	h1, h2 {
+		color:#395C1D;
+		margin: 40px 20px 30px;
+	}
+
+	strong, em {
+		color:#ECAB6F;
+	}
+
+	ul > li > ul > li{
+		list-style-type: circle;
+		list-style-position: inside;
+	}
+	ul > li > ul {
+		list-style-type: square;
+		color: #E2857E;
+		margin-left: 20px;
+	}
+	ul {
+		margin-left: 60px;
+	}
+
+	ul > li {
+		margin-left: 0;
+	}
+
+	table {
+		border: 1px solid black;
+	}
+
+	table * {
+		padding: 4px;
+	}
+
+	table thead > tr >th {
+		text-align: center;
+	}
+
+	table tbody > tr > td {
+		color: #6B367D;
+	}
+
+	label {
+		display: block;
+		margin-bottom: 20px;
+	}
+
+	fieldset {
+		padding: 0 20px 10px 20px;
+		margin-bottom: 20px;
+	}
+
+	fieldset * {
+		display: inline;
+		margin: 8px 4px;
+	}
+
+	textarea {
+		display: block;
+	}
+
+	footer {
+		margin: 20px 0;
+	}
+	</style>
+
+</head>
+<body>
+	<header>
+		<img src="materials/logo.jpg" alt="Logo">
+	</header>
+  
+  	<main>
+
+  		<section>
+  			<h1>About</h1>
+ 			<p>It can be intimidating for women to learn and ask questions when they are in an <strong>extreme minority</strong>. While open and welcoming, today's budding developer community is up to <strong>91% male</strong>. If we can empower more females with the confidence in their technological capabilities <em>we can begin to change this landscape</em>.</p>
+  		</section>
+
+  		<section>
+  			<h2>Our Locations</h2>
+  			<ul>
+   				<li>USA
+	 				<ul>
+	  					<li><a href="#">New York</a></li>
+	  					<li><a href="#">Columbus</a></li>
+	  					<li><a href="#">Austin</a></li>
+	  					<li><a href="#">Philly</a></li>
+	 				</ul>
+   				</li>
+   				<li>World
+	 				<ul>
+	  					<li><a href="#">Ottawa</a></li>
+	  					<li><a href="#">Sydney</a></li>
+	 				</ul>
+   				</li>
+  			</ul>
+  		</section>
+
+  		<section>
+  			<h2>Upcoming Classes</h2>
+  			<table border="1">
+			   	<thead>
+					<tr>
+				 		<th>Location</th>
+				 		<th>Topic</th>
+					</tr>
+			   	</thead>
+			   	<tbody>
+					<tr>
+				 		<td>New York</td>
+				 		<td>JavaScript &amp; jQuery</td>
+					</tr>
+					<tr>
+				  		<td>San Francisco</td>
+				  		<td>HTML &amp; CSS</td>
+					</tr>
+			   	</tbody>
+			</table>
+  		</section>
+
+  		<section>
+  			<h2>Sign Up!</h2>
+  			<form action="#" method="post">
+				<label>Name: <input name="name" type="text"></label>
+				
+				<label>Email: <input name="email" type="email"></label>
+				
+				<label>Location:
+				  	<select name="location">
+						<option value="sf">San Francisco</option>
+						<option value="nyc">New York</option>
+				  	</select>
+				</label>
+				
+				<fieldset>
+				  	<legend>Gender:</legend>
+				  	<label for="female">Female</label>
+				  	<input type="radio" name="gender" id="female" value="female">
+				  	<label for="male">Male</label>
+				  	<input type="radio" name="gender" id="male" value="male">
+				</fieldset>
+				
+				<label>Experience:
+					<textarea name="experience"></textarea> 
+				</label>
+				
+				<button type="submit">Sign Up</button>
+		  	</form>
+  		</section>
+
+  	</main>
+  
+  	<footer>
+  		<a href="#">Twitter</a> | <a href="#">Facebook</a> | <a href="#">Flickr</a>
+  	</footer>
+
+</body>
+</html>
