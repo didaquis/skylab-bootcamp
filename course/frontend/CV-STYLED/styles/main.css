@@ -1,0 +1,95 @@
+* {
+	/* Reset. Best Practice */
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.clearfix {
+	clear: both;
+}
+
+body {
+	/* Specify base font. Best practice. Define the other rules with the "em" unit of mesure */
+	font-size: 12px;
+	font-family: Helvetica, Arial, sans-serif;
+	padding: 20px;
+	max-width: 960px;
+	margin: 0 auto;
+	color: #697D88;
+}
+
+hr {
+	border: 1px solid #E6E6E6;
+}
+
+/* Header rules */
+header {
+	background-color: #EDEDED;
+	padding: 20px;
+	min-height: 180px;
+	border-bottom: 1px solid #CD8133;
+}
+
+header img {
+	float: left;
+	border-radius: 35px;
+	max-height: 140px;
+	filter: grayscale(100%);
+}
+
+header > div {
+	max-width: 240px;
+	margin-left: 20px;
+	display: inline-block;
+}
+
+header h1, header, h2 {
+	color: black;
+}
+
+header aside {
+	float: right;
+}
+
+/* Main rules */
+main {
+	background-color: #F3F3F3;
+	padding: 0 20px;
+}
+
+section aside {
+	float: left;
+	padding: 20px 0;
+	max-width: 25%;
+}
+
+section aside h3 {
+	color: #CA7E32;
+	font-style: italic;
+}
+
+main section article {
+	max-width: 75%;
+	width:100%;
+	float: right;
+	padding: 20px 20px 0 20px;
+}
+
+main section article:last-of-type {
+	padding-bottom: 20px;
+}
+
+main section article h3 {
+	color: #3E3132;
+}
+
+.relevant {
+	font-style: italic;
+	margin: 2px 0 4px 0;
+}
+
+.column {
+	width: 33%;
+	float: left;
+}

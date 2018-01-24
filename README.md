@@ -14,8 +14,8 @@
 | 2018-01-18 | 4/55 | JavaScript: objetos, prototype y polyfill. Challenges "secret.js" y "hangman.js" |
 | 2018-01-19 | 5/55 | Javascript: introducción al unit testing. Uso de Jasmine |
 | 2018-01-22 | 6/55 | HTML 5: elementos semánticos. JavaScripts: High order functions y callbacks |
-| 2018-01-23 | 7/55 | CSS: selectores avanzados |
-| 2018-01-24 | 8/55 |                 |
+| 2018-01-23 | 7/55 | CSS: selectores avanzados. Corrección ejercicios anteriores (JS, HTML, etc) |
+| 2018-01-24 | 8/55 | CSS: Posicionamiento de los elementos |
 | 2018-01-25 | 9/55 |                 |
 | 2018-01-26 | 10/55 |                 |
 | 2018-01-29 | 11/55 |                 |
