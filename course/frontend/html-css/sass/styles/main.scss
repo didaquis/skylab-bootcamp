@@ -1,0 +1,43 @@
+
+/* Definición de variables */
+$default-size: 100px;
+$default-size: 100px;
+$color-important: red;
+
+
+body {
+	background-color: blue;
+}
+
+a {
+	background-color: white;
+	font-size: 1.3rem;
+}
+
+.box {
+	/* Usamos las variables */
+	width: $default-size;
+	height: $default-size;
+	background-color: $color-important;
+}
+
+
+
+/* Nested rules */
+nav	{
+	ul {
+		background-color: lime;
+		padding: 10px;
+		li {
+			display: inline-block;
+			padding: 0 10px;
+			background-color: cyan;
+			font-size: 2rem;
+		}
+	}
+}
+
+
+/* importar ficheros */
+@import '_reset';
+

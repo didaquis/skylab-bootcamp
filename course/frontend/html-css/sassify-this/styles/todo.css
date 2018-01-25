@@ -1,0 +1,31 @@
+body {
+  background-color: white;
+  font: normal 14px courier,sans-serif; }
+
+.container {
+  padding: 25px;
+  position: fixed; }
+
+.form-login {
+  background-color: aquamarine;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  border-color: black;
+  border-width: 1px; }
+
+h4 {
+  border: 0 solid white;
+  border-bottom-width: 1px;
+  padding-bottom: 10px;
+  text-align: center; }
+
+.form-control {
+  border-radius: 10px;
+  border-color: gray;
+  border-width: 1px; }
+
+.wrapper {
+  text-align: center; }

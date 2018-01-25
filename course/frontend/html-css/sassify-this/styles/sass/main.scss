@@ -1,0 +1,55 @@
+// Este comentario no será visible en el fichero CSS generado
+
+/* Este comentario SI es visible en el fichero generado! */
+
+$pad-small: 10px; // Declaro una variable
+$pad-medium: 25px;
+
+
+// Declaro mixins (funciones) 
+@mixin border($rad, $col, $wid){
+    border-radius: $rad;
+    border-color: $col;
+    border-width: $wid;
+}
+
+
+body {
+    background-color: white;
+    font: normal 14px courier,sans-serif;
+}
+
+.container {
+    padding: $pad-medium;
+    position: fixed;
+}
+
+.form-login {
+    background-color: aquamarine;
+    
+    // Observa el siguiente ejemplo, me estoy ahorrando escribir cada vez: "padding-"
+    padding: {
+        top: $pad-small;
+        bottom: $pad-small * 2; // Fíjate que recojo el valor de la variable y lo multiplico por dos.
+        left: $pad-small * 2;
+        right: $pad-small * 2;
+    }
+
+    @include border($pad-small, black, 1px); // Llamo a un mixin
+
+    // Anidado de reglas
+    h4 {
+        border: 0 solid white;
+        border-bottom-width: 1px;
+        padding-bottom: $pad-small;
+        text-align: center;
+    }
+
+    .form-control {
+        @include border($pad-small, gray, 1px);
+    }
+
+    .wrapper {
+        text-align: center; 
+    }
+}
