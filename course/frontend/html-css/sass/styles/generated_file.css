@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/* Definición de variables */
+body {
+  background-color: blue; }
+
+a {
+  background-color: white;
+  font-size: 1.3rem; }
+
+.box {
+  /* Usamos las variables */
+  width: 100px;
+  height: 100px;
+  background-color: red; }
+
+/* Nested rules */
+nav ul {
+  background-color: lime;
+  padding: 10px; }
+  nav ul li {
+    display: inline-block;
+    padding: 0 10px;
+    background-color: cyan;
+    font-size: 2rem; }
+
+/* importar ficheros */
+body, html, ul, ol {
+  margin: 0;
+  padding: 0; }
+
+/*# sourceMappingURL=generated_file.css.map */
