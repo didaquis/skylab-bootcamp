@@ -16,7 +16,7 @@
 | 2018-01-22 | 6/55 | HTML 5: elementos semánticos. JavaScripts: High order functions y callbacks |
 | 2018-01-23 | 7/55 | CSS: selectores avanzados. Corrección ejercicios anteriores (JS, HTML, etc) |
 | 2018-01-24 | 8/55 | CSS: Posicionamiento de los elementos. FlexBox & CSS Grid. JSDoc|
-| 2018-01-25 | 9/55 |                 |
+| 2018-01-25 | 9/55 | JavaScript: method chaining |
 | 2018-01-26 | 10/55 |                 |
 | 2018-01-29 | 11/55 |                 |
 | 2018-01-30 | 12/55 |                 |
