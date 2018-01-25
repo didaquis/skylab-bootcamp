@@ -2,21 +2,19 @@
 
 /* Este comentario SI es visible en el fichero generado! */
 
-$pad-small: 10px; // Declaro una variable
-$pad-medium: 25px;
+// Hay dos sintaxis válidas, yo voy a usar: "scss"
 
 
-// Declaro mixins (funciones) 
-@mixin border($rad, $col, $wid){
-    border-radius: $rad;
-    border-color: $col;
-    border-width: $wid;
-}
-
+// permite importar otros ficheros scss. Observa el guión bajo delante del nombre del fichero
+@import '_mixins-and-vars.scss';
 
 body {
-    background-color: white;
+    background-color: lighten(indigo, 10%);;
     font: normal 14px courier,sans-serif;
+    padding: {
+        left: $pad-medium;
+        right: $pad-medium;
+    }
 }
 
 .container {
@@ -37,7 +35,7 @@ body {
 
     @include border($pad-small, black, 1px); // Llamo a un mixin
 
-    // Anidado de reglas
+    // Anidado de reglas (nested rules)
     h4 {
         border: 0 solid white;
         border-bottom-width: 1px;
@@ -51,5 +49,60 @@ body {
 
     .wrapper {
         text-align: center; 
+    }
+}
+
+
+.boton {
+    margin: 30px;
+    padding: 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: black;
+
+    &:hover { 
+        box-shadow: 0 0 4px 2px #000000; 
+    } // Podemos definir el "hover" dentro de la misma regla
+}
+
+.boton-normal {
+    @extend .boton; // De este modo heredamos las propiedades de otra regla
+    background-color: snow;
+
+    &:hover {
+        background: darken(snow, 5%); // "darken()" es una función preestablecida que me permite oscurecen un color
+    }
+}
+
+.boton-aviso {
+    @extend .boton;
+    background-color: chartreuse ;
+
+    &:hover {
+        background: darken(chartreuse, 5%);
+    }
+}
+
+.boton-peligro {
+    @extend .boton;
+    background-color: tomato;
+
+    &:hover {
+        background: darken(tomato, 5%);
+    }
+}
+
+.boxed{
+    padding-top: $pad-medium * 2;
+    color: white;
+    font-size: 1.6rem;
+
+    a {
+        color: black;
+        text-decoration: underline;
+
+        &:hover {
+            color: cyan;
+        }
     }
 }

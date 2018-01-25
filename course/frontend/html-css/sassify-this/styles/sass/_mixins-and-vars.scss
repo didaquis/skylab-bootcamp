@@ -1,0 +1,11 @@
+// Declaro unas variables
+$pad-small: 10px;
+$pad-medium: 25px;
+
+
+// Declaro mixins (funciones). Podré llamar a los mixins para colocar todas estas propiedades dentro de una regla
+@mixin border($rad, $col, $wid: 1px){ // Se pueden establecer parámetros por defecto
+    border-radius: $rad;
+    border-color: $col;
+    border-width: $wid;
+}
