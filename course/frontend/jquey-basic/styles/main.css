@@ -1,0 +1,16 @@
+
+.box {
+	width: 100px;
+	height: 100px;
+	margin: 30px;
+	background-color: skyblue;
+	padding: 10px;
+}
+
+.caja {
+	border: 5px solid black;
+}
+
+.highlight {
+	background-color: yellow;
+}
