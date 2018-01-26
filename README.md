@@ -17,7 +17,7 @@
 | 2018-01-23 | 7/55 | CSS: selectores avanzados. Corrección ejercicios anteriores (JS, HTML, etc) |
 | 2018-01-24 | 8/55 | CSS: Posicionamiento de los elementos. FlexBox & CSS Grid. Documentación con JSDoc|
 | 2018-01-25 | 9/55 | JavaScript: method chaining. Uso de Sass. Introducción a jQuery |
-| 2018-01-26 | 10/55 |                 |
+| 2018-01-26 | 10/55 | Javascript: event bubbling. Profundizante en jQuery. jQuery ajax. Node.js |
 | 2018-01-29 | 11/55 |                 |
 | 2018-01-30 | 12/55 |                 |
 | 2018-01-31 | 13/55 |                 |

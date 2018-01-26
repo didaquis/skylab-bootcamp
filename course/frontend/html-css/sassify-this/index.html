@@ -1,33 +1,52 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link href="vendor/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles/main.css">
+	<meta charset="utf-8">
+	<link href="vendor/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="vendor/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="styles/main.css">
+	<title>Login</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-offset-5 col-md-3">
+				<div class="form-login">
+					<h4>Welcome back.</h4>
+					<input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" />
+					</br>
+					<input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
+					</br>
+					<div class="wrapper">
+					<span class="group-btn">     
+						<a href="#" class="btn btn-success">login <i class="fa fa-sign-in"></i></a>
+					</span>
+					</div>
+				</div>
+			
+			</div>
+		</div>
 
-    <title>Login</title>
-  </head>
-  <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-offset-5 col-md-3">
-                <div class="form-login">
-                    <h4>Welcome back.</h4>
-                    <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" />
-                    </br>
-                    <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
-                    </br>
-                    <div class="wrapper">
-                    <span class="group-btn">     
-                        <a href="#" class="btn btn-success">login <i class="fa fa-sign-in"></i></a>
-                    </span>
-                    </div>
-                </div>
-            
-            </div>
-        </div>
-    </div>
-    <script src="vendor/jquery/1.12.4/jquery.min.js"></script>
-    <script src="vendor/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </body>
+		<div class="boxed">
+			<div class="row">
+				<button class="boton boton-normal">Botón normal</button>
+				<button class="boton boton-aviso">Botón aviso</button>
+				<button class="boton boton-peligro">Botón peligro</button>
+			</div>
+			<div class="row">
+				<h2>Sobre Sass</h2>
+				<ul>
+					<li>Primeros pasos: <a href="http://sass-lang.com/guide" target="_blank" title="lo básico de Sass">lo básico de Sass</a></li>
+					<li>Documentación: <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html" target="_blank" title="guía de referencia">guía completa de referencia</a></li>
+				</ul>
+				<h3>Recuerda:</h3>
+				<p>Para generar tu fichero CSS, usa el comando <code class="text-nowrap">sass foo.scss foo.css</code></p>
+				<p>Generar el fichero CSS y actualizarse dinámicamente con los cambios <code class="text-nowrap">sass --watch foo.scss foo.css</code></p>
+				<p>Observa las diferencias al generar el fichero así <code class="text-nowrap">sass foo.scss foo.css --style compressed</code> y así <code class="text-nowrap">sass foo.scss foo.css --style compact</code>. Existen cuatro variantes posibles!</p>
+			</div>
+		</div>
+	</div>
+	<script src="vendor/jquery/1.12.4/jquery.min.js"></script>
+	<script src="vendor/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
 </html>
