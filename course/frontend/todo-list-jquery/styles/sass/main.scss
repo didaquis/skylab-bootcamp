@@ -1,0 +1,18 @@
+$espacio-medio: 20px;
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#listOfTasks {
+
+	margin: $espacio-medio;
+
+	li{
+		font-size: 1.5rem;
+		a {
+			margin: $espacio-medio;
+			font-size: 1rem;
+		}	
+	}
+}
