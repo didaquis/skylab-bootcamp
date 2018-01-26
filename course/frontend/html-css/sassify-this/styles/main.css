@@ -1,27 +1,67 @@
 /* Este comentario SI es visible en el fichero generado! */
-body { background-color: #6800b5; font: normal 14px courier,sans-serif; padding-left: 25px; padding-right: 25px; }
+body {
+  background-color: #6800b5;
+  font: normal 14px courier,sans-serif;
+  padding-left: 25px;
+  padding-right: 25px; }
 
-.container { padding: 25px; position: fixed; }
+.container {
+  padding: 25px;
+  position: fixed; }
 
-.form-login { background-color: aquamarine; padding-top: 10px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px; border-radius: 10px; border-color: black; border-width: 1px; }
-.form-login h4 { border: 0 solid white; border-bottom-width: 1px; padding-bottom: 10px; text-align: center; }
-.form-login .form-control { border-radius: 10px; border-color: gray; border-width: 1px; }
-.form-login .wrapper { text-align: center; }
+.form-login {
+  background-color: aquamarine;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  border-color: black;
+  border-width: 1px; }
+  .form-login h4 {
+    border: 0 solid white;
+    border-bottom-width: 1px;
+    padding-bottom: 10px;
+    text-align: center; }
+  .form-login .form-control {
+    border-radius: 10px;
+    border-color: gray;
+    border-width: 1px; }
+  .form-login .wrapper {
+    text-align: center; }
 
-.boton, .boton-normal, .boton-aviso, .boton-peligro { margin: 30px; padding: 16px; border-radius: 4px; font-weight: bold; color: black; }
-.boton:hover, .boton-normal:hover, .boton-aviso:hover, .boton-peligro:hover { box-shadow: 0 0 4px 2px #000000; }
+.boton, .boton-normal, .boton-aviso, .boton-peligro {
+  margin: 30px;
+  padding: 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: black; }
+  .boton:hover, .boton-normal:hover, .boton-aviso:hover, .boton-peligro:hover {
+    box-shadow: 0 0 4px 2px #000000; }
 
-.boton-normal { background-color: snow; }
-.boton-normal:hover { background: #ffe1e1; }
+.boton-normal {
+  background-color: snow; }
+  .boton-normal:hover {
+    background: #ffe1e1; }
 
-.boton-aviso { background-color: chartreuse; }
-.boton-aviso:hover { background: #72e600; }
+.boton-aviso {
+  background-color: chartreuse; }
+  .boton-aviso:hover {
+    background: #72e600; }
 
-.boton-peligro { background-color: tomato; }
-.boton-peligro:hover { background: #ff4d2e; }
+.boton-peligro {
+  background-color: tomato; }
+  .boton-peligro:hover {
+    background: #ff4d2e; }
 
-.boxed { padding-top: 50px; color: white; font-size: 1.6rem; }
-.boxed a { color: black; text-decoration: underline; }
-.boxed a:hover { color: cyan; }
+.boxed {
+  padding-top: 50px;
+  color: white;
+  font-size: 1.6rem; }
+  .boxed a {
+    color: black;
+    text-decoration: underline; }
+    .boxed a:hover {
+      color: cyan; }
 
 /*# sourceMappingURL=main.css.map */

@@ -12,13 +12,13 @@ body {
     background-color: lighten(indigo, 10%);;
     font: normal 14px courier,sans-serif;
     padding: {
-        left: $pad-medium;
-        right: $pad-medium;
+        left: $space-medium;
+        right: $space-medium;
     }
 }
 
 .container {
-    padding: $pad-medium;
+    padding: $space-medium;
     position: fixed;
 }
 
@@ -27,24 +27,24 @@ body {
     
     // Observa el siguiente ejemplo, me estoy ahorrando escribir cada vez: "padding-"
     padding: {
-        top: $pad-small;
-        bottom: $pad-small * 2; // Fíjate que recojo el valor de la variable y lo multiplico por dos.
-        left: $pad-small * 2;
-        right: $pad-small * 2;
+        top: $space-small;
+        bottom: $space-small * 2; // Fíjate que recojo el valor de la variable y lo multiplico por dos.
+        left: $space-small * 2;
+        right: $space-small * 2;
     }
 
-    @include border($pad-small, black, 1px); // Llamo a un mixin
+    @include border($space-small, black, 1px); // Llamo a un mixin
 
     // Anidado de reglas (nested rules)
     h4 {
         border: 0 solid white;
         border-bottom-width: 1px;
-        padding-bottom: $pad-small;
+        padding-bottom: $space-small;
         text-align: center;
     }
 
     .form-control {
-        @include border($pad-small, gray, 1px);
+        @include border($space-small, gray, 1px);
     }
 
     .wrapper {
@@ -93,7 +93,7 @@ body {
 }
 
 .boxed{
-    padding-top: $pad-medium * 2;
+    padding-top: $space-medium * 2;
     color: white;
     font-size: 1.6rem;
 
