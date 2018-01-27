@@ -180,7 +180,6 @@ console.log( getRandomItemFromArray(["A", "B", "C", "D"]) );
 
 
 // ### findDuplicates
-Write a JavaScript program to find duplicate values in a JavaScript array.
 function findDuplicates(arr){
 	var revisedItems = [], duplicatedItems = [];
 
@@ -245,5 +244,41 @@ console.log( separateEven("033") ); // "033"
 
 
 
+
+
+//### findPairSum
+function findPairSum(arr, target) {
+    var result = [];
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 1; j < arr.length; j++) {
+            if (arr[i] + arr[j] === target) {
+                result.push(i, j);
+            }
+        }
+    }
+    console.log(result);
+    return result.slice(2, 4);
+}
+console.log("Numbers= [10,20,10,40,50,60,70], target=50 and the output should be 2, 3 => " + findPairSum([10, 20, 10, 40, 50, 60, 70], 50));
+
+
+
+
+// ### flattenArray
+function flat(arr, newArray) {
+    newArray = newArray || [];
+    for (var i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            flat(arr[i], newArray);
+        } else {
+            newArray.push(arr[i]);
+        }
+    }
+    return newArray;
+
+}
+
+flat([1, 2, 3, [4, 5], 6]);
+flat([1, 2, [3, 4, [1, 2, [1, 2, 3]]], 5, 6]);
 
 
