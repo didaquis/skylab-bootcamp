@@ -180,7 +180,6 @@ console.log( getRandomItemFromArray(["A", "B", "C", "D"]) );
 
 
 // ### findDuplicates
-Write a JavaScript program to find duplicate values in a JavaScript array.
 function findDuplicates(arr){
 	var revisedItems = [], duplicatedItems = [];
 
