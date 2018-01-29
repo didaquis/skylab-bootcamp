@@ -1,3 +1,5 @@
+"use strict";
+
 $(document).ready(function() {
 
 	var game;
@@ -6,8 +8,8 @@ $(document).ready(function() {
 		event.preventDefault();
 
 		// Realizo el intercambio de secciones
-		$(event.target).closest('section').hide();
-		$('#pre_game_section').show();
+		$(event.target).closest('section').hide(500);
+		$('#pre_game_section').show(500);
 	});
 
 
@@ -19,12 +21,19 @@ $(document).ready(function() {
 		var valueOfWord = $('#word').val();
 		var valueOfAttemps = $('input[name="attemps"]').val();
 
+		if(valueOfAttemps < 5 ){
+			valueOfAttemps = 5;
+		}
+		if(valueOfAttemps > 20){
+			valueOfAttemps = 20;
+		}
+
 		// inicializo el juego!
 		game = new Hangman(valueOfWord, valueOfAttemps);
 
 		// Realizo el intercambio de secciones
-		$(event.target).closest('section').hide();
-		$('#game_section').show();
+		$(event.target).closest('section').hide(500);
+		$('#game_section').show(500);
 
 		// Pongo el foco en el campo adecuado
 		$('input[name="try"]').focus();
@@ -62,8 +71,8 @@ $(document).ready(function() {
 		event.preventDefault();
 
 		// Realizo el intercambio de secciones
-		$('#post_game_section').hide();
-		$('#pre_game_section').show();
+		$('#post_game_section').hide(500);
+		$('#pre_game_section').show(500);
 
 		// reseteo los campos adecuados
 		var inputWord = $('#word');
@@ -76,15 +85,15 @@ $(document).ready(function() {
 	function logicOfRespose(arr){
 		switch (arr[0]) {
 			case "GAME OVER":
-				$('#game_section').hide();
+				$('#game_section').hide(500);
 				$('#result').text(arr[1]);
-				$('#post_game_section').show();
+				$('#post_game_section').show(500);
 				break;
 
 			case "WIN":
-				$('#game_section').hide();
+				$('#game_section').hide(500);
 				$('#result').text(arr[1]);
-				$('#post_game_section').show();
+				$('#post_game_section').show(500);
 				break;
 
 			case "PLAYING":
@@ -100,17 +109,4 @@ $(document).ready(function() {
 	}
 
 });
-
-
-/**
- * # TO-DO
- * 		
- * * Modificar el Hangman:
- * 		* volver privados los métodos "updateUnderscoreToPrint" y "initGame"
- *
- *
- * * Implementar validaciones para los campos (número de intentos, por ejemplo)
- *
- */
-
 

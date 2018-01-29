@@ -1,6 +1,6 @@
 function Hangman(mysteriousWord, attemps){
 
-	this.updateUnderscoreToPrint = function(){
+	function updateUnderscoreToPrint(){
 		var lettersAppeared = this.gameStatus.lettersAlreadyAppeared;
 		var newUnderscore = "";
 		for (var i = 0; i < mysteriousWord.length; i++) {
@@ -13,7 +13,8 @@ function Hangman(mysteriousWord, attemps){
 		this.gameStatus.underscoreToPrint = newUnderscore;
 	};
 
-	this.initGame = function (){
+	// Este método es privado, solo es accesible desde dentro de la clase.
+	function initGame(){
 		this.gameStatus = {
 			"underscoreToPrint": "",
 			"lettersAlreadyAppeared": []
@@ -26,7 +27,8 @@ function Hangman(mysteriousWord, attemps){
 		this.gameStatus.underscoreToPrint = underscores;
 	};
 
-	this.initGame(); // inicializo el juego (este método es invocado cada vez que se genera una instancia)
+	// inicializo el juego (este método es invocado cada vez que se genera una instancia)
+	initGame.call(this); // Fíjate que uso "call" porque el método al que llamo es privado
 
 	this.try = function(userSayLetter){
 		if(attemps === 0){
@@ -44,7 +46,8 @@ function Hangman(mysteriousWord, attemps){
 			}else{
 				this.gameStatus.lettersAlreadyAppeared.push(userSayLetter);
 
-				this.updateUnderscoreToPrint(); // Actualizamos los guiones bajos para mostrarselos al usuario
+				// Actualizamos los guiones bajos para mostrarselos al usuario
+				updateUnderscoreToPrint.call(this);
 
 				/* Comprobamos si el jugador ha acertado la palabra */
 				var arrUnderscore = this.gameStatus.underscoreToPrint.split("");

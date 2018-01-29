@@ -21,6 +21,7 @@ body {
 	margin: auto;
 	max-width: $wide-page;
 	font-size: 16px;
+	background-color: $col-two;
 }
 
 form {
@@ -37,6 +38,7 @@ form {
 	}
 
 	button {
+		margin: $space-min / 2;
 		padding: ($space-min /2 ) $space-min;
 		border-radius: $space-min;
 		background-color: $col-three;
@@ -86,7 +88,6 @@ main  {
   		padding: $space-min;
   		max-width: $wide-page;
  		justify-content: center;
- 		background-color: $col-two;
 
  		h2 {
  			color: $col-four;
