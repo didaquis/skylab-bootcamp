@@ -1,12 +1,14 @@
-/* Global rules */
+/* Reset CSS */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body { margin: auto; max-width: 1200px; }
+/* Global rules */
+body { margin: auto; max-width: 1200px; font-size: 16px; }
 
 form { margin: 28px; display: flex; justify-content: center; align-items: center; flex-direction: column; }
 form input { font-size: 1.1em; display: block; margin-bottom: 14px; }
 form button { padding: 14px 28px; border-radius: 28px; background-color: #5995DA; font-weight: bold; }
-form button:hover { background-color: #72a5e0; box-shadow: 0 0 8px 1px #000000; }
+form button:hover, form button:active { background-color: #72a5e0; box-shadow: 0 0 8px 1px #000000; }
+form label { margin-bottom: 7px; }
 
 /* Header rules */
 #main_header { color: #5995DA; background-color: #D6E9FE; display: flex; justify-content: space-between; align-items: center; max-width: 1200px; height: 140px; padding: 28px; }
@@ -16,9 +18,11 @@ form button:hover { background-color: #72a5e0; box-shadow: 0 0 8px 1px #000000; 
 /* Main rules */
 main { max-width: 1200px; justify-content: center; }
 main section { padding: 28px; max-width: 1200px; justify-content: center; background-color: lightYellow; }
-main section h2, main section h3 { color: #2E2E2E; text-align: center; margin-bottom: 28px; }
+main section h2 { color: #2E2E2E; text-align: center; margin-bottom: 28px; }
+main section #underscoredWord { text-align: center; font-size: 1.3rem; letter-spacing: 1.1rem; color: #2E2E2E; }
 
-/* Footer rules */
-footer { max-width: 1200px; height: 56px; background-color: #D6E9FE; display: flex; justify-content: center; align-items: center; }
+@media screen and (max-width: 600px) { /* Header rules */
+  #main_header { flex-direction: column; justify-content: center; min-height: 220px; }
+  #main_header #img_logo { order: -1; } }
 
 /*# sourceMappingURL=main.css.map */

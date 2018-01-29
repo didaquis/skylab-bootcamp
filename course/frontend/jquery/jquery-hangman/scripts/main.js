@@ -16,7 +16,7 @@ $(document).ready(function() {
 		event.preventDefault();
 
 		// recojo la palabra y el número máximo de intentos permitidos
-		var valueOfWord = $('input[name="word"]').val();
+		var valueOfWord = $('#word').val();
 		var valueOfAttemps = $('input[name="attemps"]').val();
 
 		// inicializo el juego!
@@ -29,30 +29,88 @@ $(document).ready(function() {
 		// Pongo el foco en el campo adecuado
 		$('input[name="try"]').focus();
 
+
+		// Actualizo el board del juego
+		var initialUnderscores = '';
+		for(var i = 0; i < valueOfWord.length; i++) {
+			initialUnderscores += '_';
+		}
+		logicOfRespose(['PLAYING', valueOfAttemps, initialUnderscores]);
 	});
 
 
 	$('#submit_try').on('click', function(event) {
 		event.preventDefault();
 
+		var inputTry = $('input[name="try"]');
+
 		// recupero el valor del input
-		var valueOfTry = $('input[name="try"]').val();
+		var valueOfTry = inputTry.val();
 
 		// reseteo el campo
-		$('input[name="try"]').val('');
+		inputTry.val('');
+		inputTry.focus();
 
+
+		// lanzamos la jugada
 		var resultOfAttemp = game.try(valueOfTry);
 
-		// muestro los resultados
-		showGameData(resultOfAttemp);
+		logicOfRespose(resultOfAttemp);
 	});
 
-	function showGameData(source){
-		alert(source);
-		var numOfAttempsRemaining = 0;
-		var underscoredWord = 'Nyancat';
+	$('#submit_play_again').on('click', function(event) {
+		event.preventDefault();
+
+		// Realizo el intercambio de secciones
+		$('#post_game_section').hide();
+		$('#pre_game_section').show();
+
+		// reseteo los campos adecuados
+		var inputWord = $('#word');
+		inputWord.val('');
+		inputWord.focus();
+		$('#attemps').val(10)
+
+	});
+
+	function logicOfRespose(arr){
+		switch (arr[0]) {
+			case "GAME OVER":
+				$('#game_section').hide();
+				$('#result').text(arr[1]);
+				$('#post_game_section').show();
+				break;
+
+			case "WIN":
+				$('#game_section').hide();
+				$('#result').text(arr[1]);
+				$('#post_game_section').show();
+				break;
+
+			case "PLAYING":
+				// actualizo el board
+				updateGameData(arr[1], arr[2]);
+				break;
+		}
+	}
+
+	function updateGameData(numOfAttempsRemaining, underscoredWord){
 		$('#num_of_attemps').text(numOfAttempsRemaining);
-		$('#board').text(underscoredWord);
+		$('#underscoredWord').text(underscoredWord);
 	}
 
 });
+
+
+/**
+ * # TO-DO
+ * 		
+ * * Modificar el Hangman:
+ * 		* volver privados los métodos "updateUnderscoreToPrint" y "initGame"
+ *
+ *
+ * * Implementar validaciones para los campos (número de intentos, por ejemplo)
+ *
+ */
+
+

@@ -5,9 +5,9 @@ function Hangman(mysteriousWord, attemps){
 		var newUnderscore = "";
 		for (var i = 0; i < mysteriousWord.length; i++) {
 			if(lettersAppeared.indexOf(mysteriousWord[i]) === -1 ){
-				newUnderscore += " _";
+				newUnderscore += "_";
 			}else{
-				newUnderscore +=  " " + mysteriousWord[i].toUpperCase();
+				newUnderscore +=  mysteriousWord[i].toUpperCase();
 			}
 		}
 		this.gameStatus.underscoreToPrint = newUnderscore;
@@ -21,7 +21,7 @@ function Hangman(mysteriousWord, attemps){
 
 		var underscores = "";
 		for (var i = 0; i < mysteriousWord.length; i++) {
-			underscores += " _";
+			underscores += "_";
 		}
 		this.gameStatus.underscoreToPrint = underscores;
 	};
@@ -30,7 +30,7 @@ function Hangman(mysteriousWord, attemps){
 
 	this.try = function(userSayLetter){
 		if(attemps === 0){
-			return 'GAME OVER.';
+			return ['GAME OVER', mysteriousWord];
 		}
 
 		if(userSayLetter.length === 1){
@@ -39,7 +39,7 @@ function Hangman(mysteriousWord, attemps){
 				attemps--;
 
 				if(attemps === 0){
-					return 'GAME OVER.';
+					return ['GAME OVER', mysteriousWord];
 				}
 			}else{
 				this.gameStatus.lettersAlreadyAppeared.push(userSayLetter);
@@ -50,18 +50,20 @@ function Hangman(mysteriousWord, attemps){
 				var arrUnderscore = this.gameStatus.underscoreToPrint.split("");
 				if( arrUnderscore.indexOf("_") === -1 ){
 					attemps = 0;
+					return ['WIN', 'You have guessed the word, well done!'];
 				}
 			}
-			return (attemps + this.gameStatus.underscoreToPrint );
+			return ['PLAYING', attemps , this.gameStatus.underscoreToPrint];
 		}else{
 			// el usuario trata de adivinar la palabra entera
 
 			if(userSayLetter === mysteriousWord){
 				attemps = 0;
-				return 'You have guessed the word, well done!';
+				return ['WIN', 'You have guessed the word, well done!'];
 			}
 			attemps = 0;
-			return 'Sorry, you have not guessed... the correct word is HELLO.';
+			var message = "Sorry, you have not guessed... the correct word was " + mysteriousWord;
+			return ['GAME OVER', message];
 		}
 	};
 }

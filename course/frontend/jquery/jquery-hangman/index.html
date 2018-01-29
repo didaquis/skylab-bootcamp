@@ -25,7 +25,7 @@
 		<section hidden id="pre_game_section">
 			<h2>Enter a word!</h2>
 			<form method="get" action="">
-				<input type="text" name="word" autofocus required>
+				<input type="text" name="word" id="word" autofocus required>
 				<label for="attemps">Number of attemps:</label>
 				<input type="number" id="attemps" name="attemps" min="5" max="20" value="10">
 				<button type="submit" id="submit_pre_game">Go!</button>
@@ -34,28 +34,22 @@
 
 		<section hidden id="game_section">
 			<header>
-				<h3>You have <span id="num_of_attemps">10</span> attemps</h3>
+				<h2>You have <span id="num_of_attemps">10</span> attemps</h2>
 			</header>
-			<div id="board">
-				
-			</div>
+			<p id="underscoredWord"></p>
 			<form method="get" action="">
 				<input type="text" name="try" autofocus required>
 				<button type="submit" id="submit_try">Try!</button>
 			</form>
 		</section>
 
-		<section hidden class="post_game_section">
+		<section hidden id="post_game_section">
+			<h2 id="result"></h2>
 			<form method="get" action="">
 				<button type="submit" id="submit_play_again">Play again!</button>
 			</form>
 		</section>
 	</main>
-
-	<footer>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua.</p>
-	</footer>
 
 	<!-- scripts -->
 	<script src="vendor/jquery-3.3.1/jquery-3.3.1.min.js"></script>
