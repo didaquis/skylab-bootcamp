@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <title>Hangman!</title>
+</head>
+<body>
+
+	<header id="main_header">
+		<h1>Hangman!</h1>
+		<img src="img/logo.png" id="img_logo" alt="hangman logo">	
+	</header>
+
+	<main>
+		<section id="welcome_section">
+			<h2>Are you ready?</h2>
+			<form method="get" action="">
+				<button type="submit" id="submit_ready">Play!</button>
+			</form>
+		</section>
+
+		<section hidden id="pre_game_section">
+			<h2>Enter a word!</h2>
+			<form method="get" action="">
+				<input type="text" name="word" id="word" autofocus required>
+				<label for="attemps">Number of attemps:</label>
+				<input type="number" id="attemps" name="attemps" min="5" max="20" value="10">
+				<button type="submit" id="submit_pre_game">Go!</button>
+			</form>
+		</section>
+
+		<section hidden id="game_section">
+			<header>
+				<h2>You have <span id="num_of_attemps">10</span> attemps</h2>
+			</header>
+			<p id="underscoredWord"></p>
+			<form method="get" action="">
+				<input type="text" name="try" autofocus required>
+				<button type="submit" id="submit_try">Try!</button>
+			</form>
+		</section>
+
+		<section hidden id="post_game_section">
+			<h2 id="result"></h2>
+			<form method="get" action="">
+				<button type="submit" id="submit_play_again">Play again!</button>
+			</form>
+		</section>
+	</main>
+
+	<!-- scripts -->
+	<script src="vendor/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="scripts/Hangman.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

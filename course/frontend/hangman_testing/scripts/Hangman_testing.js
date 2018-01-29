@@ -56,6 +56,7 @@ function Hangman(mysteriousWord, attemps){
 				var arrUnderscore = this.gameStatus.underscoreToPrint.split("");
 				if( arrUnderscore.indexOf("_") === -1 ){
 					attemps = 0;
+					return 'You have guessed the word, well done!';
 				}
 			}
 			return (attemps + this.gameStatus.underscoreToPrint );
@@ -67,7 +68,7 @@ function Hangman(mysteriousWord, attemps){
 				return 'You have guessed the word, well done!';
 			}
 			attemps = 0;
-			return 'Sorry, you have not guessed... the correct word is HELLO.';
+			return 'Sorry, you have not guessed... the correct word is ' + mysteriousWord;
 		}
 	};
 }

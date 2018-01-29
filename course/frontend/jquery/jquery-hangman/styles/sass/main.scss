@@ -1,0 +1,123 @@
+$wide-page: 1200px;
+$space-min: 28px;
+$col-one: #D6E9FE;
+$col-two: lightYellow;
+$col-three: #5995DA;
+$col-four: #2E2E2E;
+
+
+
+/* Reset CSS */
+* {
+  	margin: 0;
+  	padding: 0;
+  	box-sizing: border-box;
+}
+
+
+
+/* Global rules */
+body {
+	margin: auto;
+	max-width: $wide-page;
+	font-size: 16px;
+	background-color: $col-two;
+}
+
+form {
+	margin: $space-min;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	input {
+		font-size: 1.1em;
+		display: block;
+		margin-bottom: ($space-min / 2);
+	}
+
+	button {
+		margin: $space-min / 2;
+		padding: ($space-min /2 ) $space-min;
+		border-radius: $space-min;
+		background-color: $col-three;
+		font-weight: bold;
+
+		&:hover, &:active {
+			background-color: lighten($col-three, 6%);
+			box-shadow: 0 0 8px 1px #000000;
+		}
+	}
+
+	label {
+		margin-bottom: ($space-min / 4);
+	}
+}
+
+
+
+/* Header rules */
+#main_header {
+  	color: $col-three;
+  	background-color: $col-one;
+  	display: flex;
+  	justify-content: space-between;
+  	align-items: center;
+  	max-width: $wide-page;
+  	height: 140px;
+  	padding: $space-min;
+
+  	#img_logo {
+		max-width: 300px;
+	}
+
+	h1 {
+		text-transform: uppercase;
+		color: $col-four;
+	}
+}
+
+
+
+/* Main rules */
+main  {
+  	max-width: $wide-page;
+  	justify-content: center;
+  	section	{
+  		padding: $space-min;
+  		max-width: $wide-page;
+ 		justify-content: center;
+
+ 		h2 {
+ 			color: $col-four;
+ 			text-align: center;
+ 			margin-bottom: $space-min;
+ 		}
+
+ 		#underscoredWord {
+ 			text-align: center;
+ 			font-size: 1.3rem;
+ 			letter-spacing: 1.1rem;
+ 			color: $col-four;
+ 		}
+  	}
+}
+
+
+@media screen and (max-width: 600px) {
+	// si la pantalla tiene un ancho menor de 600 px:
+
+
+	/* Header rules */
+	#main_header {
+	  	flex-direction: column;
+	  	justify-content: center;
+	  	min-height: 220px;
+
+	  	#img_logo {
+			order: -1;
+		}
+	}
+
+}// media screen
