@@ -1,0 +1,100 @@
+$wide-page: 1200px;
+
+$space-min: 28px;
+
+$col-one: #D6E9FE;
+$col-two: lightYellow;
+$col-three: #5995DA;
+$col-four: #2E2E2E;
+
+
+/* Global rules */
+* {
+  	margin: 0;
+  	padding: 0;
+  	box-sizing: border-box;
+}
+
+body {
+	margin: auto;
+	max-width: $wide-page;
+}
+
+form {
+	margin: $space-min;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	input {
+		font-size: 1.1em;
+		display: block;
+		margin-bottom: ($space-min / 2);
+	}
+
+	button {
+		padding: ($space-min /2 ) $space-min;
+		border-radius: $space-min;
+		background-color: $col-three;
+		font-weight: bold;
+
+		&:hover {
+			background-color: lighten($col-three, 6%);
+			box-shadow: 0 0 8px 1px #000000;
+		}
+	}
+}
+
+
+
+/* Header rules */
+#main_header {
+  	color: #5995DA;
+  	background-color: $col-one;
+  	display: flex;
+  	justify-content: space-between;
+  	align-items: center;
+  	max-width: $wide-page;
+  	height: 140px;
+  	padding: $space-min;
+
+  	#img_logo {
+		max-width: 300px;
+	}
+
+	h1 {
+		text-transform: uppercase;
+		color: $col-four;
+	}
+}
+
+
+/* Main rules */
+main  {
+  	max-width: $wide-page;
+  	justify-content: center;
+  	section	{
+  		padding: $space-min;
+  		max-width: $wide-page;
+ 		justify-content: center;
+ 		background-color: $col-two;
+
+ 		h2, h3 {
+ 			color: $col-four;
+ 			text-align: center;
+ 			margin-bottom: $space-min;
+ 		}
+  	}
+}
+
+
+/* Footer rules */
+footer {
+	max-width: $wide-page;
+	height: $space-min * 2;
+	background-color: $col-one;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
