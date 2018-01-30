@@ -9,8 +9,28 @@ $(document).ready(function() {
 
 		// Realizo el intercambio de secciones
 		$(event.target).closest('section').hide(500);
-		$('#pre_game_section').show(500);
+		$('#pre_game_section').show();
 	});
+
+
+	(function() {
+		/* Controlaré que me introducen una palabra, ya que el jQuery está evitando que la propiedad "required" del elemento input funcione correctamente. */
+	    $('#word').keyup(function() {
+
+	        var empty = false;
+	        $('#word').each(function() {
+	            if ($(this).val() == '') {
+	                empty = true;
+	            }
+	        });
+
+	        if (empty) {
+	            $('#submit_pre_game').attr('disabled', 'disabled');
+	        } else {
+	            $('#submit_pre_game').removeAttr('disabled');
+	        }
+	    });
+	})()
 
 
 
@@ -33,7 +53,7 @@ $(document).ready(function() {
 
 		// Realizo el intercambio de secciones
 		$(event.target).closest('section').hide(500);
-		$('#game_section').show(500);
+		$('#game_section').show();
 
 		// Pongo el foco en el campo adecuado
 		$('input[name="try"]').focus();
@@ -46,6 +66,27 @@ $(document).ready(function() {
 		}
 		logicOfRespose(['PLAYING', valueOfAttemps, initialUnderscores]);
 	});
+
+
+
+	(function() {
+		/* Controlaré que me introducen una palabra, ya que el jQuery está evitando que la propiedad "required" del elemento input funcione correctamente. */
+	    $('#try').keyup(function() {
+
+	        var empty = false;
+	        $('#try').each(function() {
+	            if ($(this).val() == '') {
+	                empty = true;
+	            }
+	        });
+
+	        if (empty) {
+	            $('#submit_try').attr('disabled', 'disabled');
+	        } else {
+	            $('#submit_try').removeAttr('disabled');
+	        }
+	    });
+	})()
 
 
 	$('#submit_try').on('click', function(event) {
@@ -72,7 +113,7 @@ $(document).ready(function() {
 
 		// Realizo el intercambio de secciones
 		$('#post_game_section').hide(500);
-		$('#pre_game_section').show(500);
+		$('#pre_game_section').show();
 
 		// reseteo los campos adecuados
 		var inputWord = $('#word');
@@ -87,13 +128,13 @@ $(document).ready(function() {
 			case "GAME OVER":
 				$('#game_section').hide(500);
 				$('#result').text(arr[1]);
-				$('#post_game_section').show(500);
+				$('#post_game_section').show();
 				break;
 
 			case "WIN":
 				$('#game_section').hide(500);
 				$('#result').text(arr[1]);
-				$('#post_game_section').show(500);
+				$('#post_game_section').show();
 				break;
 
 			case "PLAYING":

@@ -44,7 +44,7 @@ form {
 		background-color: $col-three;
 		font-weight: bold;
 
-		&:hover, &:active {
+		&:hover:enabled, &:active:enabled {
 			background-color: lighten($col-three, 6%);
 			box-shadow: 0 0 8px 1px #000000;
 		}

@@ -7,7 +7,7 @@ body { margin: auto; max-width: 1200px; font-size: 16px; background-color: light
 form { margin: 28px; display: flex; justify-content: center; align-items: center; flex-direction: column; }
 form input { font-size: 1.1em; display: block; margin-bottom: 14px; }
 form button { margin: 14px; padding: 14px 28px; border-radius: 28px; background-color: #5995DA; font-weight: bold; }
-form button:hover, form button:active { background-color: #72a5e0; box-shadow: 0 0 8px 1px #000000; }
+form button:hover:enabled, form button:active:enabled { background-color: #72a5e0; box-shadow: 0 0 8px 1px #000000; }
 form label { margin-bottom: 7px; }
 
 /* Header rules */
