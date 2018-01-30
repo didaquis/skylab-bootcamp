@@ -1,5 +1,6 @@
 $SPACE_MIN: 8px;
 $SPACE_MED: 16px;
+$SPACE_BIG: 24px;
 $COL_FIRST: white;
 $COL_SECOND: #4AAB99;
 $COL_THIRD: #F8F8F8;
@@ -15,6 +16,13 @@ main, section, footer, aside, article {
 	box-sizing: border-box;
 }
 
+h1 {
+	color: $COL_FIRST;
+
+	span {
+		color: $COL_SECOND;
+	}
+}
 
 /* Rules for global navbar */
 #main-navbar {
@@ -28,7 +36,7 @@ main, section, footer, aside, article {
 
 /* Rules for global footer */
 #features {
-	background-color: #4AAB99;
+	background-color: $COL_SECOND;
 	color: $COL_FIRST;
 	align-items: center;
 
@@ -76,5 +84,11 @@ footer {
 #main-image {
 	background-image: url("../material/site_showcase_bg.jpg");
 	min-height: 520px;
+	padding: ($SPACE_BIG * 2) ($SPACE_BIG * 4) 0 ($SPACE_BIG * 4);
+
+	figure, img {
+		margin: 0;
+		padding: 0;
+	}
 }
 

@@ -7,6 +7,11 @@ main, section, footer, aside, article {
   padding: 0;
   box-sizing: border-box; }
 
+h1 {
+  color: white; }
+h1 span {
+  color: #4AAB99; }
+
 /* Rules for global navbar */
 #main-navbar {
   background-color: #F8F8F8;
@@ -43,6 +48,10 @@ footer nav ul li a:hover, footer nav ul li a:active {
 /* Rules for index.html */
 #main-image {
   background-image: url("../material/site_showcase_bg.jpg");
-  min-height: 520px; }
+  min-height: 520px;
+  padding: 48px 96px 0 96px; }
+#main-image figure, #main-image img {
+  margin: 0;
+  padding: 0; }
 
 /*# sourceMappingURL=main.css.map */
