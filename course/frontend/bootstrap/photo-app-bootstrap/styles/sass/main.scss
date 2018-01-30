@@ -1,0 +1,80 @@
+$SPACE_MIN: 8px;
+$SPACE_MED: 16px;
+$COL_FIRST: white;
+$COL_SECOND: #4AAB99;
+$COL_THIRD: #F8F8F8;
+
+/* Global rules */
+body {
+	background-color: $COL_THIRD;
+}
+
+main, section, footer, aside, article {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+/* Rules for global navbar */
+#main-navbar {
+	background-color: $COL_THIRD;
+	color: $COL_SECOND;
+
+	.navbar-brand {
+		color: $COL_SECOND;
+	}
+}
+
+/* Rules for global footer */
+#features {
+	background-color: #4AAB99;
+	color: $COL_FIRST;
+	align-items: center;
+
+	#features_list {
+
+		padding-top: $SPACE_MED;
+
+		ul {
+			list-style: none;
+			margin-left: - $SPACE_MED * 2;
+
+			li {
+				margin-bottom: $SPACE_MIN;
+			}
+		}
+	}
+
+	figure {
+
+	}
+}
+
+footer {
+	color: $COL_FIRST;
+	text-align: center;
+	padding-top: $SPACE_MED;
+
+ 	nav ul li {
+		display: inline-block;
+
+		a {
+			color: $COL_FIRST;
+			margin: $SPACE_MIN;
+
+			&:hover, &:active {
+				text-decoration: underline;
+				color: $COL_FIRST;
+			}
+		}
+	}
+}
+
+
+/* Rules for index.html */
+#main-image {
+	background-image: url("../material/site_showcase_bg.jpg");
+	min-height: 520px;
+}
+

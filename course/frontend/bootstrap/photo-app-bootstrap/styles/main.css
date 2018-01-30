@@ -1,0 +1,48 @@
+/* Global rules */
+body {
+  background-color: #F8F8F8; }
+
+main, section, footer, aside, article {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/* Rules for global navbar */
+#main-navbar {
+  background-color: #F8F8F8;
+  color: #4AAB99; }
+#main-navbar .navbar-brand {
+  color: #4AAB99; }
+
+/* Rules for global footer */
+#features {
+  background-color: #4AAB99;
+  color: white;
+  align-items: center; }
+#features #features_list {
+  padding-top: 16px; }
+#features #features_list ul {
+  list-style: none;
+  margin-left: -32px; }
+#features #features_list ul li {
+  margin-bottom: 8px; }
+
+footer {
+  color: white;
+  text-align: center;
+  padding-top: 16px; }
+footer nav ul li {
+  display: inline-block; }
+footer nav ul li a {
+  color: white;
+  margin: 8px; }
+footer nav ul li a:hover, footer nav ul li a:active {
+  text-decoration: underline;
+  color: white; }
+
+/* Rules for index.html */
+#main-image {
+  background-image: url("../material/site_showcase_bg.jpg");
+  min-height: 520px; }
+
+/*# sourceMappingURL=main.css.map */
