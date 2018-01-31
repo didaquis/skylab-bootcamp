@@ -103,18 +103,16 @@ h1 {
 
 	background-image: url("../material/site_showcase_bg.jpg");
 	min-height: 520px;
-	padding: ($SPACE_MAX * 2) $SPACE_MAX 0 $SPACE_MAX;
+	padding: ($SPACE_MAX * 2) ($SPACE_MAX * 2) 0 ($SPACE_MAX * 2);
 
 	align-items: center;
 	justify-content: space-around;
 
 	#text-main-section-home {
-
 		.lead {
 			color: $COL_FIRST;
 			margin-bottom: $SPACE_MAX * 2;
 		}
-
 		figure {
 			margin-bottom: $SPACE_MAX * 2;
 			margin-right: $SPACE_MAX;
@@ -125,21 +123,26 @@ h1 {
 		margin: 0;
 		padding: 0;
 	}
-
 }
 
 #features-section-home {
 	@include resetSpacing();
 	min-height: 600px;
 	background-color: $COL_FIRST;
-	margin-right: $SPACE_MAX;
-	margin-left: $SPACE_MAX;
+	padding: $SPACE_MAX ($SPACE_MAX * 2) $SPACE_MAX ($SPACE_MAX * 2);
 	justify-content: center;
 
 	.feature-card-section-home {
-		padding: ($SPACE_MAX * 2) $SPACE_MAX ($SPACE_MAX * 2) $SPACE_MAX;
-		max-width: 400px;
-		margin: auto;
+		margin-top: $SPACE_MAX;
+		margin-bottom: $SPACE_MAX * 3;
+
+		text-align: center;
+		p {
+			text-align: left;
+		}
 	}
 }
 
+// ***************************************************************
+// ***************************************************************
+// ***************************************************************
