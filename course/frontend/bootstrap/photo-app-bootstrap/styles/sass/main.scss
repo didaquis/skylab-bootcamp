@@ -18,6 +18,8 @@ main, section, footer, aside, article {
 
 h1 {
 	color: $COL_FIRST;
+	margin-bottom: $SPACE_BIG * 2;
+	font-size: 3.6rem;
 
 	span {
 		color: $COL_SECOND;
@@ -81,14 +83,30 @@ footer {
 
 
 /* Rules for index.html */
-#main-image {
+#main-section-home {
 	background-image: url("../material/site_showcase_bg.jpg");
 	min-height: 520px;
 	padding: ($SPACE_BIG * 2) ($SPACE_BIG * 4) 0 ($SPACE_BIG * 4);
+
+	align-items: center;
+
+	#text-main-section-home {
+
+		.lead {
+			color: $COL_FIRST;
+			margin-bottom: $SPACE_BIG * 2;
+		}
+
+		figure {
+			margin-bottom: $SPACE_BIG * 2;
+			margin-right: $SPACE_BIG;
+		}
+	}
 
 	figure, img {
 		margin: 0;
 		padding: 0;
 	}
+
 }
 

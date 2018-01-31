@@ -8,7 +8,9 @@ main, section, footer, aside, article {
   box-sizing: border-box; }
 
 h1 {
-  color: white; }
+  color: white;
+  margin-bottom: 48px;
+  font-size: 3.6rem; }
 h1 span {
   color: #4AAB99; }
 
@@ -46,11 +48,18 @@ footer nav ul li a:hover, footer nav ul li a:active {
   color: white; }
 
 /* Rules for index.html */
-#main-image {
+#main-section-home {
   background-image: url("../material/site_showcase_bg.jpg");
   min-height: 520px;
-  padding: 48px 96px 0 96px; }
-#main-image figure, #main-image img {
+  padding: 48px 96px 0 96px;
+  align-items: center; }
+#main-section-home #text-main-section-home .lead {
+  color: white;
+  margin-bottom: 48px; }
+#main-section-home #text-main-section-home figure {
+  margin-bottom: 48px;
+  margin-right: 24px; }
+#main-section-home figure, #main-section-home img {
   margin: 0;
   padding: 0; }
 
