@@ -21,7 +21,7 @@ var spotifyApi;
 		baseUrl: "https://api.spotify.com/v1/",
 
 		token:
-			"BQAt_5TuwCv3rCaPiAirBADyXVusv8OaqY74Fy1uRAGwiHWZju7scZVT92UIAyjYrhPN3dxOh3g6O5FlQYD5Rm0NZ7vRenUatNKqwdpeuHdB3-ekjrjRxkdqHBkyqcMACfRsA6oGvJuh4-33NAH9enrrPPMU",
+			"BQDQWNfBM14LsUkLmb_Ue8p9HQY0L9qdyywfR8YqvDyYc0VdTH5vNIu2gvhkCblwV9YuneZBUB76EwOX36ru6W1OKrYFqVLSmCT_O10mL1gnyWtzP5mesF4iuLa4s6sFEtWZ9_LBQBwYR7hl9vMAuFLmrg",
 
 		timeout: 2000,
 
@@ -72,7 +72,15 @@ var spotifyApi;
 		 * @param {Function} handleError - Handles an error.
 		 */
 		retrieveTracks: function(albumId, handleResults, handleError) {
-			// TODO implement album's tracks retrieval by means of endpoint https://api.spotify.com/v1/albums/{id}/tracks
+			call(
+				this.baseUrl + "albums/" + albumId + "/tracks",
+				this.token,
+				function(results) {
+					handleResults(results.items);
+				},
+				handleError,
+				this.timeout
+			);
 		},
 
 		/**
@@ -82,8 +90,17 @@ var spotifyApi;
 		 * @param {Function} handleResults - Handles the results.
 		 * @param {Function} handleError - Handles an error.
 		 */
-		retrieveTracks: function(id, handleResults, handleError) {
+		retrieveTrack: function(id, handleResults, handleError) {
 			// TODO implement track information retrieval by means of endpoint https://api.spotify.com/v1/tracks/{id}
+			call(
+				this.baseUrl + "tracks/" + id,
+				this.token,
+				function(results) {
+					handleResults(results.items);
+				},
+				handleError,
+				this.timeout
+			);
 		}
 	};
 })();
