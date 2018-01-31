@@ -21,7 +21,7 @@ var spotifyApi;
 		baseUrl: "https://api.spotify.com/v1/",
 
 		token:
-			"BQDLbGZo3xveEZQ-Z8pRl65FLGoHW5nWXu8X3crs4V5mMVw9ioY6-rvHwaZQa1kLeGssbLdUI4avzH8VqNQiWg8dPUKD0KxPBCx2HIKrr-aWJGhzkR0vX1N9By1ELEN4hHfqeEWjCvD_kUg",
+			"BQAt_5TuwCv3rCaPiAirBADyXVusv8OaqY74Fy1uRAGwiHWZju7scZVT92UIAyjYrhPN3dxOh3g6O5FlQYD5Rm0NZ7vRenUatNKqwdpeuHdB3-ekjrjRxkdqHBkyqcMACfRsA6oGvJuh4-33NAH9enrrPPMU",
 
 		timeout: 2000,
 
@@ -65,6 +65,7 @@ var spotifyApi;
 
 		/**
 		 * Retrieve tracks from an album (by album id).
+		 *
 		 *
 		 * @param {String} albumId - The id of the album to retrieve the tracks from.
 		 * @param {Function} handleResults - Handles the results.
