@@ -93,6 +93,9 @@ h1 {
 	}
 }
 
+// ***************************************************************
+// ***************************************************************
+// ***************************************************************
 
 /* Rules for index.html */
 #main-section-home {
@@ -124,3 +127,19 @@ h1 {
 	}
 
 }
+
+#features-section-home {
+	@include resetSpacing();
+	min-height: 600px;
+	background-color: $COL_FIRST;
+	margin-right: $SPACE_MAX;
+	margin-left: $SPACE_MAX;
+	justify-content: center;
+
+	.feature-card-section-home {
+		padding: ($SPACE_MAX * 2) $SPACE_MAX ($SPACE_MAX * 2) $SPACE_MAX;
+		max-width: 400px;
+		margin: auto;
+	}
+}
+

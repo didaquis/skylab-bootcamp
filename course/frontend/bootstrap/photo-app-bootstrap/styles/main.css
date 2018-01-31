@@ -74,4 +74,18 @@ h1 span {
   margin: 0;
   padding: 0; }
 
+#features-section-home {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 600px;
+  background-color: white;
+  margin-right: 24px;
+  margin-left: 24px;
+  justify-content: center; }
+#features-section-home .feature-card-section-home {
+  padding: 48px 24px 48px 24px;
+  max-width: 400px;
+  margin: auto; }
+
 /*# sourceMappingURL=main.css.map */
