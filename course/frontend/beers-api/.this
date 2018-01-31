@@ -1,0 +1,14 @@
+{
+  "title": "Beers API client",
+  "description": "AJAX client abstraction component of Beers API.",
+  "tags": [
+    "js",
+    "jquery",
+    "$",
+    "ajax",
+    "api",
+    "client",
+    "component"
+  ],
+  "created": "2018-01-31T16:32:49.314Z"
+}
