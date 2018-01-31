@@ -2,6 +2,7 @@
 .sass-cache/
 *.css.map
 .sass-cache/*
+*.scssc
 
 
 ### macOS ###
