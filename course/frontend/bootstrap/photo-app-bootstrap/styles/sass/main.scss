@@ -1,0 +1,148 @@
+$SPACE_MIN: 8px;
+$SPACE_MID: 16px;
+$SPACE_MAX: 24px;
+$COL_FIRST: white;
+$COL_SECOND: #4AAB99;
+$COL_THIRD: #F8F8F8;
+
+@mixin resetSpacing(){ // Se pueden establecer parámetros por defecto
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+/* Global rules */
+h1 {
+	color: $COL_FIRST;
+	margin-bottom: $SPACE_MAX * 2;
+	font-size: 3.6rem;
+
+	span {
+		color: $COL_SECOND;
+	}
+}
+
+#main-container {
+	@include resetSpacing();
+}
+
+/* Rules for global navbar */
+#main-navbar {
+	background-color: $COL_THIRD;
+	color: $COL_SECOND;
+
+	.navbar-brand {
+		color: $COL_SECOND;
+		margin-left: $SPACE_MAX * 3;
+
+	}
+}
+
+/* Rules for global footer */
+#features {
+	@include resetSpacing();
+
+	background-color: $COL_SECOND;
+	color: $COL_FIRST;
+	align-items: center;
+
+	#features_list {
+
+		padding-top: $SPACE_MID;
+
+		ul {
+			list-style: none;
+			margin-left: - $SPACE_MID * 2.5;
+
+			li {
+				margin-bottom: $SPACE_MIN;
+			}
+		}
+	}
+
+	figure {
+
+	}
+}
+
+#main-footer {
+	@include resetSpacing();
+
+	color: $COL_FIRST;
+	text-align: center;
+	padding-top: $SPACE_MID;
+
+ 	nav ul li {
+		display: inline-block;
+
+		a {
+			font-size: 0.8rem;
+			color: $COL_FIRST;
+			margin: $SPACE_MIN;
+
+			&:hover, &:active {
+				text-decoration: underline;
+				color: $COL_FIRST;
+			}
+		}
+	}
+
+	p {
+		font-size: 0.8rem;
+	}
+}
+
+// ***************************************************************
+// ***************************************************************
+// ***************************************************************
+
+/* Rules for index.html */
+#main-section-home {
+	@include resetSpacing();
+
+	background-image: url("../material/site_showcase_bg.jpg");
+	min-height: 520px;
+	padding: ($SPACE_MAX * 2) ($SPACE_MAX * 2) 0 ($SPACE_MAX * 2);
+
+	align-items: center;
+	justify-content: space-around;
+
+	#text-main-section-home {
+		.lead {
+			color: $COL_FIRST;
+			margin-bottom: $SPACE_MAX * 2;
+		}
+		figure {
+			margin-bottom: $SPACE_MAX * 2;
+			margin-right: $SPACE_MAX;
+		}
+	}
+
+	figure, img {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+#features-section-home {
+	@include resetSpacing();
+	min-height: 600px;
+	background-color: $COL_FIRST;
+	padding: $SPACE_MAX ($SPACE_MAX * 2) $SPACE_MAX ($SPACE_MAX * 2);
+	justify-content: center;
+
+	.feature-card-section-home {
+		margin-top: $SPACE_MAX;
+		margin-bottom: $SPACE_MAX * 3;
+
+		text-align: center;
+		p {
+			text-align: left;
+		}
+	}
+}
+
+// ***************************************************************
+// ***************************************************************
+// ***************************************************************

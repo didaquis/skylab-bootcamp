@@ -19,8 +19,8 @@
 | 2018-01-25 | 9/55 | JavaScript: method chaining. Uso de Sass. Introducción a jQuery |
 | 2018-01-26 | 10/55 | Javascript: event bubbling. Profundizando en jQuery. jQuery ajax. Node.js |
 | 2018-01-29 | 11/55 | Aplicamos jQuery y Sass a un challenge anterior. JavaScript: "call stack" |
-| 2018-01-30 | 12/55 | Refactorización de código. JavaScript: "memoization". Bootstrap |
-| 2018-01-31 | 13/55 |                 |
+| 2018-01-30 | 12/55 | Refactorización de código. JavaScript: "memoization". Bootstrap. Postman |
+| 2018-01-31 | 13/55 | Bootstrap, JavaScript & jQuery: ajax, refactorización de código |
 | 2018-02-01 | 14/55 |                 |
 | 2018-02-02 | 15/55 |                 |
 | 2018-02-05 | 16/55 |                 |

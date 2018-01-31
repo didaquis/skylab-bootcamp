@@ -1,0 +1,92 @@
+/* Global rules */
+h1 {
+  color: white;
+  margin-bottom: 48px;
+  font-size: 3.6rem; }
+h1 span {
+  color: #4AAB99; }
+
+#main-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/* Rules for global navbar */
+#main-navbar {
+  background-color: #F8F8F8;
+  color: #4AAB99; }
+#main-navbar .navbar-brand {
+  color: #4AAB99;
+  margin-left: 72px; }
+
+/* Rules for global footer */
+#features {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #4AAB99;
+  color: white;
+  align-items: center; }
+#features #features_list {
+  padding-top: 16px; }
+#features #features_list ul {
+  list-style: none;
+  margin-left: -40px; }
+#features #features_list ul li {
+  margin-bottom: 8px; }
+
+#main-footer {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+  padding-top: 16px; }
+#main-footer nav ul li {
+  display: inline-block; }
+#main-footer nav ul li a {
+  font-size: 0.8rem;
+  color: white;
+  margin: 8px; }
+#main-footer nav ul li a:hover, #main-footer nav ul li a:active {
+  text-decoration: underline;
+  color: white; }
+#main-footer p {
+  font-size: 0.8rem; }
+
+/* Rules for index.html */
+#main-section-home {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url("../material/site_showcase_bg.jpg");
+  min-height: 520px;
+  padding: 48px 48px 0 48px;
+  align-items: center;
+  justify-content: space-around; }
+#main-section-home #text-main-section-home .lead {
+  color: white;
+  margin-bottom: 48px; }
+#main-section-home #text-main-section-home figure {
+  margin-bottom: 48px;
+  margin-right: 24px; }
+#main-section-home figure, #main-section-home img {
+  margin: 0;
+  padding: 0; }
+
+#features-section-home {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 600px;
+  background-color: white;
+  padding: 24px 48px 24px 48px;
+  justify-content: center; }
+#features-section-home .feature-card-section-home {
+  margin-top: 24px;
+  margin-bottom: 72px;
+  text-align: center; }
+#features-section-home .feature-card-section-home p {
+  text-align: left; }
+
+/*# sourceMappingURL=main.css.map */

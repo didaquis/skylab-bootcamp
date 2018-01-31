@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="vendor/bootstrap-4.0.0/css/bootstrap.css">
+
+	<link rel="stylesheet" href="styles/main.css">
+
+	<title>Beer App</title>
+</head>
+<body>
+
+	<!-- Modal -->
+	<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-header">
+	        		<h5 class="modal-title" id="detailsModalLabel">Modal title</h5>
+	     			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          			<span aria-hidden="true">&times;</span>
+	        		</button>
+	      		</div>
+	      		<div class="modal-body" id="detailsModalBody">
+	      		</div>
+	      		<div class="modal-footer">
+	        		<button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Let's drink!</button>
+	      		</div>
+	    	</div>
+	  	</div>
+	</div>
+
+	<div class="container">		
+		<div class="jumbotron mt-4">
+			<div class="row d-flex justify-content-center mb-4">
+				<h1>Beer App</h1>
+			</div>
+			<div class="row d-flex justify-content-center">
+				<p class="lead">This page allows you to search for any beer and know more details about that beer.</p>
+			</div>
+
+			<div class="row d-flex justify-content-center mt-4 mb-4">
+				<form class="form-inline" action="" method="GET">
+	  				<label class="sr-only" for="inlineFormInputName2">Search beer</label>
+	  				<input type="text" class="form-control mb-4 mr-sm-4" id="input_beer" name="input_beer" placeholder="Search name of beer..." autofocus required />
+	  				<button type="submit" id="search_button" class="btn btn-primary mb-4" disabled>Search!</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="row d-flex justify-content-center mt-4 mb-4">
+			<div id="list_of_results"></div>
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="vendor/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+	<script src="vendor/popper-1.12.9/umd/popper.min.js"></script>
+	<script src="vendor/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+
+	<script src="scripts/main.js"></script>
+</body>
+</html>
