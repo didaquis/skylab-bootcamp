@@ -1,6 +1,6 @@
 $SPACE_MIN: 8px;
-$SPACE_MED: 16px;
-$SPACE_BIG: 24px;
+$SPACE_MID: 16px;
+$SPACE_MAX: 24px;
 $COL_FIRST: white;
 $COL_SECOND: #4AAB99;
 $COL_THIRD: #F8F8F8;
@@ -15,7 +15,7 @@ $COL_THIRD: #F8F8F8;
 /* Global rules */
 h1 {
 	color: $COL_FIRST;
-	margin-bottom: $SPACE_BIG * 2;
+	margin-bottom: $SPACE_MAX * 2;
 	font-size: 3.6rem;
 
 	span {
@@ -34,6 +34,8 @@ h1 {
 
 	.navbar-brand {
 		color: $COL_SECOND;
+		margin-left: $SPACE_MAX * 3;
+
 	}
 }
 
@@ -47,11 +49,11 @@ h1 {
 
 	#features_list {
 
-		padding-top: $SPACE_MED;
+		padding-top: $SPACE_MID;
 
 		ul {
 			list-style: none;
-			margin-left: - $SPACE_MED * 2;
+			margin-left: - $SPACE_MID * 2.5;
 
 			li {
 				margin-bottom: $SPACE_MIN;
@@ -69,12 +71,13 @@ h1 {
 
 	color: $COL_FIRST;
 	text-align: center;
-	padding-top: $SPACE_MED;
+	padding-top: $SPACE_MID;
 
  	nav ul li {
 		display: inline-block;
 
 		a {
+			font-size: 0.8rem;
 			color: $COL_FIRST;
 			margin: $SPACE_MIN;
 
@@ -83,6 +86,10 @@ h1 {
 				color: $COL_FIRST;
 			}
 		}
+	}
+
+	p {
+		font-size: 0.8rem;
 	}
 }
 
@@ -93,20 +100,21 @@ h1 {
 
 	background-image: url("../material/site_showcase_bg.jpg");
 	min-height: 520px;
-	padding: ($SPACE_BIG * 2) ($SPACE_BIG * 4) 0 ($SPACE_BIG * 4);
+	padding: ($SPACE_MAX * 2) $SPACE_MAX 0 $SPACE_MAX;
 
 	align-items: center;
+	justify-content: space-around;
 
 	#text-main-section-home {
 
 		.lead {
 			color: $COL_FIRST;
-			margin-bottom: $SPACE_BIG * 2;
+			margin-bottom: $SPACE_MAX * 2;
 		}
 
 		figure {
-			margin-bottom: $SPACE_BIG * 2;
-			margin-right: $SPACE_BIG;
+			margin-bottom: $SPACE_MAX * 2;
+			margin-right: $SPACE_MAX;
 		}
 	}
 

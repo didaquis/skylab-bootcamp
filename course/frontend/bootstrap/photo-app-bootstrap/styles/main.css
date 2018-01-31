@@ -16,7 +16,8 @@ h1 span {
   background-color: #F8F8F8;
   color: #4AAB99; }
 #main-navbar .navbar-brand {
-  color: #4AAB99; }
+  color: #4AAB99;
+  margin-left: 72px; }
 
 /* Rules for global footer */
 #features {
@@ -30,7 +31,7 @@ h1 span {
   padding-top: 16px; }
 #features #features_list ul {
   list-style: none;
-  margin-left: -32px; }
+  margin-left: -40px; }
 #features #features_list ul li {
   margin-bottom: 8px; }
 
@@ -44,11 +45,14 @@ h1 span {
 #main-footer nav ul li {
   display: inline-block; }
 #main-footer nav ul li a {
+  font-size: 0.8rem;
   color: white;
   margin: 8px; }
 #main-footer nav ul li a:hover, #main-footer nav ul li a:active {
   text-decoration: underline;
   color: white; }
+#main-footer p {
+  font-size: 0.8rem; }
 
 /* Rules for index.html */
 #main-section-home {
@@ -57,8 +61,9 @@ h1 span {
   box-sizing: border-box;
   background-image: url("../material/site_showcase_bg.jpg");
   min-height: 520px;
-  padding: 48px 96px 0 96px;
-  align-items: center; }
+  padding: 48px 24px 0 24px;
+  align-items: center;
+  justify-content: space-around; }
 #main-section-home #text-main-section-home .lead {
   color: white;
   margin-bottom: 48px; }
