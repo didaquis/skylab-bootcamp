@@ -13,11 +13,11 @@
 
 	<title>PhotoApp Website</title>
 </head>
-<body>
-	<main class="container-flex">
+<body id="body">
+	<main class="container-fluid" id="main-container">
 		
 		<!-- main navbar -->
-		<nav class="navbar navbar-expand-lg navbar-light bg-light" id="main-navbar">
+		<nav class="navbar navbar-expand-md navbar-light bg-light" id="main-navbar">
 			<a class="navbar-brand" href="index.html">Gamma</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -38,17 +38,19 @@
 		</nav>
 
 		<section class="row" id="main-section-home">
-			<div class="col-sm-7" id="text-main-section-home">
+			<div class="col-ld-7" id="text-main-section-home">
 				<h1>Capture <span>Life</span></h1>
-				<p class="lead">A fun and easy way to capture & share the moments yoou live for</p>
-				<figure class="figure">
-					<img src="material/icon_app_store.png" class="figure-img" alt="logo">
-				</figure>
-				<figure class="figure">
-					<img src="material/icon_google_play.png" class="figure-img" alt="logo">
-				</figure>
+				<p class="lead">A fun and easy way to capture & share the moments you live for</p>
+				<div class="d-flex flex-nowrap">
+					<figure class="figure">
+						<img src="material/icon_app_store.png" class="figure-img" alt="logo">
+					</figure>
+					<figure class="figure">
+						<img src="material/icon_google_play.png" class="figure-img" alt="logo">
+					</figure>
+				</div>
 			</div>
-			<div class="col-sm-5">
+			<div class="col-ld-5">
 				<figure class="figure">
 					<img src="material/site_phone.png" class="figure-img" alt="logo">
 				</figure>
@@ -56,7 +58,7 @@
 		</section>
 
 
-		<!-- footer -->
+		<!-- footer content -->
 		<section id="features" class="row">
 			<div class="col-sm d-flex justify-content-around">
 				<div id="features_list">
@@ -77,25 +79,23 @@
 			</div>
 		</section>
 
-		<div class="row">
-			<footer class="container-fluid bg-dark">
-				<div class="row">
-					<div class="col-sm">
-						<nav>
-							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-							</ul>
-						</nav>
-					</div>
-					<div class="col-sm">
-						<p>Copyright @ 2015, All Rights Reserved</p>
-					</div>
-				</div>
-			</footer>
+		
+		<div class="row container-fluid bg-dark" id="main-footer">
+			<div class="col-sm-6">
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="contact.html">Contact</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-sm-6">
+				<p>Copyright @ 2015, All Rights Reserved</p>
+			</div>
 		</div>
+		
 
 	</main>
 	<!-- Optional JavaScript -->

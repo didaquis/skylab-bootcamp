@@ -1,18 +1,15 @@
 /* Global rules */
-body {
-  background-color: #F8F8F8; }
-
-main, section, footer, aside, article {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
-
 h1 {
   color: white;
   margin-bottom: 48px;
   font-size: 3.6rem; }
 h1 span {
   color: #4AAB99; }
+
+#main-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
 
 /* Rules for global navbar */
 #main-navbar {
@@ -23,6 +20,9 @@ h1 span {
 
 /* Rules for global footer */
 #features {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   background-color: #4AAB99;
   color: white;
   align-items: center; }
@@ -34,21 +34,27 @@ h1 span {
 #features #features_list ul li {
   margin-bottom: 8px; }
 
-footer {
+#main-footer {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   color: white;
   text-align: center;
   padding-top: 16px; }
-footer nav ul li {
+#main-footer nav ul li {
   display: inline-block; }
-footer nav ul li a {
+#main-footer nav ul li a {
   color: white;
   margin: 8px; }
-footer nav ul li a:hover, footer nav ul li a:active {
+#main-footer nav ul li a:hover, #main-footer nav ul li a:active {
   text-decoration: underline;
   color: white; }
 
 /* Rules for index.html */
 #main-section-home {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   background-image: url("../material/site_showcase_bg.jpg");
   min-height: 520px;
   padding: 48px 96px 0 96px;

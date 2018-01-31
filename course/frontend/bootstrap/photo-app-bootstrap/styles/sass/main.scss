@@ -5,17 +5,14 @@ $COL_FIRST: white;
 $COL_SECOND: #4AAB99;
 $COL_THIRD: #F8F8F8;
 
-/* Global rules */
-body {
-	background-color: $COL_THIRD;
-}
-
-main, section, footer, aside, article {
-	margin: 0;
+@mixin resetSpacing(){ // Se pueden establecer parámetros por defecto
+    margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
+
+/* Global rules */
 h1 {
 	color: $COL_FIRST;
 	margin-bottom: $SPACE_BIG * 2;
@@ -24,6 +21,10 @@ h1 {
 	span {
 		color: $COL_SECOND;
 	}
+}
+
+#main-container {
+	@include resetSpacing();
 }
 
 /* Rules for global navbar */
@@ -38,6 +39,8 @@ h1 {
 
 /* Rules for global footer */
 #features {
+	@include resetSpacing();
+
 	background-color: $COL_SECOND;
 	color: $COL_FIRST;
 	align-items: center;
@@ -61,7 +64,9 @@ h1 {
 	}
 }
 
-footer {
+#main-footer {
+	@include resetSpacing();
+
 	color: $COL_FIRST;
 	text-align: center;
 	padding-top: $SPACE_MED;
@@ -84,6 +89,8 @@ footer {
 
 /* Rules for index.html */
 #main-section-home {
+	@include resetSpacing();
+
 	background-image: url("../material/site_showcase_bg.jpg");
 	min-height: 520px;
 	padding: ($SPACE_BIG * 2) ($SPACE_BIG * 4) 0 ($SPACE_BIG * 4);
@@ -109,4 +116,3 @@ footer {
 	}
 
 }
-
