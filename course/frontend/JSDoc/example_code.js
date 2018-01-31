@@ -2,6 +2,8 @@
 // Ejemplos: https://code.google.com/archive/p/jsdoc-toolkit/wikis/DocExamples.wiki
 // 
 // Listado de tags: https://code.google.com/archive/p/jsdoc-toolkit/wikis/TagReference.wiki
+// 
+// file:///Users/didac/repos/skylab-bootcamp/course/frontend/JSDoc/JS_Doc/example_code.js.html
 
 /**
  * @summary Sum two numbers
