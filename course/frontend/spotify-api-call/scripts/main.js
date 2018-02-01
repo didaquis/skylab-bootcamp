@@ -74,8 +74,8 @@ $(document).ready(function(){
 			spotifyApi.retrieveTracks(idOfAlbum, showResultsOfTracks, alert);
 
 		}else if(theClass === 'btn btn-success song-card'){
-			var idOfSong = $buttonOfCard.data("id");
-			spotifyApi.retrieveTrack(idOfSong, showModalForReproduceSong, alert);
+			var preview_url = $buttonOfCard.data("preview_url");
+			showModalForReproduceSong(preview_url);
 		}
 	}))
 
@@ -99,12 +99,13 @@ $(document).ready(function(){
 
 	function showResultsOfTracks(listOfTracks){
 		var toPrint = '';
+		console.log(listOfTracks);
 		for(var prop in listOfTracks){
 			toPrint += "<div class='card mb-4' data-id='" + listOfTracks[prop].id + "'>";
 			toPrint += "<div class='card-body'>";
 			toPrint += "<h5 class='card-title'>"+ listOfTracks[prop].artists[0]['name'] +" - " + listOfTracks[prop].name +"</h5>";
 			toPrint += "<p class='card-text'>Track number: "+ listOfTracks[prop].track_number +"</p>";
-			toPrint += "<a href='#' data-id='" + listOfTracks[prop].id + "' class='btn btn-success song-card'>Listen the song</a>";
+			toPrint += "<a href='#' data-preview_url='" + listOfTracks[prop].preview_url + "' class='btn btn-success song-card'>Listen the song</a>";
 			toPrint += "</div>";
 			toPrint += "</div>";
 		}
@@ -113,21 +114,22 @@ $(document).ready(function(){
 
 
 	function showModalForReproduceSong(song){
-		console.log(song);
-		//console.log(song['preview_url']);
 		// Preparo la información a mostrar:
-		var textForModal = '<dl>';
-		//textForModal += '<dd>ID</dd>';
-		//textForModal += '<dt class="mb-4">' + beer['id'] + '</dt>';
-		//textForModal += '<dd>Name</dd>';
-		//textForModal += '<dt class="mb-4">' + beer['name'] + '</dt>';
-		//textForModal += '</dl>';
+		var textForModal = '<audio controls id="audioplayer" autoplay><source src="'+ song +'" type="audio/ogg"></audio>';
 
 		// Establezco la información a mostrar dentro de un modal
-		$("#songModalLabel").html('');
+		$("#songModalLabel").html('Listening song...');
 		$("#songModalBody").html(textForModal);
 
 		// Mostramos un modal
 		$('#songModal').modal();
 	}
+
+
+	$('#songModal').on('hidden.bs.modal', function () {
+        //cuando el modal es ocultado, paro el reproductor
+        $('#audioplayer').get(0).pause();
+		$('#audioplayer').get(0).currentTime = 0;
+    });
+
 });

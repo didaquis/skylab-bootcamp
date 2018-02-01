@@ -21,7 +21,7 @@ var spotifyApi;
 		baseUrl: "https://api.spotify.com/v1/",
 
 		token:
-			"BQDQWNfBM14LsUkLmb_Ue8p9HQY0L9qdyywfR8YqvDyYc0VdTH5vNIu2gvhkCblwV9YuneZBUB76EwOX36ru6W1OKrYFqVLSmCT_O10mL1gnyWtzP5mesF4iuLa4s6sFEtWZ9_LBQBwYR7hl9vMAuFLmrg",
+			"BQCMGkWRSiSN91zKHyIqMi5by_KyfZm5NYhbrYGGJ-9rhhLyj30IUphaI_DV05ICyIURrmOJSBCr9_toJ9gLBxY9q-2rMPPC4UxcQW0Z1MYmDYW30RUuDooRXnGEwEV7Q8CRRVYdr1p90yslQyg",
 
 		timeout: 2000,
 
@@ -92,15 +92,8 @@ var spotifyApi;
 		 */
 		retrieveTrack: function(id, handleResults, handleError) {
 			// TODO implement track information retrieval by means of endpoint https://api.spotify.com/v1/tracks/{id}
-			call(
-				this.baseUrl + "tracks/" + id,
-				this.token,
-				function(results) {
-					handleResults(results.items);
-				},
-				handleError,
-				this.timeout
-			);
+
+			/* Es innecesario hacer esta llamada */
 		}
 	};
 })();
