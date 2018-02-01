@@ -58,7 +58,7 @@ $(document).ready(function(){
 	}
 
 
-	/* Detectamos si el usuario quiere ver el listado de álbumes y realizamos la petición */
+	/* Detectamos si el usuario quiere ver el listado de álbumes, tracks o reproducir una canción */
 	$("#listOfResults").on("click", "a", (function(e) {
 		e.preventDefault();
 		var $buttonOfCard = $(this);
@@ -66,14 +66,17 @@ $(document).ready(function(){
 
 		// En función del botón pulsado realizo una acción u otra:
 		if(theClass === 'btn btn-primary artist-card'){
+			// el usuario quiere: ver álbumes
 			var idOfArtist = $buttonOfCard.data("id");
 			spotifyApi.retrieveAlbums(idOfArtist, showResultsOfAlbums, alert);
 
 		}else if(theClass === 'btn btn-secondary album-card'){
+			// el usuario quiere: ver tracks
 			var idOfAlbum = $buttonOfCard.data("id");
 			spotifyApi.retrieveTracks(idOfAlbum, showResultsOfTracks, alert);
 
 		}else if(theClass === 'btn btn-success song-card'){
+			// el usuario quiere: reproducir una canción
 			var preview_url = $buttonOfCard.data("preview_url");
 			showModalForReproduceSong(preview_url);
 		}
