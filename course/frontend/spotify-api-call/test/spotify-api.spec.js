@@ -1,4 +1,6 @@
+/* Usamos Jasmin para realizar pruebas asíncronas */
 describe("Spotify API", function() {
+
 	describe("search artists", function() {
 		var artists;
 
@@ -23,6 +25,7 @@ describe("Spotify API", function() {
 		});
 	});
 
+
 	describe("retrieve albums", function() {
 		var albums;
 
@@ -46,4 +49,30 @@ describe("Spotify API", function() {
 			expect(albums.length > 0).toBeTruthy();
 		});
 	});
+
+
+	describe("retrieve tracks", function() {
+		var tracks;
+
+		beforeEach(function(done) {
+			spotifyApi.retrieveTracks(
+				"391y4N0CepQ4aH3KdL0lPh",
+				function(_albums) {
+					tracks = _albums;
+
+					done();
+				},
+				function(error) {
+					done();
+				}
+			);
+		});
+
+		it("should get tracks on retrieve", function() {
+			expect(tracks).not.toBeUndefined();
+
+			expect(tracks.length > 0).toBeTruthy();
+		});
+	});
+
 });

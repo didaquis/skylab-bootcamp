@@ -99,7 +99,6 @@ $(document).ready(function(){
 
 	function showResultsOfTracks(listOfTracks){
 		var toPrint = '';
-		console.log(listOfTracks);
 		for(var prop in listOfTracks){
 			toPrint += "<div class='card mb-4' data-id='" + listOfTracks[prop].id + "'>";
 			toPrint += "<div class='card-body'>";
