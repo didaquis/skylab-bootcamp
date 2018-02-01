@@ -33,14 +33,14 @@ $(document).ready(function(){
 	/* Detectamos el envío del formulario y realizamos una petición de búsqueda de artista */
 	$('#search_button').on('click', function(e) {
 		e.preventDefault();
+
 		var artistToFind = $('#input_search').val();
+
 		spotifyApi.searchArtists(artistToFind, showResultsOfArtist, alert);
 	})
 
 
 	function showResultsOfArtist(listOfArtist){
-		//removeResultsOfLastSearch();
-
 		var toPrint = '';
 		for(var prop in listOfArtist){
 			toPrint += "<div class='card mb-4' data-id='" + listOfArtist[prop].id + "'>";
@@ -48,6 +48,7 @@ $(document).ready(function(){
 			toPrint += "<h5 class='card-title'>"+ listOfArtist[prop].name +"</h5>";
 			toPrint += "<a href='#' data-id='" + listOfArtist[prop].id + "' class='btn btn-primary artist-card'>List of albums</a>";
 			toPrint += "</div>";
+
 			// Voy a comprobar si hay disponible una fotografía
 			if(listOfArtist[prop].images.length > 0){
 				toPrint += "<img class='card-img-bottom img-square' src='"+ listOfArtist[prop].images[0]['url'] +"' alt='Card image cap'>";
@@ -61,22 +62,26 @@ $(document).ready(function(){
 	/* Detectamos si el usuario quiere ver el listado de álbumes, tracks o reproducir una canción */
 	$("#listOfResults").on("click", "a", (function(e) {
 		e.preventDefault();
+
 		var $buttonOfCard = $(this);
 		var theClass = $buttonOfCard.attr('class');
 
 		// En función del botón pulsado realizo una acción u otra:
 		if(theClass === 'btn btn-primary artist-card'){
 			// el usuario quiere: ver álbumes
+			
 			var idOfArtist = $buttonOfCard.data("id");
 			spotifyApi.retrieveAlbums(idOfArtist, showResultsOfAlbums, alert);
 
 		}else if(theClass === 'btn btn-secondary album-card'){
 			// el usuario quiere: ver tracks
+			
 			var idOfAlbum = $buttonOfCard.data("id");
 			spotifyApi.retrieveTracks(idOfAlbum, showResultsOfTracks, alert);
 
 		}else if(theClass === 'btn btn-success song-card'){
 			// el usuario quiere: reproducir una canción
+
 			var preview_url = $buttonOfCard.data("preview_url");
 			showModalForReproduceSong(preview_url);
 		}
@@ -91,6 +96,7 @@ $(document).ready(function(){
 			toPrint += "<h5 class='card-title'>"+ listOfAlbums[prop].name +"</h5>";
 			toPrint += "<a href='#' data-id='" + listOfAlbums[prop].id + "' class='btn btn-secondary album-card'>List of tracks</a>";
 			toPrint += "</div>";
+			
 			// Voy a comprobar si hay disponible una fotografía
 			if(listOfAlbums[prop].images.length > 0){
 				toPrint += "<img class='card-img-bottom img-square' src='"+ listOfAlbums[prop].images[0]['url'] +"' alt='Card image cap'>";
