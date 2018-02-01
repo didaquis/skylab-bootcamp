@@ -104,7 +104,9 @@ $(document).ready(function(){
 			toPrint += "<div class='card-body'>";
 			toPrint += "<h5 class='card-title'>"+ listOfTracks[prop].artists[0]['name'] +" - " + listOfTracks[prop].name +"</h5>";
 			toPrint += "<p class='card-text'>Track number: "+ listOfTracks[prop].track_number +"</p>";
-			toPrint += "<a href='#' data-preview_url='" + listOfTracks[prop].preview_url + "' class='btn btn-success song-card'>Listen the song</a>";
+			if(listOfTracks[prop].preview_url !== null){
+				toPrint += "<a href='#' data-preview_url='" + listOfTracks[prop].preview_url + "' class='btn btn-success song-card'>Listen the song</a>";
+			}
 			toPrint += "</div>";
 			toPrint += "</div>";
 		}
