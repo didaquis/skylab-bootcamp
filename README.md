@@ -22,7 +22,7 @@
 | 2018-01-30 | 12/55 | Refactorización de código. JavaScript: "memoization". Bootstrap. Postman |
 | 2018-01-31 | 13/55 | Bootstrap, JavaScript & jQuery: ajax, refactorización de código, encapsulamiento |
 | 2018-02-01 | 14/55 | JavaScript ES6 (ECMAScript 2015) |
-| 2018-02-02 | 15/55 |                 |
+| 2018-02-02 | 15/55 | JavaScript: ES6, promises |
 | 2018-02-05 | 16/55 |                 |
 | 2018-02-06 | 17/55 |                 |
 | 2018-02-07 | 18/55 |                 |

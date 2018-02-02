@@ -27,7 +27,7 @@ $(document).ready(function(){
 				$('#search_button').removeAttr('disabled');
 			}
 		});
-	})()
+	})();
 
 
 	/* Detectamos el envío del formulario y realizamos una petición de búsqueda de artista */
@@ -37,7 +37,7 @@ $(document).ready(function(){
 		var artistToFind = $('#input_search').val();
 
 		spotifyApi.searchArtists(artistToFind, showResultsOfArtist, alert);
-	})
+	});
 
 
 	function showResultsOfArtist(listOfArtist){
@@ -85,7 +85,7 @@ $(document).ready(function(){
 			var preview_url = $buttonOfCard.data("preview_url");
 			showModalForReproduceSong(preview_url);
 		}
-	}))
+	}));
 
 
 	function showResultsOfAlbums(listOfAlbums){
