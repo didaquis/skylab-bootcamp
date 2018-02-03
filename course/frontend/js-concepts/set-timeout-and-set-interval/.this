@@ -1,0 +1,19 @@
+{
+  "title": "setTimeout and setInterval",
+  "description": "The setTimeout() method sets a timer which executes a function or specified piece of code once after the timer expires. The setInterval() method repeatedly calls a function or executes a code snippet, with a fixed time delay between each call. It returns an interval ID which uniquely identifies the interval, so you can remove it later by calling clearInterval().",
+  "tags": [
+    "js",
+    "set-timeout",
+    "set-interval",
+    "timeout",
+    "interval",
+    "timing",
+    "async",
+    "asynchronous",
+    "global",
+    "function",
+    "method",
+    "callback"
+  ],
+  "created": "2018-01-23T11:38:28.824Z"
+}

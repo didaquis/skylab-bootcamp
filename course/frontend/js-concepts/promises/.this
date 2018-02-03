@@ -1,0 +1,21 @@
+{
+  "title": "Promise",
+  "description": "The Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.",
+  "tags": [
+    "js",
+    "es6",
+    "promise",
+    "pattern",
+    "async",
+    "asynchronous",
+    "task",
+    "operation",
+    "object",
+    "function",
+    "defer",
+    "deferred",
+    "untimely",
+    "postpone"
+  ],
+  "created": "2018-02-02T12:43:19.856Z"
+}
