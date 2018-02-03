@@ -4,37 +4,38 @@
  * @version 1.0.0
  */
 
-/* Cuidado: IE11 no soporta "fetch", pero puedes usar: https://github.com/github/fetch */
+/* Cuidado: IE11 no soporta "fetch", pero puedes usar este polyfill: https://github.com/github/fetch */
 
 
 let spotifyApi;
 (function() {
 	"use strict";
 
-	function callUsingFetch(url, token, handleSuccess, handleError, timeout){
+	function callUsingFetch(url, token, handleSuccess, handleError, timeout) {
 		const headers = { Authorization: "Bearer " + token };
 
-		fetch(url, {headers})
+		fetch(url, { headers })
+			.then(fetchStatusHandler)
 			.then(res => res.json())
 			.then(data => handleSuccess(data))
-			.catch(err => handleError('Error: ', err));
+			.catch(err => handleError(err));
 	}
 
 
-	function call(url, token, handleSuccess, handleError, timeout) {
-		$.ajax({
-			url: url,
-			headers: { Authorization: "Bearer " + token },
-			timeout: timeout,
-			success: handleSuccess,
-			error: handleError
-		});
+	function fetchStatusHandler(response) {
+		if (response.status === 200) {
+			return response;
+		} else {
+			console.error(`Error code: ${response.status}`);
+			console.error(`Error status: ${response.statusText}`);
+			throw new Error(response.statusText);
+		}
 	}
+
 
 	spotifyApi = {
 		baseUrl: "https://api.spotify.com/v1/",
-		token:
-			"BQCZXpsgF3xcTSzhFl8xcQpKXuwSGi4zacFSFULSGfPw9Uj_JdQy4vLKm5TdmsUN2EeEk2WvYb0v7ZkY0S3rnRll7t0BOwRAh4s1KSnLoeLaLqFTzVP6hFj4jOZqnEJ3-Gefau4ecWuCnb66R5Y",
+		token: "BQCy5Mjv6aXM4jg_I2YBCdkMu0vg99nsmNEE-KkaMtmEn6vfenrmlMRxRkDK7Liju-OymxWANg8CYITn6IcPLQ0kRNECi_-2egbUBzR2RtRGGF2c6XfZeB5WG6qNPrcXZ1IWPIKdVzw7pTWue4U",
 		timeout: 2000,
 
 		/**
@@ -103,13 +104,13 @@ let spotifyApi;
 		 * @param {Function} handleError - Handles an error.
 		 */
 		retrieveTrack: function(id, handleResults, handleError) {
-			call(
-		        this.baseUrl + "tracks/" + id,
-		        this.token,
-		        handleResults,
-		        handleError,
-		        this.timeout
-		    );
+			callUsingFetch(
+				this.baseUrl + "tracks/" + id,
+				this.token,
+				handleResults,
+				handleError,
+				this.timeout
+			);
 		}
 	};
 })();
