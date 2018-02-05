@@ -6,36 +6,43 @@
 
 /* Cuidado: IE11 no soporta "fetch", pero puedes usar este polyfill: https://github.com/github/fetch */
 
-
 let spotifyApi;
 (function() {
 	"use strict";
 
+
+	/**
+	 * Make a request to Spotify public API
+	 * 
+	 * @param {String} URL of Spotify endpoint
+	 * @param {String} Auth token
+	 * @param {Function} Function for handle success request
+	 * @param {Function} Function for handle errors
+	 * @param {Integer} Miliseconds of timeout
+	 * @returns {Promise<Response>} Data received from endpoint
+	 * @throws {String} If something go wrong
+	 */
 	function callUsingFetch(url, token, handleSuccess, handleError, timeout) {
 		const headers = { Authorization: "Bearer " + token };
 
 		fetch(url, { headers })
-			.then(fetchStatusHandler)
-			.then(res => res.json())
-			.then(data => handleSuccess(data))
-			.catch(err => handleError(err));
-	}
-
-
-	function fetchStatusHandler(response) {
-		if (response.status === 200) {
-			return response;
-		} else {
-			console.error(`Error code: ${response.status}`);
-			console.error(`Error status: ${response.statusText}`);
-			throw new Error(response.statusText);
-		}
+			.then(res => {
+				if(res.status === 200){
+					return res.json();
+				}else{
+					console.error(`Error code: ${res.status}`);
+					console.error(`Error status: ${res.statusText}`);
+					throw new Error(res.statusText);
+				}
+			})
+			.then(handleSuccess)
+			.catch(handleError);
 	}
 
 
 	spotifyApi = {
 		baseUrl: "https://api.spotify.com/v1/",
-		token: "BQCy5Mjv6aXM4jg_I2YBCdkMu0vg99nsmNEE-KkaMtmEn6vfenrmlMRxRkDK7Liju-OymxWANg8CYITn6IcPLQ0kRNECi_-2egbUBzR2RtRGGF2c6XfZeB5WG6qNPrcXZ1IWPIKdVzw7pTWue4U",
+		token: "BQAHrUUP_tQd1NbTJSMZNjPlx6OZ1mb4lknpiR8g6BubcKYrGElcH7n_T43tYT4LKPzJ6tBQO3TMKXjH5dUe8f3qax4QpLf7Yxg6B36ytmPthqf6cf4K5a4bJgCOyp7LKFA9u6i5X8Yh5sKuqYQ",
 		timeout: 2000,
 
 		/**
@@ -49,9 +56,7 @@ let spotifyApi;
 			callUsingFetch(
 				this.baseUrl + "search?type=artist&q=" + query,
 				this.token,
-				function(results) {
-					handleResults(results.artists.items);
-				},
+				results => handleResults(results.artists.items),
 				handleError,
 				this.timeout
 			);
@@ -68,9 +73,7 @@ let spotifyApi;
 			callUsingFetch(
 				this.baseUrl + "artists/" + artistId + "/albums",
 				this.token,
-				function(results) {
-					handleResults(results.items);
-				},
+				results => handleResults(results.items),
 				handleError,
 				this.timeout
 			);
@@ -78,7 +81,6 @@ let spotifyApi;
 
 		/**
 		 * Retrieve tracks from an album (by album id).
-		 *
 		 *
 		 * @param {String} albumId - The id of the album to retrieve the tracks from.
 		 * @param {Function} handleResults - Handles the results.
@@ -88,9 +90,7 @@ let spotifyApi;
 			callUsingFetch(
 				this.baseUrl + "albums/" + albumId + "/tracks",
 				this.token,
-				function(results) {
-					handleResults(results.items);
-				},
+				results => handleResults(results.items),
 				handleError,
 				this.timeout
 			);
