@@ -19,8 +19,7 @@ const willIGetNewPhone = new Promise(
 );
 
 const showOff = function (phone) {
-	const message = 'Hey friend, I have a new ' +
-				phone.color + ' ' + phone.brand + ' phone';
+	const message = `Hey friend, I have a new ${phone.color} ${phone.brand} phone`;
 	return Promise.resolve(message);
 };
 
