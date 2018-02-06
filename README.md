@@ -24,7 +24,7 @@
 | 2018-02-01 | 14/55 | JavaScript ES6 (ECMAScript 2015) |
 | 2018-02-02 | 15/55 | JavaScript: ES6, fetch & promises. Spotify API |
 | 2018-02-05 | 16/55 | JavaScript: callback hell & promises. Introducción a React y Babel |
-| 2018-02-06 | 17/55 |                 |
+| 2018-02-06 | 17/55 | React + Babel |
 | 2018-02-07 | 18/55 |                 |
 | 2018-02-08 | 19/55 |                 |
 | 2018-02-09 | 20/55 |                 |
