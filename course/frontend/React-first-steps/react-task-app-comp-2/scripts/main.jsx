@@ -14,7 +14,7 @@ class TaskApp extends React.Component {
 
         this.setState(prevState => {
             return {
-                // tasks: prevState.tasks.concat(this.state.input)
+                // tasks: prevState.tasks.concat(task)
                 tasks: [...prevState.tasks, task]
             }
         })
