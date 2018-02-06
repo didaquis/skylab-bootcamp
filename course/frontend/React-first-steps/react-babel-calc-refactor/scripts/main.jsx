@@ -26,9 +26,12 @@ class Calc extends React.Component {
 	calculate = (e) => {
 		e.preventDefault();
 
-		this.setState({
-			res: this.state.a + this.state.b
-		});
+		this.setState((prevState) => {
+			/* Recuerda que 'setState es asíncrono, por lo que es mejor trabajar con 'prevState' */
+            return {
+                res: prevState.a + prevState.b
+            }
+        })
 	};
 
 	/* Usamos arrow function para que this tenga el contexto adecuado */
