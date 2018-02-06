@@ -12,6 +12,7 @@ function Hello(props){
 }
 
 class Calc extends React.Component {
+	/* Si necesitamos que el componente maneje valores (cambios de state) tendremos que crearlo usando 'class' */
 	constructor(){
 		super();
 
