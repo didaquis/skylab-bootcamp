@@ -83,22 +83,29 @@ class TaskInput extends React.Component {
 
 
 function PendingTaskList(props) {
-	return <div><h3>Pending Tasks</h3><ul>
-		{props.tasks.map((task, index) => <li>{task} &nbsp; <a onClick={(e) => {
-			e.preventDefault()
-
-			props.onRemoveTask(index)
-		}}>🗑</a></li>)}
-	</ul></div>
+	if(props.tasks.length > 0){
+		return (<div><h3>Pending Tasks</h3><ul>
+					{props.tasks.map((task, index) => <li>{task} &nbsp; <a onClick={(e) => {
+						e.preventDefault()
+						props.onRemoveTask(index)
+					}}>🗑</a></li>)}
+				</ul></div>
+		)
+	}
+	return <div>Very good! You have no pending tasks.</div>
 }
 
 
 
 
 function CompletedTaskList(props){
-	return (<div><h3>Completed Tasks</h3><ul>
-		{props.completedTasks.map((task) => <li>{task}</li>)}
-	</ul></div>);
+	if(props.completedTasks.length > 0){
+		return (<div><h3>Completed Tasks</h3><ul>
+					{props.completedTasks.map((task) => <li>{task}</li>)}
+				</ul></div>
+		);
+	}
+	return <div></div>
 }
 
 
