@@ -37,6 +37,7 @@ class Task {
 	constructor(textOfTask){
 		this.textOfTask = textOfTask;
 		this.completedTask = false;
+		this.key = new Date().getTime();
 	}
 }
 
@@ -124,6 +125,13 @@ class ToDoTasksList extends React.Component {
 		super();
 	}
 
+	_handlerOnClick = (e) => {
+		e.preventDefault();
+		console.log(e.target.id);
+		//task que han seleccionado = e.target.id
+
+	}
+
 	render(){
 		{
 			//console.table(this.props.tasksToDo);
@@ -138,7 +146,7 @@ class ToDoTasksList extends React.Component {
 								<li className="ui-state-default">
 									<div className="checkbox">
 										<label>
-										<input type="checkbox" defaultValue />{task.textOfTask}</label>
+										<input type="checkbox" defaultValue id={task.key} onChange={this._handlerOnClick} />{task.textOfTask}</label>
 									</div>
 								</li>
 							);
@@ -162,7 +170,7 @@ function ToDoTaskCounter(props){
 
 	return(
 		<div className="todo-footer">
-			<strong><span className="count-todos" />{counter}</strong> Items Left
+			<strong><span className="count-todos">{counter}</span></strong> Items Left
 		</div>
 	);
 }
