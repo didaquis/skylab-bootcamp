@@ -15,6 +15,15 @@
 
 'use strict';
 
+class Task {
+	constructor(textOfTask){
+		this.textOfTask = textOfTask;
+		this.completedTask = false;
+		this.id = new Date().getTime();
+	}
+}
+
+
 class App extends React.Component {
 	constructor() {
 		super();
@@ -35,14 +44,25 @@ class App extends React.Component {
 		})
 	}
 
+	markOneTaskAsCompleted = (taskToCheckAsCompleted) => {
+		console.log(taskToCheckAsCompleted);
+	}
+
 
 	render() {
+
+		{
+			/* Gracias a esto, puedo ejecutar JavaScript en este scope */
+			//console.log(this.props);
+		}
+
 		return (
 			<div className="container">
 				<div className="row">
 					<BlockTasks 
-						on_addNewTask={this.addNewTask} 
+						onAddNewTask={this.addNewTask} 
 						tasksToDo={this.state.tasks} 
+						onSelectOneItem={this.markOneTaskAsCompleted} 
 						/>
 					<BlockDoneTasks tasksToDo={this.state.tasks} />
 				</div>
@@ -51,40 +71,23 @@ class App extends React.Component {
 	}
 }
 
-class Task {
-	constructor(textOfTask){
-		this.textOfTask = textOfTask;
-		this.completedTask = false;
-		this.id = new Date().getTime();
-	}
-}
 
-class BlockTasks extends React.Component {
-	constructor() {
-		super();
-	}
-
-
-	render(){
-
-		{
-			/* Gracias a esto, puedo ejecutar JavaScript en este scope */
-			//console.log(this.props);
-		}
-
-		return (
-			<div className="col-md-6">
-				<div className="todolist not-done">
-					<TitleOfSection text={'Todos'} />
-					<InputElement on_addNewTask={this.props.on_addNewTask} />
-					<ButtonMarkAllAsCompleted />
-					<hr />
-					<ToDoTasksList tasksToDo={this.props.tasksToDo} />
-					<ToDoTaskCounter tasksToDo={this.props.tasksToDo} />
-				</div>
+function BlockTasks(props){
+	return (
+		<div className="col-md-6">
+			<div className="todolist not-done">
+				<TitleOfSection text={'Todos'} />
+				<InputSubmit onSubmit={props.onAddNewTask} placeholder={'Add todo'} />
+				<SuccessButton label={'Mark all as done'} />
+				<hr />
+				<ToDoTasksList 
+					onSelectOneItem={props.onSelectOneItem} 
+					tasksToDo={props.tasksToDo} 
+					/>
+				<ToDoTaskCounter tasksToDo={props.tasksToDo} />
 			</div>
-		);
-	}
+		</div>
+	);
 }
 
 
@@ -103,24 +106,23 @@ function TitleOfSection(props){
 	return <h1>{props.text}</h1>;
 }
 
-class InputElement extends React.Component {
+class InputSubmit extends React.Component {
 	constructor() {
 		super();
 
-		this.state = {
-			inputNewTask: ''
-		}
-	}
-
-	_handlerOnSubmit = (e) => {
-		e.preventDefault();
-		this.props.on_addNewTask(this.state.inputNewTask);
-		this.setState({ inputNewTask: '' })
+		this.state = { inputNewTask: '' }
 	}
 
 	_handlerOnChange = (e) => {
 		this.setState({ inputNewTask: e.target.value })
 	}
+
+	_handlerOnSubmit = (e) => {
+		e.preventDefault();
+		this.props.onSubmit(this.state.inputNewTask);
+		this.setState({ inputNewTask: '' })
+	}
+
 
 	render (){
 		return (
@@ -128,7 +130,7 @@ class InputElement extends React.Component {
 				<input 
 					type="text" 
 					className="form-control add-todo" 
-					placeholder="Add todo" 
+					placeholder={this.props.placeholder} 
 					name="inputNewTask" 
 					required 
 					autofocus 
@@ -141,9 +143,9 @@ class InputElement extends React.Component {
 }
 
 
-function ButtonMarkAllAsCompleted(props) {
+function SuccessButton(props) {
 	return (
-		<button id="checkAll" className="btn btn-success">Mark all as done</button>
+		<button id="checkAll" className="btn btn-success">{props.label}</button>
 	);
 }
 
@@ -154,9 +156,10 @@ class ToDoTasksList extends React.Component {
 
 	_handlerOnClick = (e) => {
 		e.preventDefault();
-		console.log(e.target.id);
-		//task que han seleccionado = e.target.id
 
+		//task que han seleccionado = e.target.id
+		const itemSelected= (e.target.id);
+		this.props.onSelectOneItem(itemSelected)
 	}
 
 	render(){
@@ -192,18 +195,9 @@ class ToDoTasksList extends React.Component {
 }
 
 function ToDoTaskCounter(props){
-	{
-		var counter = 0;
-		props.tasksToDo.map( (task) => {
-			if(task.completedTask === false){
-				counter++;
-			}
-		} );
-	}
-
 	return(
 		<div className="todo-footer">
-			<strong><span className="count-todos">{counter}</span></strong> Items Left
+			<strong><span className="count-todos">{props.tasksToDo.reduce((accum, task) => task.done ? accum : ++accum, 0)}</span></strong> Items Left
 		</div>
 	);
 }
