@@ -4,13 +4,15 @@
  * 		App
  * 			BlockTasks
  * 				TitleOfSection
- * 				InputElement
- * 				ButtonMarkAllAsCompleted
+ * 				InputSubmit
+ * 				SuccessButton
  * 				ToDoTasksList
  * 				ToDoTaskCounter
  * 			BlockDoneTasks
  * 				TitleOfSection
  * 				DoneTasksList
+ * 					RemoveOneTaskFromList
+ * 
  */
 
 'use strict';
@@ -33,7 +35,6 @@ class App extends React.Component {
 		}
 	}
 
-
 	addNewTask = (textForNewTask) => {
 		const newTask = new Task( textForNewTask );
 
@@ -45,15 +46,44 @@ class App extends React.Component {
 	}
 
 	markOneTaskAsCompleted = (taskToCheckAsCompleted) => {
-		console.log(taskToCheckAsCompleted);
+		// Marcamos la tarea seleccionada como completada
+		this.setState(prevState => ({
+			tasks: prevState.tasks.map(task => {
+				if (task.id == taskToCheckAsCompleted){
+					task.completedTask = true
+				}
+				return task
+			})
+		}))
 	}
 
+	markAllTaskAsCompleted = () => {
+		// Marcamos todas las tareas no completadas como completadas
+		this.setState(prevState => ({
+			tasks: prevState.tasks.map(task => {
+				if (task.completedTask === false){
+					task.completedTask = true
+				}
+				return task
+			})
+		}))
+	}
+
+	removeOneTaskFromList = (taskToRemove) => {
+		// Eliminamos la tarea
+		this.setState(prevState => ({
+			tasks: prevState.tasks.filter(task => {
+				if (task.id != taskToRemove){
+					return task
+				}
+			})
+		}))
+	}
 
 	render() {
 
 		{
-			/* Gracias a esto, puedo ejecutar JavaScript en este scope */
-			//console.log(this.props);
+			/* Gracias a estas llaves, puedo ejecutar JavaScript en este scope */
 		}
 
 		return (
@@ -61,10 +91,14 @@ class App extends React.Component {
 				<div className="row">
 					<BlockTasks 
 						onAddNewTask={this.addNewTask} 
+						onMarkAllTaskAsCompleted={this.markAllTaskAsCompleted}
+						onMarkOneTaskAsCompleted={this.markOneTaskAsCompleted} 
 						tasksToDo={this.state.tasks} 
-						onSelectOneItem={this.markOneTaskAsCompleted} 
 						/>
-					<BlockDoneTasks tasksToDo={this.state.tasks} />
+					<BlockDoneTasks 
+						onRemoveOneTaskFromList={this.removeOneTaskFromList} 
+						tasksToDo={this.state.tasks} 
+						/>
 				</div>
 			</div>
 		);
@@ -77,11 +111,15 @@ function BlockTasks(props){
 		<div className="col-md-6">
 			<div className="todolist not-done">
 				<TitleOfSection text={'Todos'} />
-				<InputSubmit onSubmit={props.onAddNewTask} placeholder={'Add todo'} />
-				<SuccessButton label={'Mark all as done'} />
+				<InputSubmit 
+					onSubmit={props.onAddNewTask} 
+					placeholder={'Add todo'} 
+					/>
+				<SuccessButton 
+					label={'Mark all as done'} onPushButton={props.onMarkAllTaskAsCompleted} />
 				<hr />
 				<ToDoTasksList 
-					onSelectOneItem={props.onSelectOneItem} 
+					onSelectOneItem={props.onMarkOneTaskAsCompleted} 
 					tasksToDo={props.tasksToDo} 
 					/>
 				<ToDoTaskCounter tasksToDo={props.tasksToDo} />
@@ -96,7 +134,7 @@ function BlockDoneTasks(props){
 		<div className="col-md-6">
 			<div className="todolist">
 				<TitleOfSection text={'Already Done'} />
-				<DoneTasksList />
+				<DoneTasksList tasksToDo={props.tasksToDo} onSelectedTaskForRemove={props.onRemoveOneTaskFromList}/>
 			</div>
 		</div>
 	);
@@ -113,13 +151,21 @@ class InputSubmit extends React.Component {
 		this.state = { inputNewTask: '' }
 	}
 
+	focusOnInputField = (input) => {
+  		input.focus();
+	}
+
 	_handlerOnChange = (e) => {
 		this.setState({ inputNewTask: e.target.value })
 	}
 
 	_handlerOnSubmit = (e) => {
 		e.preventDefault();
-		this.props.onSubmit(this.state.inputNewTask);
+
+		const valueOfInputTrimed = this.state.inputNewTask.trim();
+		if(valueOfInputTrimed.length > 0){
+			this.props.onSubmit( valueOfInputTrimed );
+		}
 		this.setState({ inputNewTask: '' })
 	}
 
@@ -136,6 +182,7 @@ class InputSubmit extends React.Component {
 					autofocus 
 					onChange={this._handlerOnChange} 
 					value={this.state.inputNewTask} 
+					ref={this.focusOnInputField} 
 				/>
 			</form>
 		);
@@ -145,7 +192,7 @@ class InputSubmit extends React.Component {
 
 function SuccessButton(props) {
 	return (
-		<button id="checkAll" className="btn btn-success">{props.label}</button>
+		<button id="checkAll" className="btn btn-success" onClick={props.onPushButton}>{props.label}</button>
 	);
 }
 
@@ -189,7 +236,7 @@ class ToDoTasksList extends React.Component {
 						}
 					} )
 				}
-		  </ul>
+		  	</ul>
 		);
 	}
 }
@@ -197,7 +244,7 @@ class ToDoTasksList extends React.Component {
 function ToDoTaskCounter(props){
 	return(
 		<div className="todo-footer">
-			<strong><span className="count-todos">{props.tasksToDo.reduce((accum, task) => task.done ? accum : ++accum, 0)}</span></strong> Items Left
+			<strong><span className="count-todos">{props.tasksToDo.reduce((accum, task) => task.completedTask ? accum : ++accum, 0)}</span></strong> Items Left
 		</div>
 	);
 }
@@ -205,8 +252,27 @@ function ToDoTaskCounter(props){
 function DoneTasksList(props){
 	return(
 		<ul id="done-items" class="list-unstyled">
-			<li>Some item <button class="remove-item btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button></li>
+			{
+				props.tasksToDo.map( (task) => {
+					if(task.completedTask){
+						return (
+							<li key={task.id} >{task.textOfTask} 
+								<RemoveOneTaskFromList onClick={ () => { props.onSelectedTaskForRemove(task.id) } }/>
+							</li>
+						)
+					}
+				} )
+			}
 		</ul>
+	);
+}
+
+
+function RemoveOneTaskFromList(props){
+	return (
+		<button onClick={ (e) => { e.preventDefault(); props.onClick() } } class="remove-item btn btn-default btn-xs pull-right">
+			<span class="glyphicon glyphicon-remove"></span>
+		</button>
 	);
 }
 
