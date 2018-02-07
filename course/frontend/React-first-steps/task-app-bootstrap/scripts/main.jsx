@@ -25,7 +25,10 @@ class App extends React.Component {
 		return (
 			<div className="container">
 				<div className="row">
-					<BlockTasks tasksToDo={this.state.tasks} on_addNewTask={this.addNewTask} />
+					<BlockTasks 
+						on_addNewTask={this.addNewTask} 
+						tasksToDo={this.state.tasks} 
+						/>
 					<BlockDoneTasks tasksToDo={this.state.tasks} />
 				</div>
 			</div>
@@ -37,7 +40,7 @@ class Task {
 	constructor(textOfTask){
 		this.textOfTask = textOfTask;
 		this.completedTask = false;
-		this.key = new Date().getTime();
+		this.id = new Date().getTime();
 	}
 }
 
@@ -107,7 +110,14 @@ class InputTask extends React.Component {
 	render (){
 		return (
 			<form onSubmit={this._handlerOnSubmit}>
-				<input type="text" className="form-control add-todo" placeholder="Add todo" name="inputNewTask" id="inputNewTask" value={this.state.inputNewTask} onChange={this._handlerOnChange} />
+				<input 
+					type="text" 
+					className="form-control add-todo" 
+					placeholder="Add todo" 
+					name="inputNewTask" 
+					onChange={this._handlerOnChange} 
+					value={this.state.inputNewTask} 
+				/>
 			</form>
 		);
 	}
@@ -146,7 +156,13 @@ class ToDoTasksList extends React.Component {
 								<li className="ui-state-default">
 									<div className="checkbox">
 										<label>
-										<input type="checkbox" defaultValue id={task.key} onChange={this._handlerOnClick} />{task.textOfTask}</label>
+											<input 
+												type="checkbox" 
+												defaultValue 
+												id={task.id} 
+												onChange={this._handlerOnClick} 
+												/>{task.textOfTask}
+										</label>
 									</div>
 								</li>
 							);
