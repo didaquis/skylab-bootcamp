@@ -1,3 +1,18 @@
+/**
+ *  Estructura de componentes:
+ *
+ * 		App
+ * 			BlockTasks
+ * 				TitleOfSection
+ * 				InputElement
+ * 				ButtonMarkAllAsCompleted
+ * 				ToDoTasksList
+ * 				ToDoTaskCounter
+ * 			BlockDoneTasks
+ * 				TitleOfSection
+ * 				DoneTasksList
+ */
+
 'use strict';
 
 class App extends React.Component {
@@ -61,7 +76,7 @@ class BlockTasks extends React.Component {
 			<div className="col-md-6">
 				<div className="todolist not-done">
 					<TitleOfSection text={'Todos'} />
-					<InputTask on_addNewTask={this.props.on_addNewTask} />
+					<InputElement on_addNewTask={this.props.on_addNewTask} />
 					<ButtonMarkAllAsCompleted />
 					<hr />
 					<ToDoTasksList tasksToDo={this.props.tasksToDo} />
@@ -88,7 +103,7 @@ function TitleOfSection(props){
 	return <h1>{props.text}</h1>;
 }
 
-class InputTask extends React.Component {
+class InputElement extends React.Component {
 	constructor() {
 		super();
 
@@ -115,6 +130,8 @@ class InputTask extends React.Component {
 					className="form-control add-todo" 
 					placeholder="Add todo" 
 					name="inputNewTask" 
+					required 
+					autofocus 
 					onChange={this._handlerOnChange} 
 					value={this.state.inputNewTask} 
 				/>
