@@ -177,7 +177,7 @@ class ToDoTasksList extends React.Component {
 												type="checkbox" 
 												defaultValue 
 												id={task.id} 
-												onChange={this._handlerOnClick} 
+												onClick={this._handlerOnClick} 
 												/>{task.textOfTask}
 										</label>
 									</div>
