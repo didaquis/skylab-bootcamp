@@ -25,8 +25,8 @@ class App extends React.Component {
 		return (
 			<div className="container">
 				<div className="row">
-					<BlockTasks on_addNewTask={this.addNewTask} />
-					<BlockDoneTasks />
+					<BlockTasks tasksToDo={this.state.tasks} on_addNewTask={this.addNewTask} />
+					<BlockDoneTasks tasksToDo={this.state.tasks} />
 				</div>
 			</div>
 		);
@@ -47,6 +47,12 @@ class BlockTasks extends React.Component {
 
 
 	render(){
+
+		{
+			/* Gracias a esto, puedo ejecutar JavaScript en este scope */
+			//console.log(this.props);
+		}
+
 		return (
 			<div className="col-md-6">
 				<div className="todolist not-done">
@@ -54,8 +60,8 @@ class BlockTasks extends React.Component {
 					<InputTask on_addNewTask={this.props.on_addNewTask} />
 					<ButtonMarkAllAsCompleted />
 					<hr />
-					<ToDoTasksList />
-					<ToDoTaskCounter />
+					<ToDoTasksList tasksToDo={this.props.tasksToDo} />
+					<ToDoTaskCounter tasksToDo={this.props.tasksToDo} />
 				</div>
 			</div>
 		);
@@ -119,23 +125,44 @@ class ToDoTasksList extends React.Component {
 	}
 
 	render(){
+		{
+			//console.table(this.props.tasksToDo);
+		}
+
 		return (
 			<ul id="sortable" className="list-unstyled">
-				<li className="ui-state-default">
-					<div className="checkbox">
-						<label>
-						<input type="checkbox" defaultValue />Take out the trash</label>
-					</div>
-				</li>
+				{
+					this.props.tasksToDo.map( (task) => {
+						if(task.completedTask === false){
+							return (
+								<li className="ui-state-default">
+									<div className="checkbox">
+										<label>
+										<input type="checkbox" defaultValue />{task.textOfTask}</label>
+									</div>
+								</li>
+							);
+						}
+					} )
+				}
 		  </ul>
 		);
 	}
 }
 
 function ToDoTaskCounter(props){
+	{
+		var counter = 0;
+		props.tasksToDo.map( (task) => {
+			if(task.completedTask === false){
+				counter++;
+			}
+		} );
+	}
+
 	return(
 		<div className="todo-footer">
-			<strong><span className="count-todos" /></strong> Items Left
+			<strong><span className="count-todos" />{counter}</strong> Items Left
 		</div>
 	);
 }
