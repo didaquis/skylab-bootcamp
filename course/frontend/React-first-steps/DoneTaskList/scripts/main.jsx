@@ -105,12 +105,11 @@ function CompletedTaskList(props){
 				</ul></div>
 		);
 	}
-	return <div></div>
+	return ''
 }
 
 
-
-
+/* Renderizamos el componente global */
 ReactDOM.render(<DoneTaskList />,
 	document.getElementById('root'))
 
