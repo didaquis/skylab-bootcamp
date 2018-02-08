@@ -42,7 +42,7 @@ let spotifyApi;
 
 	spotifyApi = {
 		baseUrl: "https://api.spotify.com/v1/",
-		token: "BQADkPRTuA8wfITjmzm0eKz2LM4gWB52RE7JOiSMvNO57RzcTjrN2kXwR8mUndIoixLdTjw5ORGsQQ73mQobGC_3KXOxN2G8fOtQz0xK5Jk0GYOBbn_1yANA4u8ydzWee2muKAIiRXRLbR8",
+		token: "BQAhtB7bwmEBWr8PkgyikwDT700JgulGGb8w0idjFc689yxoFXdnBJnj2TCXEvwi3B1-Dh0XyNVx2t3mykcfaNupCSbzlDdS8OPgGglMKgB5kjtDnGqYusBeWKC_5cYSW5fJ8_LxTkQdHe0",
 		timeout: 2000,
 
 		/**

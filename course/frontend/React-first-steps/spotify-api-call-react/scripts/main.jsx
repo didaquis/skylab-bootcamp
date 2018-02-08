@@ -2,7 +2,8 @@
  *  Estructura de componentes:
  *
  * 		App
- * 			BlockListCard
+ * 			BlockListCardWithPhoto
+ * 			BlockListReducedCard
  * 
  */
 
@@ -14,7 +15,9 @@ class App extends React.Component {
 
 		this.state = {
 			results: [],
+			tracksResults: [],
 			textForButtonInCards: '',
+			typeOfElement: '',
 			input: ''
 		};
 	}
@@ -29,6 +32,18 @@ class App extends React.Component {
 			}
 		}
 		return sourceData;
+	}
+
+	fixResultsWithoutPreviewUrl(sourceData){
+		// Si un track no tiene preview, no lo mostraré en los resultados
+		let resultsFiltered = sourceData.filter(
+				(resultItem) => {
+					if(resultItem['preview_url'] !== null){
+						return resultItem
+					}
+				}
+			);
+		return resultsFiltered;
 	}
 
 	focusOnInputField = (input) => {
@@ -64,7 +79,7 @@ class App extends React.Component {
 		/* Utilizo una función para arreglar aquellas situaciones las que la API devuelve datos con diferente estructura, de todas esto sería responsabilidad de backend y no de front end!  */
 		const resultsFixed = this.fixResultsWithoutPictures(artist)
 
-		this.setState({ results:resultsFixed, textForButtonInCards: 'List of Artists' })
+		this.setState({ results:resultsFixed, textForButtonInCards: 'List of albums', typeOfElement: 'artistCard', tracksResults: [] })
 
 
 		// Aplico "destructuring" (JS ES 6) para volcar los datos en "artist" (Esto funcionará si el parámetro de entrada a esta función se llamara igual que el objeto destino de los datos)
@@ -74,16 +89,31 @@ class App extends React.Component {
 		/* this.setState({ artist:resultsOfData }) */
 	}
 
-	_handlerOfSelectedItem = (identifierOfItem) => {
-		spotifyApi.retrieveAlbums(identifierOfItem)
-			.then(albums => this._handlerResultsOfSearchForAlbums(albums))
-			.catch(error => this._handlerError(error));
+	_handlerOfSelectedItem = (identifierOfItem, typeOfItem) => {
+		if(typeOfItem === 'artistCard'){
+			// El usuario quiere listar los álbumes de un artista
+			spotifyApi.retrieveAlbums(identifierOfItem)
+				.then(albums => this._handlerResultsOfSearchForAlbums(albums))
+				.catch(error => this._handlerError(error));
+		}else if(typeOfItem === 'albumCard'){
+			// El usuario quiere listar los tracks...
+			spotifyApi.retrieveTracks(identifierOfItem)
+				.then(tracks => this._handlerResultsOfSearchForTracks(tracks))
+				.catch(error => this._handlerError(error));
+		}
 	}
 
 	_handlerResultsOfSearchForAlbums = (albums) => {
 		const resultsFixed = this.fixResultsWithoutPictures(albums)
 
-		this.setState({ results:resultsFixed, textForButtonInCards: 'List of Albums' })
+		/* Buen ejemplo de como hacer destructuring data seteando valores nuevos a la vez */
+		this.setState({ results:resultsFixed, textForButtonInCards: 'List of tracks', typeOfElement: 'albumCard', tracksResults: [] })
+	}
+
+	_handlerResultsOfSearchForTracks = (tracks) => {
+		const resultsFixed = this.fixResultsWithoutPreviewUrl(tracks)
+
+		this.setState({ results: [], textForButtonInCards: 'Listen the song', typeOfElement: 'trackCard', tracksResults:resultsFixed })
 	}
 
 	render() {
@@ -108,51 +138,102 @@ class App extends React.Component {
 						</form>
 					</div>
 				</div>
-				<BlockListCard resultsOfSearch={this.state.results} onSelectItem={this._handlerOfSelectedItem} textForButton={this.state.textForButtonInCards}/>
+				<BlockListCardWithPhoto 
+					onSelectItem={this._handlerOfSelectedItem} 
+					resultsOfSearch={this.state.results} 
+					textForButton={this.state.textForButtonInCards} 
+					typeOfElement={this.state.typeOfElement} 
+				/>
+				<BlockListReducedCard 
+					onSelectItem={this._handlerOfSelectedItem} 
+					resultsOfSearch={this.state.tracksResults} 
+					textForButton={this.state.textForButtonInCards} 
+					typeOfElement={this.state.typeOfElement} 
+				/>
 			</div>
 		);
 	}
 }
 
 
-class BlockListCard extends React.Component {
+class BlockListCardWithPhoto extends React.Component {
 	constructor(){
 		super();
-
 	}
 
 	_handlerOnClick = (e) => {
 		e.preventDefault();
 		/* Gracias al 'getAttribute' recupero el valor de un atributo del elemento seleccionado */
 		let identifierOfItem = e.target.getAttribute('identifier');
+		let typeOfItem = e.target.getAttribute('typeOfElement');
 
-		this.props.onSelectItem(identifierOfItem);
+		this.props.onSelectItem(identifierOfItem, typeOfItem);
 	}
 
 	render(){
-		if(this.props.resultsOfSearch.length > 0){
+		if(this.props.resultsOfSearch.length == 0){
+			return ''
+		}else{
 			return (
 				<div className="row d-flex justify-content-center mt-4 mb-4">
 					<div id="listOfResults">
-					{this.props.resultsOfSearch.map((art) => {
-						return (
-							<div className='card mb-4' identifier={art.id}>
-								<div className='card-body'>
-									<h5 className='card-title'>{art.name}</h5>
-									<a href='#' identifier={art.id} onClick={this._handlerOnClick} className='btn btn-primary artist-card'>{this.props.textForButton}</a>
+						{this.props.resultsOfSearch.map((item) => {
+							return (
+								<div className='card mb-4' identifier={item.id}>
+									<div className='card-body'>
+										<h5 className='card-title'>{item.name}</h5>
+										<a href='#' 
+											identifier={item.id} 
+											onClick={this._handlerOnClick} 
+											typeOfElement={this.props.typeOfElement} 
+											className='btn btn-primary artist-card'>{this.props.textForButton}
+										</a>
+									</div>
+									<img className='card-img-bottom img-square' src={item.images[0]['url']} alt='Card image cap' />
 								</div>
-								<img className='card-img-bottom img-square' src={art.images[0]['url']} alt='Card image cap' />
-							</div>
-						)
-					})}
+							)
+						})}
 					</div>
 				</div>
 			)
 		}
-		return '';
-		}
+	}
 }
 
+
+class BlockListReducedCard extends React.Component {
+	constructor(){
+		super();
+	}
+
+	render(){
+		if(this.props.resultsOfSearch.length == 0){
+			return ''
+		}else{
+			return (
+				<div className="row d-flex justify-content-center mt-4 mb-4">
+					<div id="listOfResults">
+						{this.props.resultsOfSearch.map((item) => {
+							return (
+								<div className='card mb-4' identifier={item.id}>
+									<div className='card-body'>
+										<h5 className='card-title'>{item.artists[0]['name']} - {item.name}</h5>
+										<p className='card-text'>Track number: {item.track_number}</p>
+										<a href='#' 
+											data-preview_url={item.preview_url} 
+											identifier={item.id} 
+											className='btn btn-success song-card'>{this.props.textForButton}
+										</a>
+									</div>
+								</div>
+							)
+						})}
+					</div>
+				</div>
+			)
+		}
+	}
+}
 
 
 /* Renderizamos el componente global */
