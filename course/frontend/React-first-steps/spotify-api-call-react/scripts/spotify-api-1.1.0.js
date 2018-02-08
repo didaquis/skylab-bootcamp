@@ -14,11 +14,7 @@ let spotifyApi;
 	/**
 	 * Make a request to Spotify public API
 	 * 
-	 * @param {String} URL of Spotify endpoint
-	 * @param {String} Auth token
-	 * @param {Function} Function for handle success request
-	 * @param {Function} Function for handle errors
-	 * @param {Integer} Miliseconds of timeout
+	 * @param {String} URL of Spotify endpoint ('https://api.spotify.com/v1/' is provided)
 	 * @returns {Promise<Response>} Data received from endpoint
 	 * @throws {String} If something go wrong
 	 */
@@ -46,8 +42,8 @@ let spotifyApi;
 		 * Searches artists by matching a text.
 		 *
 		 * @param {String} query - The text to search.
-		 * @param {Function} handleResults - Handles the results.
-		 * @param {Function} handleError - Handles an error.
+		 * @returns {Promise<Response>} Data received from endpoint
+		 * @throws {String} If something go wrong
 		 */
 		searchArtists: function(query) {
 			return call("search?type=artist&q=" + query).then(res =>  res.artists.items);
