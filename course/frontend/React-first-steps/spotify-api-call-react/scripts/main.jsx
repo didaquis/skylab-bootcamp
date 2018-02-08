@@ -31,7 +31,7 @@ class App extends React.Component {
 
 		const valueOfInputTrimed = this.state.input.trim();
 		if(valueOfInputTrimed.length > 0){
-			spotifyApi.searchArtists(valueOfInputTrimed, this._handlerResultsOfSearchForArtist, this._handlerError);
+			spotifyApi.searchArtists(valueOfInputTrimed);
 			this.setState.input = valueOfInputTrimed;
 		}
 		this.setState({ input: '' })

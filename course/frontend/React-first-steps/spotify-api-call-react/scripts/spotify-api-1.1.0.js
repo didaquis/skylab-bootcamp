@@ -22,7 +22,7 @@ let spotifyApi;
 	 * @returns {Promise<Response>} Data received from endpoint
 	 * @throws {String} If something go wrong
 	 */
-	function callUsingFetch(url, token, handleSuccess, handleError, timeout) {
+	function call(url, token, handleSuccess, handleError, timeout) {
 		const headers = { Authorization: "Bearer " + token };
 
 		fetch(url, { headers })
@@ -53,7 +53,7 @@ let spotifyApi;
 		 * @param {Function} handleError - Handles an error.
 		 */
 		searchArtists: function(query, handleResults, handleError) {
-			callUsingFetch(
+			call(
 				this.baseUrl + "search?type=artist&q=" + query,
 				this.token,
 				results => handleResults(results.artists.items),
@@ -70,7 +70,7 @@ let spotifyApi;
 		 * @param {Function} handleError - Handles an error.
 		 */
 		retrieveAlbums: function(artistId, handleResults, handleError) {
-			callUsingFetch(
+			call(
 				this.baseUrl + "artists/" + artistId + "/albums",
 				this.token,
 				results => handleResults(results.items),
@@ -87,7 +87,7 @@ let spotifyApi;
 		 * @param {Function} handleError - Handles an error.
 		 */
 		retrieveTracks: function(albumId, handleResults, handleError) {
-			callUsingFetch(
+			call(
 				this.baseUrl + "albums/" + albumId + "/tracks",
 				this.token,
 				results => handleResults(results.items),
@@ -104,7 +104,7 @@ let spotifyApi;
 		 * @param {Function} handleError - Handles an error.
 		 */
 		retrieveTrack: function(id, handleResults, handleError) {
-			callUsingFetch(
+			call(
 				this.baseUrl + "tracks/" + id,
 				this.token,
 				handleResults,
