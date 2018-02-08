@@ -22,10 +22,12 @@ let spotifyApi;
 	 * @returns {Promise<Response>} Data received from endpoint
 	 * @throws {String} If something go wrong
 	 */
-	function call(url, token, handleSuccess, handleError, timeout) {
+	function call(url) {
+		const baseUrl = "https://api.spotify.com/v1/";
+		const token = "BQBc8-UU-dYlgao25bLT13eZUABOuHdI8-bpxAHGRRG_iaZdqYFw1EctaRoj4nveO5EP0VLVMZ-RBSore15nICP1sYMsilSgHT8fORlKDhRjVd4lfZwcpDMzxGpIwjoZvKDmASCd_6-C2Jg";
 		const headers = { Authorization: "Bearer " + token };
 
-		fetch(url, { headers })
+		return fetch(baseUrl + url, { headers })
 			.then(res => {
 				if(res.status === 200){
 					return res.json();
@@ -34,16 +36,11 @@ let spotifyApi;
 					console.error(`Error status: ${res.statusText}`);
 					throw new Error(res.statusText);
 				}
-			})
-			.then(handleSuccess)
-			.catch(handleError);
+			});
 	}
 
 
 	spotifyApi = {
-		baseUrl: "https://api.spotify.com/v1/",
-		token: "BQAr5oH_CRCJzRQ2zwQUcfLBYHf84WECsaVtkOfYSfdCsZqCpEa0A7OVpmSHltXqhEnGKinR3gRr5EvT2rTCQq_7b3fV2z48tSPDVtqwjLaRjwer51r0M82TypLQG5VPtxRxIJ6mdbbQY2w",
-		timeout: 2000,
 
 		/**
 		 * Searches artists by matching a text.
@@ -52,14 +49,8 @@ let spotifyApi;
 		 * @param {Function} handleResults - Handles the results.
 		 * @param {Function} handleError - Handles an error.
 		 */
-		searchArtists: function(query, handleResults, handleError) {
-			call(
-				this.baseUrl + "search?type=artist&q=" + query,
-				this.token,
-				results => handleResults(results.artists.items),
-				handleError,
-				this.timeout
-			);
+		searchArtists: function(query) {
+			return call("search?type=artist&q=" + query).then(res =>  res.artists.items);
 		},
 
 		/**
