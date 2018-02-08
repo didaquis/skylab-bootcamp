@@ -21,7 +21,7 @@ let spotifyApi;
 	function call(url) {
 		const baseUrl = "https://api.spotify.com/v1/";
 
-		const token = "BQAlHhfvBBcoMHScxMl7jTAWuLTzNDtHtOilyuTyrtvRRgc-kUSN3ibudFDolFVPMMFpPbX8y_7KxGEv5yHXuEHHPoogWcbjg7KcG3stvftUaiLTZtGNSw4eFZth63ktoGMhGZATk3bwyts";
+		const token = "BQAe7sLVYca0IyhCfG9NxH9W5zu09VItqF3U8tG-SMfnmi07fJsPGBtDEfrBUdmRUXk9osjpQ7DbFRsyJUKyDjZOVAaX5xMDTUOP4w5QglTYXUK3YlckmKJlD0K-TzeI_RsB0qgKE866cDU";
 
 		const headers = { Authorization: "Bearer " + token };
 
@@ -57,17 +57,11 @@ let spotifyApi;
 		 * Retrieve albums from an artist (by artist id).
 		 *
 		 * @param {String} artistId - The id of the artist to retrieve the albums from.
-		 * @param {Function} handleResults - Handles the results.
-		 * @param {Function} handleError - Handles an error.
+		 * @returns {Promise<Response>} Data received from endpoint
+		 * @throws {String} If something go wrong
 		 */
-		retrieveAlbums: function(artistId, handleResults, handleError) {
-			call(
-				this.baseUrl + "artists/" + artistId + "/albums",
-				this.token,
-				results => handleResults(results.items),
-				handleError,
-				this.timeout
-			);
+		retrieveAlbums: (artistId) => {
+			return call(`artists/${artistId}/albums`).then(res => res.items)
 		},
 
 
@@ -75,17 +69,11 @@ let spotifyApi;
 		 * Retrieve tracks from an album (by album id).
 		 *
 		 * @param {String} albumId - The id of the album to retrieve the tracks from.
-		 * @param {Function} handleResults - Handles the results.
-		 * @param {Function} handleError - Handles an error.
+		 * @returns {Promise<Response>} Data received from endpoint
+		 * @throws {String} If something go wrong
 		 */
-		retrieveTracks: function(albumId, handleResults, handleError) {
-			call(
-				this.baseUrl + "albums/" + albumId + "/tracks",
-				this.token,
-				results => handleResults(results.items),
-				handleError,
-				this.timeout
-			);
+		retrieveTracks: (albumId) => {
+			return call(`albums/${albumId}/tracks`).then(res => res.items)
 		},
 
 
@@ -93,17 +81,11 @@ let spotifyApi;
 		 * Retrieve track by id.
 		 *
 		 * @param {String} id - The id of the track to retrieve information from.
-		 * @param {Function} handleResults - Handles the results.
-		 * @param {Function} handleError - Handles an error.
+		 * @returns {Promise<Response>} Data received from endpoint
+		 * @throws {String} If something go wrong
 		 */
-		retrieveTrack: function(id, handleResults, handleError) {
-			call(
-				this.baseUrl + "tracks/" + id,
-				this.token,
-				handleResults,
-				handleError,
-				this.timeout
-			);
+		retrieveTrack: (id) => {
+			return call(`tracks/${id}`)
 		}
 	};
 })();
