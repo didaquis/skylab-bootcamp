@@ -26,7 +26,7 @@
 | 2018-02-05 | 16/55 | JavaScript: callback hell & promises. Introducción a React y Babel |
 | 2018-02-06 | 17/55 | React + Babel |
 | 2018-02-07 | 18/55 | React + Babel |
-| 2018-02-08 | 19/55 | React + Babel. Spotify API. Ciclo de vida componentes de React. React-Router |
+| 2018-02-08 | 19/55 | Create-React-App. Spotify API. Ciclo de vida componentes de React. React-Router |
 | 2018-02-09 | 20/55 |                 |
 | 2018-02-12 | 21/55 |                 |
 | 2018-02-13 | 22/55 |                 |
