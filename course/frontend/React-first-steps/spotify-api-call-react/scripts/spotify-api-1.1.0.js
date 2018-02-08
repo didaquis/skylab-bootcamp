@@ -20,8 +20,11 @@ let spotifyApi;
 	 */
 	function call(url) {
 		const baseUrl = "https://api.spotify.com/v1/";
-		const token = "BQBc8-UU-dYlgao25bLT13eZUABOuHdI8-bpxAHGRRG_iaZdqYFw1EctaRoj4nveO5EP0VLVMZ-RBSore15nICP1sYMsilSgHT8fORlKDhRjVd4lfZwcpDMzxGpIwjoZvKDmASCd_6-C2Jg";
+
+		const token = "BQAlHhfvBBcoMHScxMl7jTAWuLTzNDtHtOilyuTyrtvRRgc-kUSN3ibudFDolFVPMMFpPbX8y_7KxGEv5yHXuEHHPoogWcbjg7KcG3stvftUaiLTZtGNSw4eFZth63ktoGMhGZATk3bwyts";
+
 		const headers = { Authorization: "Bearer " + token };
+
 
 		return fetch(baseUrl + url, { headers })
 			.then(res => {
@@ -45,9 +48,10 @@ let spotifyApi;
 		 * @returns {Promise<Response>} Data received from endpoint
 		 * @throws {String} If something go wrong
 		 */
-		searchArtists: function(query) {
-			return call("search?type=artist&q=" + query).then(res =>  res.artists.items);
+		searchArtists: (query) => {
+			return call(`search?type=artist&q=${query}`).then(res => res.artists.items)
 		},
+
 
 		/**
 		 * Retrieve albums from an artist (by artist id).
@@ -66,6 +70,7 @@ let spotifyApi;
 			);
 		},
 
+
 		/**
 		 * Retrieve tracks from an album (by album id).
 		 *
@@ -82,6 +87,7 @@ let spotifyApi;
 				this.timeout
 			);
 		},
+
 
 		/**
 		 * Retrieve track by id.
