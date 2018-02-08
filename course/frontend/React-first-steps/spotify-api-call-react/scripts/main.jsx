@@ -2,7 +2,7 @@
  *  Estructura de componentes:
  *
  * 		App
- * 			BlockListArtist
+ * 			BlockListCard
  * 
  */
 
@@ -13,9 +13,22 @@ class App extends React.Component {
 		super();
 
 		this.state = {
-			artist: [],
+			results: [],
+			textForButtonInCards: '',
 			input: ''
+		};
+	}
+
+	fixResultsWithoutPictures(sourceData){
+		for (let i = 0; i < sourceData.length; i++){
+			for(let prop in sourceData[i]){
+				if(sourceData[i].images.length === 0){
+					// si el item no tiene imágenes, le establezco una por defecto
+					sourceData[i].images.push({height: 600, url: "images/default-artist.png", width: 600});
+				}
+			}
 		}
+		return sourceData;
 	}
 
 	focusOnInputField = (input) => {
@@ -34,7 +47,7 @@ class App extends React.Component {
 
 			/* Uso la Api que hemos desarrollado */
 			spotifyApi.searchArtists(valueOfInputTrimed)
-				.then( artists => this._handlerResultsOfSearchForArtist(artists))
+				.then(artists => this._handlerResultsOfSearchForArtist(artists))
 				.catch(error => this._handlerError(error));
 			this.setState.input = valueOfInputTrimed;
 		}
@@ -49,9 +62,10 @@ class App extends React.Component {
 		// si llega una lista de artistas de la Api de Spotify...
 		
 		/* Utilizo una función para arreglar aquellas situaciones las que la API devuelve datos con diferente estructura, de todas esto sería responsabilidad de backend y no de front end!  */
-		const resultsFixed = this.fixResultsOfArtistSearch(artist)
+		const resultsFixed = this.fixResultsWithoutPictures(artist)
 
-		this.setState({ artist:resultsFixed })
+		this.setState({ results:resultsFixed, textForButtonInCards: 'List of Artists' })
+
 
 		// Aplico "destructuring" (JS ES 6) para volcar los datos en "artist" (Esto funcionará si el parámetro de entrada a esta función se llamara igual que el objeto destino de los datos)
 		/* this.setState({ artist }) */
@@ -60,17 +74,16 @@ class App extends React.Component {
 		/* this.setState({ artist:resultsOfData }) */
 	}
 
-	fixResultsOfArtistSearch(sourceData){
-		for (let i = 0; i < sourceData.length; i++){
-			for(let prop in sourceData[i]){
-				if(sourceData[i].images.length === 0){
-					// si el item no tiene imágenes, le establezco una por defecto
-					//sourceData[i].images.push('images/default-artist.png'); 
-					sourceData[i].images.push({height: 600, url: "images/default-artist.png", width: 600});
-				}
-			}
-		}
-		return sourceData;
+	_handlerOfSelectedItem = (identifierOfItem) => {
+		spotifyApi.retrieveAlbums(identifierOfItem)
+			.then(albums => this._handlerResultsOfSearchForAlbums(albums))
+			.catch(error => this._handlerError(error));
+	}
+
+	_handlerResultsOfSearchForAlbums = (albums) => {
+		const resultsFixed = this.fixResultsWithoutPictures(albums)
+
+		this.setState({ results:resultsFixed, textForButtonInCards: 'List of Albums' })
 	}
 
 	render() {
@@ -95,35 +108,51 @@ class App extends React.Component {
 						</form>
 					</div>
 				</div>
-				<BlockListArtist resultsOfArtistSearch={this.state.artist} />
+				<BlockListCard resultsOfSearch={this.state.results} onSelectItem={this._handlerOfSelectedItem} textForButton={this.state.textForButtonInCards}/>
 			</div>
 		);
 	}
 }
 
 
-function BlockListArtist(props){
-	if(props.resultsOfArtistSearch.length > 0){
-		return (
-			<div className="row d-flex justify-content-center mt-4 mb-4">
-				<div id="listOfResults">
-				{props.resultsOfArtistSearch.map((art) => {
-					return (
-						<div className='card mb-4' data-id={art.id}>
-							<div className='card-body'>
-								<h5 className='card-title'>{art.name}</h5>
-								<a href='#' data-id={art.id} className='btn btn-primary artist-card'>List of albums</a>
-							</div>
-							<img className='card-img-bottom img-square' src={art.images[0]['url']} alt='Card image cap' />
-						</div>
-					)
-				})}
-				</div>
-			</div>
-		)
+class BlockListCard extends React.Component {
+	constructor(){
+		super();
+
 	}
-	return '';
+
+	_handlerOnClick = (e) => {
+		e.preventDefault();
+		/* Gracias al 'getAttribute' recupero el valor de un atributo del elemento seleccionado */
+		let identifierOfItem = e.target.getAttribute('identifier');
+
+		this.props.onSelectItem(identifierOfItem);
+	}
+
+	render(){
+		if(this.props.resultsOfSearch.length > 0){
+			return (
+				<div className="row d-flex justify-content-center mt-4 mb-4">
+					<div id="listOfResults">
+					{this.props.resultsOfSearch.map((art) => {
+						return (
+							<div className='card mb-4' identifier={art.id}>
+								<div className='card-body'>
+									<h5 className='card-title'>{art.name}</h5>
+									<a href='#' identifier={art.id} onClick={this._handlerOnClick} className='btn btn-primary artist-card'>{this.props.textForButton}</a>
+								</div>
+								<img className='card-img-bottom img-square' src={art.images[0]['url']} alt='Card image cap' />
+							</div>
+						)
+					})}
+					</div>
+				</div>
+			)
+		}
+		return '';
+		}
 }
+
 
 
 /* Renderizamos el componente global */
