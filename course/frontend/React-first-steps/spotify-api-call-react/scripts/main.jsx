@@ -206,6 +206,18 @@ class BlockListReducedCard extends React.Component {
 		super();
 	}
 
+	_handlerOnClick = (e) => {
+		e.preventDefault();
+		/* Gracias al 'getAttribute' recupero el valor de un atributo del elemento seleccionado */
+		let identifierOfItem = e.target.getAttribute('identifier');
+		let typeOfItem = e.target.getAttribute('typeOfElement');
+		let previewURL = e.target.getAttribute('data-preview_url');
+
+
+		/* Ahora debo lanzar el modal con los datos aquí recopilados */
+		//this.props.onSelectItem(identifierOfItem, typeOfItem);
+	}
+
 	render(){
 		if(this.props.resultsOfSearch.length == 0){
 			return ''
@@ -222,6 +234,8 @@ class BlockListReducedCard extends React.Component {
 										<a href='#' 
 											data-preview_url={item.preview_url} 
 											identifier={item.id} 
+											onClick={this._handlerOnClick} 
+											typeOfElement={this.props.typeOfElement} 
 											className='btn btn-success song-card'>{this.props.textForButton}
 										</a>
 									</div>
