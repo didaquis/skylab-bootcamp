@@ -27,7 +27,7 @@
 | 2018-02-06 | 17/55 | React + Babel |
 | 2018-02-07 | 18/55 | React + Babel |
 | 2018-02-08 | 19/55 | Create-React-App. Spotify API. Ciclo de vida componentes de React. React-Router |
-| 2018-02-09 | 20/55 |                 |
+| 2018-02-09 | 20/55 | Create-React-App |
 | 2018-02-12 | 21/55 |                 |
 | 2018-02-13 | 22/55 |                 |
 | 2018-02-14 | 23/55 |                 |
