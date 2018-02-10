@@ -16,9 +16,9 @@ Este repositorio contiene los ejercicios realizados durante el bootcamp en [Skyl
 | 2018-01-17 | 3/55 | JavaScript: objetos, prototype y polyfill |
 | 2018-01-18 | 4/55 | JavaScript: objetos, prototype y polyfill. Challenges "secret.js" y "hangman.js" |
 | 2018-01-19 | 5/55 | Javascript: introducción al unit testing. Uso de Jasmine |
-| 2018-01-22 | 6/55 | HTML 5: elementos semánticos. JavaScripts: High order functions y callbacks |
+| 2018-01-22 | 6/55 | HTML 5: elementos semánticos. JavaScript: High order functions y callbacks |
 | 2018-01-23 | 7/55 | CSS: selectores avanzados. Corrección ejercicios anteriores (JS, HTML, etc) |
-| 2018-01-24 | 8/55 | CSS: Posicionamiento de los elementos. FlexBox & CSS Grid. Documentación con JSDoc|
+| 2018-01-24 | 8/55 | CSS: Posicionamiento de los elementos. FlexBox & CSS Grid. Documentación con JSDoc |
 | 2018-01-25 | 9/55 | JavaScript: method chaining. Uso de Sass. Introducción a jQuery |
 | 2018-01-26 | 10/55 | Javascript: event bubbling. Profundizando en jQuery. jQuery ajax. Node.js |
 | 2018-01-29 | 11/55 | Aplicamos jQuery y Sass a un challenge anterior. JavaScript: "call stack" |
