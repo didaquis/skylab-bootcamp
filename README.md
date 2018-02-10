@@ -3,7 +3,10 @@
 🚀 Full-Stack Web-Development Bootcamp 
 ======================================
 
-## Changelog && progress  
+Este repositorio contiene los ejercicios realizados durante el bootcamp en [Skylab Coders Academy](http://www.skylabcoders.com/es).  
+
+
+## Changelog & progress  
 
 
 |   Fecha    | Día  |   Changelog     |
