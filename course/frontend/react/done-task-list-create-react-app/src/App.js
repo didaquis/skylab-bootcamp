@@ -2,7 +2,7 @@ import React from 'react';
 
 import './App.css';
 
-import Task from './helpers/Helpers';
+import Task from './model/Task';
 
 import BlockDoneTasks from './components/BlockDoneTasks';
 import BlockTasks from './components/BlockTasks';
