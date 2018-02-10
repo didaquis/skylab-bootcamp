@@ -3,7 +3,10 @@
 🚀 Full-Stack Web-Development Bootcamp 
 ======================================
 
-## Changelog && progress  
+Este repositorio contiene los ejercicios realizados durante el bootcamp en [Skylab Coders Academy](http://www.skylabcoders.com/es).  
+
+
+## Changelog & progress  
 
 
 |   Fecha    | Día  |   Changelog     |
@@ -13,9 +16,9 @@
 | 2018-01-17 | 3/55 | JavaScript: objetos, prototype y polyfill |
 | 2018-01-18 | 4/55 | JavaScript: objetos, prototype y polyfill. Challenges "secret.js" y "hangman.js" |
 | 2018-01-19 | 5/55 | Javascript: introducción al unit testing. Uso de Jasmine |
-| 2018-01-22 | 6/55 | HTML 5: elementos semánticos. JavaScripts: High order functions y callbacks |
+| 2018-01-22 | 6/55 | HTML 5: elementos semánticos. JavaScript: High order functions y callbacks |
 | 2018-01-23 | 7/55 | CSS: selectores avanzados. Corrección ejercicios anteriores (JS, HTML, etc) |
-| 2018-01-24 | 8/55 | CSS: Posicionamiento de los elementos. FlexBox & CSS Grid. Documentación con JSDoc|
+| 2018-01-24 | 8/55 | CSS: Posicionamiento de los elementos. FlexBox & CSS Grid. Documentación con JSDoc |
 | 2018-01-25 | 9/55 | JavaScript: method chaining. Uso de Sass. Introducción a jQuery |
 | 2018-01-26 | 10/55 | Javascript: event bubbling. Profundizando en jQuery. jQuery ajax. Node.js |
 | 2018-01-29 | 11/55 | Aplicamos jQuery y Sass a un challenge anterior. JavaScript: "call stack" |
@@ -26,8 +29,8 @@
 | 2018-02-05 | 16/55 | JavaScript: callback hell & promises. Introducción a React y Babel |
 | 2018-02-06 | 17/55 | React + Babel |
 | 2018-02-07 | 18/55 | React + Babel |
-| 2018-02-08 | 19/55 |                 |
-| 2018-02-09 | 20/55 |                 |
+| 2018-02-08 | 19/55 | Create-React-App. Spotify API. Ciclo de vida componentes de React. React-Router |
+| 2018-02-09 | 20/55 | Create-React-App |
 | 2018-02-12 | 21/55 |                 |
 | 2018-02-13 | 22/55 |                 |
 | 2018-02-14 | 23/55 |                 |

@@ -1,0 +1,18 @@
+{
+  "title": "Beers client App with React Router",
+  "description": "Web client application for searching beers by means of AJAX through JSON API, implemented with React Router.",
+  "tags": [
+    "bs",
+    "bootstrap",
+    "css",
+    "beers",
+    "client",
+    "app",
+    "fetch",
+    "ajax",
+    "api",
+    "react",
+    "router"
+  ],
+  "created": "2018-02-08T16:45:23.148Z"
+}
