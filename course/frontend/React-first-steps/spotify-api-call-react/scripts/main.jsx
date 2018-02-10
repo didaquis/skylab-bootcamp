@@ -4,6 +4,8 @@
  * 		App
  * 			BlockListCardWithPhoto
  * 			BlockListReducedCard
+ * 			
+ * 			ModalForListenSong ????
  * 
  */
 
@@ -47,7 +49,7 @@ class App extends React.Component {
 	}
 
 	focusOnInputField = (input) => {
-  		input.focus();
+		input.focus();
 	}
 
 	_handlerOnChange = (e) => {
@@ -129,7 +131,7 @@ class App extends React.Component {
 					<div className="row d-flex justify-content-center mt-4 mb-4">
 						<form className="form-inline" action method="GET" onSubmit={this._handlerOnSubmit} >
 							<label className="sr-only" htmlFor="input_search">Search Artist</label>
-							<input type="text" className="form-control mb-4 mr-sm-4" id="input_search" name="input_search" placeholder="Search name of artist..." autofocus required 
+							<input type="text" className="form-control mb-4 mr-sm-4" id="input_search" name="input_search" placeholder="Search name of artist..." autoFocus required 
 								onChange={this._handlerOnChange} 
 								ref={this.focusOnInputField} 
 								value={this.state.input} 
@@ -145,7 +147,6 @@ class App extends React.Component {
 					typeOfElement={this.state.typeOfElement} 
 				/>
 				<BlockListReducedCard 
-					onSelectItem={this._handlerOfSelectedItem} 
 					resultsOfSearch={this.state.tracksResults} 
 					textForButton={this.state.textForButtonInCards} 
 					typeOfElement={this.state.typeOfElement} 
@@ -202,20 +203,19 @@ class BlockListCardWithPhoto extends React.Component {
 
 
 class BlockListReducedCard extends React.Component {
-	constructor(){
-		super();
+	constructor(props){
+		super(props);
+
+		this.state = {
+			trackToReproduce: '#'
+		}
 	}
 
 	_handlerOnClick = (e) => {
 		e.preventDefault();
-		/* Gracias al 'getAttribute' recupero el valor de un atributo del elemento seleccionado */
-		let identifierOfItem = e.target.getAttribute('identifier');
-		let typeOfItem = e.target.getAttribute('typeOfElement');
+
 		let previewURL = e.target.getAttribute('data-preview_url');
-
-
-		/* Ahora debo lanzar el modal con los datos aquí recopilados */
-		//this.props.onSelectItem(identifierOfItem, typeOfItem);
+		this.setState( { trackToReproduce: previewURL } )
 	}
 
 	render(){
@@ -225,19 +225,22 @@ class BlockListReducedCard extends React.Component {
 			return (
 				<div className="row d-flex justify-content-center mt-4 mb-4">
 					<div id="listOfResults">
+						<ModalForListenSong contentForModal={this.state.trackToReproduce} />
 						{this.props.resultsOfSearch.map((item) => {
 							return (
 								<div className='card mb-4' identifier={item.id}>
 									<div className='card-body'>
 										<h5 className='card-title'>{item.artists[0]['name']} - {item.name}</h5>
 										<p className='card-text'>Track number: {item.track_number}</p>
-										<a href='#' 
+										<button 
+											data-toggle="modal"
+											data-target="#songModal"
 											data-preview_url={item.preview_url} 
 											identifier={item.id} 
 											onClick={this._handlerOnClick} 
 											typeOfElement={this.props.typeOfElement} 
 											className='btn btn-success song-card'>{this.props.textForButton}
-										</a>
+										</button>
 									</div>
 								</div>
 							)
@@ -247,6 +250,35 @@ class BlockListReducedCard extends React.Component {
 			)
 		}
 	}
+}
+
+
+function ModalForListenSong(props) {
+
+	console.log(`ModalForListenSong => El valor de props.contentForModal es: ${props.contentForModal} `)
+
+	return (
+		<div className="modal fade" id="songModal" tabindex="-1" role="dialog" aria-labelledby="songModalLabel" aria-hidden="true">
+			<div className="modal-dialog" role="document">
+				<div className="modal-content">
+					<div className="modal-header">
+						<h5 className="modal-title" id="songModalLabel">Listening song...</h5>
+						<button type="button" className="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div className="modal-body" id="songModalBody">
+						<audio controls id="audioplayer" autoPlay>
+							<source src={props.contentForModal} type="audio/ogg" />
+						</audio>
+					</div>
+					<div className="modal-footer">
+						<button type="button" className="btn btn-primary" data-dismiss="modal" aria-label="Close">OK</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 }
 
 
