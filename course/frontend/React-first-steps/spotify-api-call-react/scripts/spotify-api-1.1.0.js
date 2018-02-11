@@ -4,6 +4,14 @@
  * @version 1.1.0
  */
 
+/**
+ * ENLACES PARA OBTENER EL TOKEN DE AUTENTIFICACIÓN CONTRA LA API DE SPOTIFY (caduca en 60 minutos):
+ *
+ * https://developer.spotify.com/web-api/
+ * https://developer.spotify.com/web-api/console/get-search-item/ 
+ * 
+ */
+
 /* Cuidado: IE11 no soporta "fetch", pero puedes usar este polyfill: https://github.com/github/fetch */
 
 let spotifyApi;
@@ -21,7 +29,7 @@ let spotifyApi;
 	function call(url) {
 		const baseUrl = "https://api.spotify.com/v1/";
 
-		const token = "BQCLavt9gluNHgf1OdmdacMNtxkMKCZUiM_Wu-Y0FrakjjTVZ18h0M65pZuyzn65SLeVnG__k57os48O9KBrKqTHl1Zvsm-6BOftAX1hyJLw5BWul19KRD1gvv8js5GTnZID-K4MqtQDE80";
+		const token = "BQDnzX2g9eMMA-d_uA9Ihg4xlGUp9Rix8AOomSNLMaRWJuF_a-RStyVANfS8Sh_e5AEHDW_DLHQIOnBMrV_15wJ6RpPU26WesBLHXKJ-nEinMWwjrgs8hNO6n_E5mlgc2ZkuV-vMJd1tnU0";
 
 		const headers = { Authorization: "Bearer " + token };
 
