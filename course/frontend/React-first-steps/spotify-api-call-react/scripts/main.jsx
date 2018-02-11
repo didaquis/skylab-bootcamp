@@ -253,6 +253,11 @@ class BlockListReducedCard extends React.Component {
 
 
 function ModalForListenSong(props) {
+	$('#songModal').on('hidden.bs.modal', function () {
+        //cuando el modal es ocultado, paro el reproductor
+        $('#audioplayer').get(0).pause();
+		$('#audioplayer').get(0).currentTime = 0;
+    });
 	return (
 		<div className="modal fade" id="songModal" tabindex="-1" role="dialog" aria-labelledby="songModalLabel" aria-hidden="true">
 			<div className="modal-dialog" role="document">
