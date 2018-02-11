@@ -4,8 +4,7 @@
  * 		App
  * 			BlockListCardWithPhoto
  * 			BlockListReducedCard
- * 			
- * 			ModalForListenSong ????
+ * 				ModalForListenSong
  * 
  */
 
@@ -254,9 +253,6 @@ class BlockListReducedCard extends React.Component {
 
 
 function ModalForListenSong(props) {
-
-	console.log(`ModalForListenSong => El valor de props.contentForModal es: ${props.contentForModal} `)
-
 	return (
 		<div className="modal fade" id="songModal" tabindex="-1" role="dialog" aria-labelledby="songModalLabel" aria-hidden="true">
 			<div className="modal-dialog" role="document">
@@ -268,8 +264,7 @@ function ModalForListenSong(props) {
 						</button>
 					</div>
 					<div className="modal-body" id="songModalBody">
-						<audio controls id="audioplayer" autoPlay>
-							<source src={props.contentForModal} type="audio/ogg" />
+						<audio src={props.contentForModal} controls id="audioplayer" autoPlay>
 						</audio>
 					</div>
 					<div className="modal-footer">
