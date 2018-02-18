@@ -1,5 +1,7 @@
 'use strict';
 
+/* Dos ejemplos distintos de 'react-router-dom'. Uno de ellos usando "BrowserRouter" (está comentado) y otro usando "HashRouter"  */
+
 // NICE! Object destructuring...
 const { Component} = React
 // const { BrowserRouter, Route, NavLink } = ReactRouterDOM
@@ -15,7 +17,6 @@ class App extends Component {
         //     <div className="container">
         //         <NavBar />
         //         <Route exact path="/" component={Jumbotron} />
-        //         <Route exact path="/" component={HomePage} />
         //         <Route path="/about" component={AboutPage} />
         //         <Route path="/contact" component={ContactPage} />
         //     </div>
@@ -24,7 +25,6 @@ class App extends Component {
             <div className="container">
                 <NavBar />
                 <Route exact path="/" component={Jumbotron} />
-                <Route exact path="/" component={HomePage} />
                 <Route path="/about" component={AboutPage} />
                 <Route path="/contact" component={ContactPage} />
             </div>
@@ -67,16 +67,6 @@ function Jumbotron(props) {
         <h1>Navbar example</h1>
         <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work.
             It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>
-            <a className="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-        </p>
-    </div>
-}
-
-function HomePage(props) {
-    return <div>
-        <h1>Home Page</h1>
-        <p>This is the home page</p>
     </div>
 }
 
