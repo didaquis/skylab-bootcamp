@@ -36,7 +36,7 @@ Este repositorio contiene los ejercicios realizados durante el bootcamp en [Skyl
 | 2018-02-14 | 23/55 | One Week Hackathon: creación app Tiki Ticket |
 | 2018-02-15 | 24/55 | One Week Hackathon: creación app Tiki Ticket |
 | 2018-02-16 | 25/55 | One Week Hackathon: creación app Tiki Ticket |
-| 2018-02-19 | 26/55 |                 |
+| 2018-02-19 | 26/55 | Node.js |
 | 2018-02-20 | 27/55 |                 |
 | 2018-02-21 | 28/55 |                 |
 | 2018-02-22 | 29/55 |                 |
