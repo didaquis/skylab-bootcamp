@@ -1,5 +1,10 @@
 /*
 	## CLIENTE HTTP (Ejercicio 7 de 13) https://github.com/workshopper/learnyounode
+
+Escribe un programa que reciba como argumento una URL y realice una
+petición HTTP GET a la misma. Luego, deberá imprimir por consola el
+contenido de cada evento "data" de la petición, uno por línea.
+
 */
 
 /* Importamos un módulo */
