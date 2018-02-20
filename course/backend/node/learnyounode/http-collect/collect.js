@@ -27,4 +27,4 @@ http.get(url, (res) => {
 	})
 });
 
-/* Para ejecutarlo, pon esto en el terminal: "node clientehttp.js http://nodejs.org/api/index.html"  */
+/* Para ejecutarlo, pon esto en el terminal: "node clientehttp.js http://www.ibmbigdatahub.com/tag/1008"  */
