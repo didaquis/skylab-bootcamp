@@ -2,9 +2,10 @@
   "name": "learnyounode",
   "version": "1.0.0",
   "description": "",
-  "main": "babysteps.js",
+  "main": "helloworld.js",
   "dependencies": {
-    "bl": "^1.2.1"
+    "bl": "^1.2.1",
+    "concat-stream": "^1.6.0"
   },
   "devDependencies": {},
   "scripts": {

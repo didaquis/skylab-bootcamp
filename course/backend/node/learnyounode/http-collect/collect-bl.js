@@ -22,4 +22,4 @@ http.get(url, (res) => {
 	res.on("error", console.log)
 });
 
-/* Para ejecutarlo, pon esto en el terminal: "node clientehttp.js http://www.ibmbigdatahub.com/tag/1008"  */
+/* Para ejecutarlo, pon esto en el terminal: "node collect-bl.js http://www.ibmbigdatahub.com/tag/1008"  */
