@@ -34,7 +34,7 @@ const server = net.createServer(function(socket) { //'connection' listener
 });
 
 /* Llamamos al método 'listen' del objecto 'server' q es una instancia de 'net.createServer' */
-server.listen(Number(port), function() { //'listening' listener
+server.listen(port, function() { //'listening' listener
   	console.log(`server running on port: ${port}`);
 });
 
