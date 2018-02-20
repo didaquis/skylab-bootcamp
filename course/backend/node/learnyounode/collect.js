@@ -12,19 +12,19 @@ http.get(url, (res) => {
 	let body = '';
 	let chars = 0;
 
-  	res.setEncoding("utf8");
+	res.setEncoding("utf8");
 
-  	res.on("error", console.error)
+	res.on("error", console.error)
 
-  	res.on("data", (data) => {
-		body += data
-		chars += data.length
-  	})
-  
-  	res.on("end", () => {
-  		console.log(chars)
+	res.on("data", (chunk) => {
+	body += chunk
+	chars += chunk.length
+	})
+
+	res.on("end", () => {
+		console.log(chars)
 		console.log(body)
-  	})
+	})
 });
 
 /* Para ejecutarlo, pon esto en el terminal: "node clientehttp.js http://nodejs.org/api/index.html"  */
