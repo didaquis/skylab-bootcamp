@@ -1,5 +1,8 @@
 /*
 
+  Ejercicio 6: https://github.com/workshopper/learnyounode
+ 
+
   Este problema es similar al anterior e introduce la idea de módulos.
   Deberás crear dos archivos para resolver el ejercicio.
 
@@ -43,4 +46,16 @@
 const filteredLs = require('./filtered-ls')
 //import filteredLs from './filtered-ls'
 
-filteredLs('..', 'js', files => files.forEach(file => console.log(file)))
+const path = process.argv[2]
+const ext = process.argv[3]
+
+filteredLs(path, ext, (err, files) => {
+    if (err) throw err
+
+    files.forEach(file => console.log(file))
+})
+
+/*
+
+Para probarlo: node . ./ js
+ */
