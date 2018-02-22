@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 
+const _ = require('lodash');
 
 const staffData = require('./staff.json');
 /**
@@ -26,6 +27,8 @@ app.get('/api/staff', (req, res) => {
 		res.json(staffData)
 	}
 });
+
+app.get('/api/staff/shuffle', (req, res) => res.json(_.shuffle(staff)))
 
 
 require('dotenv').config(); /* Cargo las variables de entorno de mi fichero '.env' */
