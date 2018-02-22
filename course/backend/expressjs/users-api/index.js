@@ -21,7 +21,7 @@ const jsonBodyParser = bodyParser.json();
 app.use(jsonBodyParser); /* Gracias a esta instrucción, todas las llamadas a 'app' usarán a partir de ahora 'jsonBodyParser'. */
 
 app.post('/api/users', (req, res) => {
-
+	// Por POST creamos nuevos usuarios
 	const usernameProvided = req.body.username;
 	const passwordProvided = req.body.password;
 
@@ -37,19 +37,13 @@ app.post('/api/users', (req, res) => {
 });
 
 app.get('/api/users', (req, res) => {
+	// Por GET mostramos todos los usuarios
 	let result = usersData.map( ({username}) => {
+		// Hacemos este destructuring nivel ninja para no mostrar los passwords en los resultados
 		return {username};
 	});
-	//console.log(result)
 	res.json( success('Users listing succeeded.', result) );
 });
-
-/*app.get('/api/users', (req, res) => {
-	res.json( success('Users listing succeeded.', usersData.map( ({username}) => {
-			return { username }
-		}) ) 
-	)
-})*/
 
 
 function failed(message, error) {
