@@ -15,7 +15,7 @@ client.connect(port, ip, () => {
 client.on('data', data => console.log( data.toString() ))
 
 client.on('close', () => {
-	console.log('Connection closed');
+	console.log('Connection closed\n');
 });
 
 /* Fíjate que debemos especificar puerto, IP y mensaje */

@@ -17,15 +17,16 @@ function now () {
 const net = require('net');
 
 const server = net.createServer( (socket) => { //'connection' listener
-	console.log('server connected');
+	console.log('Socket openned\n');
 
 	socket.on( 'data', data => {
-		console.log(`${now()} => ${data.toString()}`);
+		// Si nos llega una petición:
+		console.log(`${socket.remoteAddress}:${socket.remotePort} - ${now()} => ${data.toString()}`);
 
-		socket.write('Server receive the message');
+		socket.write('Server received the message\n'); /* Respondemos al cliente en caso de recibir datos */
 	});
 
-	socket.on('close', () =>console.log('closing socket'))
+	socket.on('close', () =>console.log('Closing socket\n'))
 });
 
 
@@ -33,13 +34,13 @@ const port = process.argv[2] || 4048;
 
 
 /* Llamamos al método 'listen' del objecto 'server' q es una instancia de 'net.createServer' */
-server.listen(port, () => console.log(`server running on port: ${port}`));
+server.listen(port, () => console.log(`Server running on port: ${port}\n`));
 
 /*  
 Para probar este ejemplo:
 
 En el terminal ejecuta: node server.js 4048
-En otro terminal ejecuta: node client.js 4048 120.0.0.1 'texto que quiero enviar'
+En otro terminal ejecuta: node client.js 4048 127.0.0.1 'texto que quiero enviar'
 Felicidades, acabas de crear un chat!
 */
 
