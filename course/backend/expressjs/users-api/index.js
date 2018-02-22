@@ -26,7 +26,15 @@ app.post('/api/users', (req, res) => {
 	const passwordProvided = req.body.password;
 
 	if(usernameProvided && passwordProvided){
-		// creo un nuevo usuario y lo guardo:
+		// Si me llegan valores por POST...
+		
+		// Chequeo si ya existe un usuario con el mismo username
+		const usernameAlreadyExists = usersData.some( user => user.username === usernameProvided);
+		if (usernameAlreadyExists) {
+			return res.json( failed('User registration failed.', 'Username already exists.') ); // El return provoca que de deje de ejecutar el resto del código
+		}
+
+		// Dado que ha pasado las validaciones, creo un nuevo usuario y lo guardo:
 		let userRegistration = new User(usernameProvided, passwordProvided);
 		usersData.push(userRegistration);
 
@@ -43,6 +51,18 @@ app.get('/api/users', (req, res) => {
 		return {username};
 	});
 	res.json( success('Users listing succeeded.', result) );
+});
+
+
+app.delete('/api/users', (req, res) => {
+	// Usamos DELETE para borrar usuarios
+	res.json('delete');
+});
+
+
+app.put('/api/users', (req, res) => {
+	// Usamos UPDATE para actualizar el nombre de los usuarios
+	res.json('update');
 });
 
 
