@@ -66,19 +66,26 @@ app.put('/api/users', (req, res) => {
 	// Usamos UPDATE para actualizar el password de los usuarios
 	const usernameProvided = req.body.username;
 	const passwordProvided = req.body.password;
+	const newpasswordProvided = req.body.newpassword;
 
-	const userPasswordChanged = usersData.some( (user) => {
-		// busco el usuario y modifico su password
-		if(user.username === usernameProvided){
-			user.password = passwordProvided;
-			return true;
+	if(usernameProvided && passwordProvided && newpasswordProvided){
+		const userPasswordChanged = usersData.some( (user) => {
+			// busco el usuario y modifico su password
+			if( (user.username === usernameProvided) && (user.password === passwordProvided) ){
+				user.password = newpasswordProvided;
+				return true;
+			}
+		});
+
+		if(userPasswordChanged){
+			res.json( success('Password changed.') )
+		}else{
+			res.json( failed('Password not changed.') );
 		}
-	});
-
-	if(userPasswordChanged){
-		res.json( success('Password changed.') )
 	}else{
-		res.json( failed('Password not changed.') );
+		// no me llegan los datos necesarios
+		// 
+		// TO-DO
 	}
 });
 
