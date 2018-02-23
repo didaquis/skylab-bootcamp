@@ -17,6 +17,8 @@ class User{
 	}
 }
 
+/* Si vamos a recibir info por 'json' usaremos 'bodyParser.json()' pero si la info llega por formulario trabajaríamos con 'bodyParser.urlencoded({extended:false})' */
+// En este caso, trabajamos con JSON.
 const jsonBodyParser = bodyParser.json();
 app.use(jsonBodyParser); /* Gracias a esta instrucción, todas las llamadas a 'app' usarán a partir de ahora 'jsonBodyParser'. */
 
@@ -61,8 +63,23 @@ app.delete('/api/users', (req, res) => {
 
 
 app.put('/api/users', (req, res) => {
-	// Usamos UPDATE para actualizar el nombre de los usuarios
-	res.json('update');
+	// Usamos UPDATE para actualizar el password de los usuarios
+	const usernameProvided = req.body.username;
+	const passwordProvided = req.body.password;
+
+	const userPasswordChanged = usersData.some( (user) => {
+		// busco el usuario y modifico su password
+		if(user.username === usernameProvided){
+			user.password = passwordProvided;
+			return true;
+		}
+	});
+
+	if(userPasswordChanged){
+		res.json( success('Password changed.') )
+	}else{
+		res.json( failed('Password not changed.') );
+	}
 });
 
 
