@@ -1,0 +1,171 @@
+{
+	"info": {
+		"name": "node / express - api user",
+		"_postman_id": "14a297da-e080-ec63-e396-7da27feea882",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users api delete (delete users)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "username",
+						"value": "maria"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"password\": \"849473sgy\"\n}"
+				},
+				"url": {
+					"raw": "localhost:4501/api/users/pepe",
+					"host": [
+						"localhost"
+					],
+					"port": "4501",
+					"path": [
+						"api",
+						"users",
+						"pepe"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "users api put (modify users)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "username",
+						"value": "maria"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"password\": \"dds\",\n\t\"newpassword\": \"849473sgy\"\n}"
+				},
+				"url": {
+					"raw": "localhost:4501/api/users/pepe",
+					"host": [
+						"localhost"
+					],
+					"port": "4501",
+					"path": [
+						"api",
+						"users",
+						"pepe"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "users api get (obtain users)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "didac",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "my-secret-password",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:4501/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "4501",
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "users api post (insert users)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"pepe\",\n\t\"password\": \"dds\"\n}"
+				},
+				"url": {
+					"raw": "localhost:4501/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "4501",
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "users api post (obtain one user)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:4501/api/users/pepe",
+					"host": [
+						"localhost"
+					],
+					"port": "4501",
+					"path": [
+						"api",
+						"users",
+						"pepe"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
