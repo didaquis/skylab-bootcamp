@@ -38,9 +38,9 @@ Este repositorio contiene los ejercicios realizados durante el bootcamp en [Skyl
 | 2018-02-16 | 25/55 | One Week Hackathon: creación app Tiki Ticket |
 | 2018-02-19 | 26/55 | Node.js. Devtool (debugging tool) |
 | 2018-02-20 | 27/55 | Node.js |
-| 2018-02-21 | 28/55 |                 |
-| 2018-02-22 | 29/55 |                 |
-| 2018-02-23 | 30/55 |                 |
+| 2018-02-21 | 28/55 | Node.js |
+| 2018-02-22 | 29/55 | Node.js, Express.js, Nodemon, lodash, variables de entorno, CRUD |
+| 2018-02-23 | 30/55 | Express.js, CRUD |
 | 2018-02-26 | 31/55 |                 |
 | 2018-02-27 | 32/55 |                 |
 | 2018-02-28 | 33/55 |                 |

@@ -1,12 +1,10 @@
 {
-  "name": "learnyounode",
+  "name": "clean-dirty-water",
   "version": "1.0.0",
   "description": "",
-  "main": "helloworld.js",
+  "main": "index.js",
   "dependencies": {
-    "bl": "^1.2.1",
-    "concat-stream": "^1.6.0",
-    "through2-map": "^3.0.0"
+    "byline": "^5.0.0"
   },
   "devDependencies": {},
   "scripts": {

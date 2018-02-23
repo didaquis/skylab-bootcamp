@@ -1,0 +1,15 @@
+{
+  "title": "cp (unix-like command) in Node",
+  "description": "Copies files from a path to another (emulates the unix-like command, cp).",
+  "tags": [
+    "node",
+    "js",
+    "copy",
+    "file",
+    "cp",
+    "unix-like",
+    "command",
+    "cli"
+  ],
+  "created": "2018-02-21T11:52:18.725Z"
+}
