@@ -1,0 +1,15 @@
+{
+  "title": "Users API",
+  "description": "CRUD API for managing users, implemented in Node / Express.",
+  "tags": [
+    "node",
+    "js",
+    "express",
+    "users",
+    "api",
+    "crud",
+    "user",
+    "challenge"
+  ],
+  "created": "2018-02-22T15:36:22.470Z"
+}
