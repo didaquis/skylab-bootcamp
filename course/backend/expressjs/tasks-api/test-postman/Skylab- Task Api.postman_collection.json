@@ -1,0 +1,188 @@
+{
+	"info": {
+		"name": "Skylab: Task Api",
+		"_postman_id": "365dc3ee-c809-48a3-9f64-d87081d08e1d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list tasks done",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:4501/api/tasks/done",
+					"host": [
+						"localhost"
+					],
+					"port": "4501",
+					"path": [
+						"api",
+						"tasks",
+						"done"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "list tasks todo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:4501/api/tasks/todo",
+					"host": [
+						"localhost"
+					],
+					"port": "4501",
+					"path": [
+						"api",
+						"tasks",
+						"todo"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "new task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\": \"foo task\"\n}"
+				},
+				"url": {
+					"raw": "localhost:4501/api/tasks/",
+					"host": [
+						"localhost"
+					],
+					"port": "4501",
+					"path": [
+						"api",
+						"tasks",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update task: mark task as completed",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:4501/api/tasks/15195579124742273",
+					"host": [
+						"localhost"
+					],
+					"port": "4501",
+					"path": [
+						"api",
+						"tasks",
+						"15195579124742273"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update text of task",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\": \"Buy an amazing computer!\"\n}"
+				},
+				"url": {
+					"raw": "localhost:4501/api/tasks/15195579123649862",
+					"host": [
+						"localhost"
+					],
+					"port": "4501",
+					"path": [
+						"api",
+						"tasks",
+						"15195579123649862"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete one task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:4501/api/tasks/1519557912254973",
+					"host": [
+						"localhost"
+					],
+					"port": "4501",
+					"path": [
+						"api",
+						"tasks",
+						"1519557912254973"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete all tasks",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:4501/api/tasks/",
+					"host": [
+						"localhost"
+					],
+					"port": "4501",
+					"path": [
+						"api",
+						"tasks",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
