@@ -1,0 +1,20 @@
+{
+  "name": "tasks-api",
+  "version": "1.0.0",
+  "description": "Example of task API",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src",
+    "debug": "devtool src --watch",
+    "watch": "nodemon src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Dídac García",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2"
+  }
+}

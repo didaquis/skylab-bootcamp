@@ -1,0 +1,15 @@
+$espacio-medio: 20px;
+
+
+#listOfTasks {
+
+	margin: $espacio-medio;
+
+	li{
+		font-size: 1.5rem;
+		a {
+			margin: $espacio-medio;
+			font-size: 1rem;
+		}	
+	}
+}

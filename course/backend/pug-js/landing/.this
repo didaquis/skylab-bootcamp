@@ -1,0 +1,14 @@
+{
+  "title": "Landing on Pug",
+  "description": "Simple web-app with server-side rendering through Pug.",
+  "tags": [
+    "node",
+    "js",
+    "pug",
+    "express",
+    "server",
+    "side",
+    "render"
+  ],
+  "created": "2018-02-26T15:13:51.423Z"
+}
