@@ -38,7 +38,7 @@ router.post('/tasks/', jsonBodyParser, (req, res) => {
 
 
 /* PUT (mark task as done) */
-router.put('/tasks/:id', jsonBodyParser, (req, res) => {
+router.put('/tasks/:id?', jsonBodyParser, (req, res) => {
 	const { params: {id} } = req;
 
 	try{
@@ -52,7 +52,7 @@ router.put('/tasks/:id', jsonBodyParser, (req, res) => {
 
 
 /* PATCH (update text of task) */
-router.patch('/tasks/:id', jsonBodyParser, (req, res) => {
+router.patch('/tasks/:id?', jsonBodyParser, (req, res) => {
 	const { params: {id} } = req;
 	const { text } = req.body;
 
