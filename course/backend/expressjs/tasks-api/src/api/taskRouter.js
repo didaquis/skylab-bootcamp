@@ -81,7 +81,7 @@ router.delete('/tasks/:id', jsonBodyParser, (req, res) => {
 
 
 /* DELETE (delete all task) */
-router.delete('/tasks/', jsonBodyParser, (req, res) => {
+router.delete('/tasks/', (req, res) => {
 	try{
 		taskLogic.removeAll();
 
