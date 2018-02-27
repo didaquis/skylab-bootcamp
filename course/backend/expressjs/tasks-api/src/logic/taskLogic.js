@@ -13,6 +13,11 @@ function validateId(id){
 }
 
 const taskLogic = {
+
+	listAll(){
+		return taskData.listAll();
+	}
+
 	listDone(){
 		let allTasks = taskData.list();
 
@@ -33,10 +38,10 @@ const taskLogic = {
 		} );
 	},
 
-	create(text){
+	create(text, doneValue){
 		validateText(text);
 
-		return taskData.create(text);
+		return taskData.create(text, doneValue);
 	}, 
 
 	markDone(id){
@@ -63,16 +68,19 @@ const taskLogic = {
 	},
 
 	removeAll(){
-		let allTasks = taskData.list();
-
-		const idOfAllTasks = [];
-		for(let i = 0; i < allTasks.length; i++){
-			idOfAllTasks.push(allTasks[i].id)
-		}
-
-		for(let i = 0; i < idOfAllTasks.length; i++){
-			taskData.delete(idOfAllTasks[i]);
-		}
+		/**
+		 * //Solución 1
+		 *
+		 * let allTasks = taskData.list();
+		 * const idOfAllTasks = [];
+		 * for(let i = 0; i < allTasks.length; i++){
+		 * 	idOfAllTasks.push(allTasks[i].id)
+		 * }
+		 * for(let i = 0; i < idOfAllTasks.length; i++){
+		 * 	taskData.delete(idOfAllTasks[i]);
+		 * }
+		 */
+		taskData.deleteAll();
 	}
 }
 

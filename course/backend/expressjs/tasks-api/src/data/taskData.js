@@ -30,7 +30,7 @@ function idGenerator(){
 
 const taskData = {
 
-	list(){
+	listAll(){
 		return tasks;
 	},
 
@@ -48,10 +48,8 @@ const taskData = {
 		throw Error('Task does not exist');
 	},
 
-	create(text){
+	create(textValue, doneValue){
 		let idValue = idGenerator();
-		let textValue = text;
-		let doneValue = false;
 
 		let newTask = {
 			"id": idValue,
@@ -77,6 +75,10 @@ const taskData = {
 		}
 
 		tasks.splice(index, 1);
+	},
+
+	deleteAll(){
+		tasks.length = 0;
 	}
 }
 
