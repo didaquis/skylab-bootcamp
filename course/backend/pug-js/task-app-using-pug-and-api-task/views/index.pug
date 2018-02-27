@@ -1,0 +1,37 @@
+//- template.pug
+include base.pug
+
+block content
+header
+	h1 To Do List
+main
+	section
+		form(action='/tasks', method='post')
+			label(for='task') Input a task:
+			input#task(type='text', name='task', placeholder='title', autofocus='', required='')
+			input(type='submit', name='submit', value='Send a new task')
+		-const tasksListToDo = tasksList.some( task => task.done === false );
+
+		if tasksListToDo
+			h3 Task list: to do
+			section
+				ul#listOfTasks
+					each task in tasksList
+						if !task.done
+							li
+								form(action='/tasks/markasdone/' + task.id, method='get')
+									span #{task.text}
+									button Mark As Done
+
+
+		-const tasksListDone = tasksList.some( task => task.done === true );
+		if tasksListDone
+			h3 Task list: done
+			section
+				ul#listOfTasks
+					each task in tasksList
+						if task.done
+							li
+								form(action='/tasks/delete/' + task.id, method='get')
+									span #{task.text}
+									button Delete Task

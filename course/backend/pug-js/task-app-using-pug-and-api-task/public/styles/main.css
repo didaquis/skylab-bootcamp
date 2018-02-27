@@ -1,0 +1,26 @@
+* {
+	/* Reset. Best Practice */
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	/* Specify base font. Best practice. Define the other rules with the "em" unit of mesure */
+	font-size: 18px;
+	font-family: Helvetica, Arial, sans-serif;
+	padding: 20px;
+}
+
+h2, h3{
+	margin-top: 32px;
+}
+
+#listOfTasks {
+	margin: 20px;
+}
+
+button, input {
+	margin: 20px;
+	font-size: 1rem;
+}
