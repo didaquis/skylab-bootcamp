@@ -16,7 +16,7 @@ const taskLogic = {
 
 	listAll(){
 		return taskData.listAll();
-	}
+	},
 
 	listDone(){
 		let allTasks = taskData.list();
