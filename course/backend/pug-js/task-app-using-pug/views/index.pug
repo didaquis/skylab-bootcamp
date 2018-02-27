@@ -1,4 +1,5 @@
 //- template.pug
+include base.pug
 
 block content
 header
@@ -12,9 +13,9 @@ main
 		-const tasksListToDo = tasksList.some( task => task.done === false );
 
 		if tasksListToDo
-			h3 Task list
+			h3 Task list: to do
 			section
-				ul
+				ul#listOfTasks
 					each task in tasksList
 						if !task.done
 							li
@@ -25,9 +26,9 @@ main
 
 		-const tasksListDone = tasksList.some( task => task.done === true );
 		if tasksListDone
-			h3 Task list
+			h3 Task list: done
 			section
-				ul
+				ul#listOfTasks
 					each task in tasksList
 						if task.done
 							li
