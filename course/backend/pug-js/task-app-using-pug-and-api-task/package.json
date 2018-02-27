@@ -1,5 +1,5 @@
 {
-  "name": "task-app-with-basic-login",
+  "name": "task-app-using-pug-and-api-task",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
