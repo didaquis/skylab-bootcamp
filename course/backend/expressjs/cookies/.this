@@ -1,0 +1,16 @@
+{
+  "title": "HTTP Cookies",
+  "description": "An HTTP cookie (web cookie, browser cookie) is a small piece of data that a server sends to the user's web browser. The browser may store it and send it back with the next request to the same server. Typically, it's used to tell if two requests came from the same browser — keeping a user logged-in, for example. It remembers stateful information for the stateless HTTP protocol.",
+  "tags": [
+    "node",
+    "js",
+    "express",
+    "cookie",
+    "session",
+    "http",
+    "state",
+    "stateful",
+    "stateless"
+  ],
+  "created": "2018-02-28T16:05:15.695Z"
+}
