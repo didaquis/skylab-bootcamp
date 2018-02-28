@@ -1,0 +1,150 @@
+{
+	"info": {
+		"name": "Task API 201801",
+		"_postman_id": "af92fbc8-4397-614c-7369-14c418eb014b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CREATE task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"title\": \"buy milk\",\n\t\"description\": \"get avena and rice ones only\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"task"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "LIST tasks <STATUS>?",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"title\": \"buy milk\",\n\t\"description\": \"get avena and rice ones only\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/tasks/TODO",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks",
+						"TODO"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "MARK task <STATUS>",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/task/d73b4557-dd2c-40cc-bbd5-62cdec0513a9/DONE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"task",
+						"d73b4557-dd2c-40cc-bbd5-62cdec0513a9",
+						"DONE"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/task/3f957e41-8e95-479e-8adb-b0700655219c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"task",
+						"3f957e41-8e95-479e-8adb-b0700655219c"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "RETRIEVE task",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/task/9c997745-8022-4c51-8ae1-c1350b26b770",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"task",
+						"9c997745-8022-4c51-8ae1-c1350b26b770"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

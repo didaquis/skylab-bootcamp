@@ -1,0 +1,19 @@
+{
+  "name": "task-api-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "demo": "devtool demos",
+    "test": "mocha tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {
+    "task-data": "file:../task-data"
+  }
+}

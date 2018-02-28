@@ -1,0 +1,17 @@
+{
+  "name": "task-data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "demo": "devtool demos --watch",
+    "test": "mocha tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "uuid": "^3.2.1"
+  }
+}

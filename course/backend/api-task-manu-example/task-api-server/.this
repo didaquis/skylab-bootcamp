@@ -1,0 +1,15 @@
+{
+  "title": "REST Task API server",
+  "description": "Handles REST http requests to manage tasks.",
+  "tags": [
+    "node",
+    "js",
+    "module",
+    "task",
+    "api",
+    "rest",
+    "server",
+    "layer"
+  ],
+  "created": "2018-02-28T09:22:08.348Z"
+}
