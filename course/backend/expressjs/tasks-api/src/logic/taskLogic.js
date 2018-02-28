@@ -19,7 +19,7 @@ const taskLogic = {
 	},
 
 	listDone(){
-		let allTasks = taskData.list();
+		let allTasks = taskData.listAll();
 
 		return allTasks.filter( (task) =>{
 			if(task.done){
@@ -29,7 +29,7 @@ const taskLogic = {
 	},
 
 	listTodo(){
-		let allTasks = taskData.list();
+		let allTasks = taskData.listAll();
 
 		return allTasks.filter( (task) =>{
 			if(!task.done){
@@ -71,7 +71,7 @@ const taskLogic = {
 		/**
 		 * //Solución 1
 		 *
-		 * let allTasks = taskData.list();
+		 * let allTasks = taskData.listAll();
 		 * const idOfAllTasks = [];
 		 * for(let i = 0; i < allTasks.length; i++){
 		 * 	idOfAllTasks.push(allTasks[i].id)
