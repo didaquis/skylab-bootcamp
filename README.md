@@ -42,8 +42,8 @@ Este repositorio contiene los ejercicios realizados durante el bootcamp en [Skyl
 | 2018-02-22 | 29/55 | Node.js, Express.js, Nodemon, lodash, variables de entorno, CRUD |
 | 2018-02-23 | 30/55 | Express.js, CRUD. Introducción a arquitectura de software |
 | 2018-02-26 | 31/55 | Express.js, TDD & Code Coverage (Istanbul). Pug.js (template engine) |
-| 2018-02-27 | 32/55 |                 |
-| 2018-02-28 | 33/55 |                 |
+| 2018-02-27 | 32/55 | Pug.js, JavaScript: Async / Await. Axios |
+| 2018-02-28 | 33/55 | Reviewing pull request. Cookies |
 | 2018-03-01 | 34/55 |                 |
 | 2018-03-02 | 35/55 |                 |
 | 2018-03-05 | 36/55 |                 |

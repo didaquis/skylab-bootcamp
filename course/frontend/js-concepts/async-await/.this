@@ -1,0 +1,12 @@
+{
+  "title": "Async & Await",
+  "description": "When an async function is called, it returns a Promise. When the async function returns a value, the Promise will be resolved with the returned value.  When the async function throws an exception or some value, the Promise will be rejected with the thrown value.\nThe await expression causes async function execution to pause until a Promise is fulfilled, that is resolved or rejected, and to resume execution of the async function after fulfillment. When resumed, the value of the await expression is that of the fulfilled Promise.",
+  "tags": [
+    "es6",
+    "js",
+    "async",
+    "await",
+    "promise"
+  ],
+  "created": "2018-02-27T08:57:58.421Z"
+}

@@ -11,6 +11,12 @@ const router = Router();
 const jsonBodyParser = bodyParser.json(); /* Middleware for methods: PUT, POST, DETELE and PATCH */
 
 
+/* GET (list all tasks) */
+router.get('/tasks/all', (req, res) => {
+	return res.json( success( 'Tasks listed', taskLogic.listAll()) );
+});
+
+
 /* GET (list all tasks done) */
 router.get('/tasks/done', (req, res) => {
 	return res.json( success( 'Tasks listed', taskLogic.listDone()) );
@@ -28,7 +34,7 @@ router.post('/tasks/', jsonBodyParser, (req, res) => {
 	const { text } = req.body;
 
 	try{
-		taskLogic.create(text);
+		taskLogic.create(text, false);
 
 		res.json( success('New Task created') );
 	}catch (err) {

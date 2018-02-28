@@ -1,0 +1,16 @@
+{
+  "title": "Task Logic (business object) module",
+  "description": "Handles the business logic related to tasks.",
+  "tags": [
+    "node",
+    "js",
+    "module",
+    "task",
+    "logic",
+    "business",
+    "object",
+    "handler",
+    "layer"
+  ],
+  "created": "2018-02-28T09:19:59.984Z"
+}

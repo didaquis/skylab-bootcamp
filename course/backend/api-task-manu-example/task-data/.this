@@ -1,0 +1,17 @@
+{
+  "title": "Task Data (storage hanlder) module",
+  "description": "Manages tasks data in storage.",
+  "tags": [
+    "node",
+    "js",
+    "task",
+    "data",
+    "storage",
+    "handler",
+    "manager",
+    "layer",
+    "model",
+    "module"
+  ],
+  "created": "2018-02-28T09:19:01.573Z"
+}
