@@ -24,22 +24,22 @@ let taskApi
 		switch (method) {
 			case 'get':
 				return axios.get(`${baseUrl}${url}`)
-					.then( result => { return result } );
+					.then( result => { return result.data } );
 				break;
 
 			case 'post':
 				return axios.post(`${baseUrl}${url}`, { text: dataValue })
-					.then( result => { return result } );
+					.then( result => { return result.data } );
 				break;
 
 			case 'put':
 				return axios.put(`${baseUrl}${url}`)
-					.then( result => { return result } );
+					.then( result => { return result.data } );
 				break;
 
 			case 'delete':
 				return axios.delete(`${baseUrl}${url}`)
-					.then( result => { return result } );
+					.then( result => { return result.data } );
 		}
 	}
 

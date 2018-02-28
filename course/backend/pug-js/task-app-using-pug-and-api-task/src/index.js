@@ -17,7 +17,7 @@ const taskApi = require('./api/taskApi.js');
 
 app.get('/', (req, res) => {
 	taskApi.requestAllTasks()
-		.then(result => { handlerRender(result.data)})
+		.then(result => { handlerRender(result)})
 		.catch(err => console.log(err));
 
 	function handlerRender(allTasks){
