@@ -1,0 +1,13 @@
+section
+	form(action='/register', method='post')
+		label(for='name') Name:
+		input#name(type='text', name='name', placeholder='name', autofocus='', required='')
+		label(for='surname') Surname:
+		input#surname(type='text', name='surname', placeholder='surname', required='')
+		label(for='email') Email:
+		input#email(type='email', name='email', placeholder='email', required='')
+		label(for='username') Username:
+		input#username(type='text', name='username', placeholder='username', required='')
+		label(for='password') Password:
+		input#password(type='password', name='password', placeholder='password', required='')
+		input(type='submit', name='submit', value='Send form')

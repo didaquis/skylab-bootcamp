@@ -1,0 +1,10 @@
+section
+	h2 Users:
+	if userList
+		ul
+			each user in userList
+				li
+					p #{user.name}
+					p #{user.surname}
+					p #{user.email}
+					p #{user.username}
