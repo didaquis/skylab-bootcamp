@@ -2,7 +2,26 @@ body {
 	padding: 10px 20px;
 }
 
+main, header, section {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+input[type=submit] {
+	margin: 20px;
+	padding: 18px;
+	font-size: 1.1em;
+	background-color: #2ECC40;
+	border-radius: 4px;
+}
+
 input {
-	display: block;
-	margin-bottom: 12px;
+	margin: 12px;
+}
+
+li {
+	list-style-type: none;
+	margin-bottom: 32px;
+	box-shadow: 1px 1px 1px 2px #AAAAAA;
+	padding: 2px 12px 12px 12px;
 }

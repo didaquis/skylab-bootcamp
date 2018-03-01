@@ -1,10 +1,8 @@
 section
-	h2 Users:
 	if userList
-		ul
-			each user in userList
-				li
-					p #{user.name}
-					p #{user.surname}
-					p #{user.email}
-					p #{user.username}
+	h2 Users:
+	ul
+		each user in userList
+			li
+				p #{user.name} #{user.surname}
+				| #{user.email} #{user.username}

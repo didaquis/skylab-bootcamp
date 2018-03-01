@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const md5 = require('md5');
+const uuidv4 = require('uuid/v4');
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -37,7 +38,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 		const { name , surname, email, username, password } = req.body;
 
 		// Inserto en mi base de datos un nuevo usuario:
-		db.collection('users').insert({name: name, surname: surname, email: email, username: username, password: md5(password)})
+		db.collection('users').insert({ id: uuidv4(), name: name, surname: surname, email: email, username: username, password: md5(password)})
 			.then(res.redirect('/'))
 			.catch(error => console.log(error));
 	});
@@ -50,17 +51,17 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 
 	const port = process.env.PORT;
 	app.listen(port, () => console.log(`Task API running on port: ${port}`) );
+
+
+	process.on('SIGINT', () =>{
+		/* Detectamos el cierre del proceso de Node */
+		console.log('\nStopping server...');
+
+		/* Cerramos la conexión a la base de datos para evitar que se quede abierta */
+		connection.close();
+
+		/* Finalizamos las instrucciones que queremos ejecutar al detectar el cierre del proceso de Node */
+		process.exit();
+	});
 });
-
-process.on('SIGINT', () =>{
-	/* Detectamos el cierre del proceso de Node */
-	console.log('Stopping server');
-
-	/* Cerramos la conexión a la base de datos para evitar que se quede abierta */
-	connection.close();
-
-	/* Finalizamos las instrucciones que queremos ejecutar al detectar el cierre del proceso de Node */
-	process.exit();
-});
-
 
