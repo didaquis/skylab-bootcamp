@@ -58,3 +58,12 @@ fieldset {
 label span {
 	color: red;
 }
+
+.box-alert {
+	width: 80%;
+	margin: 10px auto 38px;
+	padding: 18px 36px;
+	color: black;
+	background-color: #FF665E;
+	border-radius: 6px;
+}

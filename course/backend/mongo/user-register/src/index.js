@@ -12,6 +12,17 @@ const { MongoClient } = require('mongodb');
 const app = express();
 
 
+/**
+ * Check if password have numbers, minus chars, mayús chars and at least a length of 8
+ * 
+ * @param  {String} password
+ * @return {Boolean} return true if is a valid password
+ */
+function checkValidPassword(password){
+	return (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/).test(password);
+}
+
+
 /* Conectamos con el servidor */
 MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 	if(err) {
@@ -22,8 +33,9 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 	app.set('view engine', 'pug');
 	app.use(express.static('public'));
 
-
-	let idOfDocument = ""; 
+	let idOfDocument = "";
+	let errorsInForm = false;
+	let errorFormList = [];
 
 	app.get('/', (req, res) => {
 		// Listar los documentos de una determinada colección
@@ -31,7 +43,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 			if(err) {
 				throw err;
 			}
-			res.render('index', {userList:data, idOfDocument} );
+			res.render('index', {userList:data, idOfDocument, errorsInForm, errorFormList} );
 		})
 	});
 
@@ -69,12 +81,27 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 
 	const formBodyParser = bodyParser.urlencoded({ extended: false });
 	app.post('/register', formBodyParser, (req, res) => {
-		const { name , surname, email, username, password } = req.body;
+		const { name, surname, email, username, password } = req.body;
 
-		// Inserto en mi base de datos un nuevo documento:
-		db.collection('users').insert({ id: uuidv4(), name: name, surname: surname, email: email, username: username, password: md5(password)})
-			.then(res.redirect('/'))
-			.catch(error => console.log(error));
+		// Validaciones
+		errorsInForm = false;
+		errorFormList = [];
+
+		if(!checkValidPassword(password)){
+			errorsInForm = true;
+			errorFormList.push({errorText: "Password must contain numbers, minus chars, mayus chars and min length of 8 chars."});
+		}
+
+		if(errorsInForm){
+			// hay errores en el formulario
+			return res.redirect('/');
+		}else{
+			// Inserto en mi base de datos un nuevo documento:
+			console.log('me la pelaaaa.....')
+			db.collection('users').insert({ id: uuidv4(), name: name, surname: surname, email: email, username: username, password: md5(password)})
+				.then(res.redirect('/'))
+				.catch(error => console.log(error));
+		}
 	});
 
 	app.post('/update', formBodyParser, (req, res) => {
@@ -126,7 +153,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 		res.json({ "error": "404", "message": "URL not found" });
 	});
 
-	const port = process.env.PORT;
+	const port = process.env.PORT || 8080;
 	app.listen(port, () => console.log(`Task API running on port: ${port}`) );
 
 
