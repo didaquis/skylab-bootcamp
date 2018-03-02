@@ -1,13 +1,20 @@
 section
+	h2 Register new user:
 	form(action='/register', method='post')
 		label(for='name') Name:
+			span *
 		input#name(type='text', name='name', placeholder='name', autofocus='', required='')
 		label(for='surname') Surname:
+			span *
 		input#surname(type='text', name='surname', placeholder='surname', required='')
 		label(for='email') Email:
+			span *
 		input#email(type='email', name='email', placeholder='email', required='')
 		label(for='username') Username:
+			span *
 		input#username(type='text', name='username', placeholder='username', required='')
 		label(for='password') Password:
+			span *
 		input#password(type='password', name='password', placeholder='password', required='')
-		input(type='submit', name='submit', value='Send form')
+		br
+		input.nice-button(type='submit', name='submit', value='Send form')

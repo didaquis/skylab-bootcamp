@@ -1,0 +1,28 @@
+section
+	if idOfDocument !== ""
+		fieldset
+			h3 Edit user:  #{user.name} #{user.surname}
+			form(action='/update', method='post')
+				input#id_update(type='hidden', name='identifier', value=user.id)
+
+				label(for='name_update') Name 
+					span *
+				input#name_update(type='text', name='name', placeholder=' change your name', autofocus='', required='', value=user.name)
+				label(for='surname_update') Surname 
+					span *
+				input#surname_update(type='text', name='surname', placeholder=' change your surname', required='', value=user.surname)
+				label(for='email_update') Email 
+					span *
+				input#email_update(type='email', name='email', placeholder=' change your email', required='', value=user.email)
+				br
+				label(for='username_update') Username 
+					span *
+				input#username_update(type='text', name='username', placeholder=' change your username', required='', value=user.username)
+				label(for='password_update') New Password:
+				input#password_update(type='password', name='password', placeholder=' change your password')
+				br
+				label(for='password_actual') Your password is required for accept changes:
+				input#password_actual(type='password', name='password_provided', placeholder='password', required='')
+				br
+				a.nice-button(href='/cancel') Cancel
+				input.nice-button(type='submit', name='submit', value='Send form')

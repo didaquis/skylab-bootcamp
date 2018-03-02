@@ -7,12 +7,20 @@ main, header, section {
 	margin: 0 auto;
 }
 
-input[type=submit] {
+.nice-button {
 	margin: 20px;
 	padding: 18px;
 	font-size: 1.1em;
 	background-color: #2ECC40;
 	border-radius: 4px;
+	cursor: pointer;
+	text-decoration: none;
+	color: black;
+	text-transform: uppercase;
+}
+
+.nice-button:hover {
+	box-shadow: 1px 1px 1px 1px #AAAAAA;
 }
 
 input {
@@ -21,7 +29,7 @@ input {
 
 li {
 	list-style-type: none;
-	margin-bottom: 32px;
+	margin-bottom: 24px;
 	box-shadow: 1px 1px 1px 2px #AAAAAA;
 	padding: 2px 12px 12px 12px;
 }
@@ -29,5 +37,15 @@ li {
 .button-link {
 	text-decoration: none;
 	display: inline-block;
-	margin: 16px 8px 4px 2px;
+	margin: 16px 24px 2px 0;
+	font-size: 1.5em;
+}
+
+fieldset {
+	max-width: 80%;
+	margin: 0 auto 48px;
+}
+
+label span {
+	color: red;
 }

@@ -1,10 +1,14 @@
 section
-	if userList
-	h2 Users:
-	ul
-		each user in userList
-			li
-				p #{user.name} #{user.surname}
-				| #{user.email} #{user.username}
-				br
-				a.button-link(href='/delete/'+user.id) 🗑
+	if userList.length > 0
+		h2 All users list:
+		ul
+			each user in userList
+				li
+					p #{user.name} #{user.surname}
+					| #{user.email} #{user.username}
+					br
+					a.button-link(href='/edit/'+user.id) 📝
+					a.button-link(href='/delete/'+user.id) 🗑
+
+				if idOfDocument === user.id
+					include edit-form.pug

@@ -23,23 +23,47 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 	app.use(express.static('public'));
 
 
+	let idOfDocument = ""; 
+
 	app.get('/', (req, res) => {
+		// Listar los documentos de una determinada colección
 		db.collection('users').find().toArray((err, data) => {
 			if(err) {
 				throw err;
 			}
-			res.render('index', {userList:data} );
+			res.render('index', {userList:data, idOfDocument} );
 		})
 	});
 
 
-	app.get('/delete/:id', (req, res) => {
+	app.get('/delete/:id?', (req, res) => {
 		const idOfUser = req.params.id;
 
 		// Elimino un documento
 		db.collection('users').remove({id: idOfUser})
 			.then(res.redirect('/'))
-			.catch(error => console.log(error))
+			.catch(error => {
+				console.log(error);
+				res.redirect('/');
+			})
+	});
+
+
+	app.get('/edit/:id?', (req, res) => {
+		const idOfUser = req.params.id;
+
+		if(idOfUser){
+			idOfDocument = idOfUser;
+		}
+
+		res.redirect('/');
+	});
+
+
+	app.get('/cancel', (req, res) => {
+		// El usuario quiere cancelar la operación
+		idOfDocument = "";
+		res.redirect('/');
 	});
 
 
@@ -51,6 +75,49 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 		db.collection('users').insert({ id: uuidv4(), name: name, surname: surname, email: email, username: username, password: md5(password)})
 			.then(res.redirect('/'))
 			.catch(error => console.log(error));
+	});
+
+	app.post('/update', formBodyParser, (req, res) => {
+		const identifier = req.body.identifier;
+		const newName = req.body.name;
+		const newSurname = req.body.surname;
+		const newEmail = req.body.email;
+		const newUsername = req.body.username;
+		const newPassword = req.body.password;
+		const passwordProvided = req.body.password_provided;
+
+		// Si el usuario no ha establecido el password correcto no le dejo actualizar los datos. Voy a comprobarlo:
+
+		// Recuperar un documento
+		db.collection('users').findOne({id: identifier})
+			.then(data =>{
+				if(md5(passwordProvided) !== data.password){
+					// Han introducido el password incorrecto
+					idOfDocument = "";
+					res.redirect('/');
+				}else{
+					// El password es válido, por lo que le dejo modificar los datos:
+					
+					// Compruebo si quiere actualizar el password o dejar el anterior
+					const passwordToSet = (newPassword !== "") ? newPassword: passwordProvided;
+
+					// Actualizo un documento
+					db.collection('users').update({id: identifier}, {id: identifier, name: newName, surname: newSurname, email: newEmail, username: newUsername, password: md5(passwordToSet) })
+						.then(() => {
+							idOfDocument = "";
+							res.redirect('/');
+							})
+						.catch(error => {
+							console.log(error);
+							res.redirect('/');
+						});
+
+				}
+			})
+			.catch(error => {
+				console.log(error);
+				res.redirect('/');
+			})
 	});
 
 
