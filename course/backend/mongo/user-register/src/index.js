@@ -22,6 +22,27 @@ function checkValidPassword(password){
 	return (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/).test(password);
 }
 
+/**
+ * Remove all spaces from string
+ *
+ * @example
+ * // returns "abc"
+ * cleanSpacesFromString("  a  b  c  ");
+ * 
+ * @param  {String} str
+ * @return {String} Return str without spaces
+ */
+function cleanSpacesFromString(str){
+	return str.replace(/\s/g, '').trim()
+}
+
+
+function checkIfEmailAlreadyExist(db, emailToCheck){
+	return db.collection('users').findOne({email: emailToCheck}).then(function(result){
+		return result !== null;
+	});
+}
+
 
 /* Conectamos con el servidor */
 MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
@@ -33,18 +54,19 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 	app.set('view engine', 'pug');
 	app.use(express.static('public'));
 
+	/* Lo siguiente no se debería hacer, ya que si hubiera múltiples usuarios conectados podría existir un cruce de datos (aunque es improbable debido a los hilos de ejecución) */
 	let idOfDocument = "";
 	let errorsInForm = false;
 	let errorFormList = [];
 
 	app.get('/', (req, res) => {
 		// Listar los documentos de una determinada colección
-		db.collection('users').find().toArray((err, data) => {
+		db.collection('users').find().sort({ dateRegister: -1}).toArray((err, data) => {
 			if(err) {
 				throw err;
 			}
 			res.render('index', {userList:data, idOfDocument, errorsInForm, errorFormList} );
-		})
+		});
 	});
 
 
@@ -87,21 +109,35 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 		errorsInForm = false;
 		errorFormList = [];
 
+		username = cleanSpacesFromString(username);
+
 		if(!checkValidPassword(password)){
 			errorsInForm = true;
 			errorFormList.push({errorText: "Password must contain numbers, minus chars, mayus chars and min length of 8 chars."});
 		}
 
-		if(errorsInForm){
-			// hay errores en el formulario
-			return res.redirect('/');
-		}else{
-			// Inserto en mi base de datos un nuevo documento:
-			console.log('me la pelaaaa.....')
-			db.collection('users').insert({ id: uuidv4(), name: name, surname: surname, email: email, username: username, password: md5(password)})
-				.then(res.redirect('/'))
-				.catch(error => console.log(error));
-		}
+		checkIfEmailAlreadyExist(db, email)
+			.then( alreadyExist => {
+				if(alreadyExist){
+					errorsInForm = true;
+					errorFormList.push({errorText: "It's not a valid email"});
+				}
+
+				if(errorsInForm){
+					// hay errores en el formulario
+					return res.redirect('/'); /* Este 'return' evita que se siga ejecutando código */
+				}else{
+					// Inserto en mi base de datos un nuevo documento:
+					let newIdentifier = uuidv4();
+					let newTimestamp = new Date().getTime().toString();
+
+					db.collection('users').insert({ id: newIdentifier, name: name, surname: surname, email: email, username: username, password: md5(password), dateRegister: newTimestamp})
+						.then( res.redirect('/') )
+						.catch(error => console.log(error));
+				}
+
+			})
+			.catch(error => console.log(error));
 	});
 
 	app.post('/update', formBodyParser, (req, res) => {
@@ -129,7 +165,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 					const passwordToSet = (newPassword !== "") ? newPassword: passwordProvided;
 
 					// Actualizo un documento
-					db.collection('users').update({id: identifier}, {id: identifier, name: newName, surname: newSurname, email: newEmail, username: newUsername, password: md5(passwordToSet) })
+					db.collection('users').update({id: identifier}, { $set: {name: newName, surname: newSurname, email: newEmail, username: newUsername, password: md5(passwordToSet)} })
 						.then(() => {
 							idOfDocument = "";
 							res.redirect('/');
