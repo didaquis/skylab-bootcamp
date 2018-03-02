@@ -45,7 +45,7 @@ Este repositorio contiene los ejercicios realizados durante el bootcamp en [Skyl
 | 2018-02-27 | 32/55 | Pug.js, JavaScript: Async / Await. Axios |
 | 2018-02-28 | 33/55 | Reviewing pull request. Cookies |
 | 2018-03-01 | 34/55 | MongoDB |
-| 2018-03-02 | 35/55 |                 |
+| 2018-03-02 | 35/55 | MongoDB. Pug |
 | 2018-03-05 | 36/55 |                 |
 | 2018-03-06 | 37/55 |                 |
 | 2018-03-07 | 38/55 |                 |
