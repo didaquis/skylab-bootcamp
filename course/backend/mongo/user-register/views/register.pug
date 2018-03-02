@@ -9,12 +9,12 @@ section
 		input#surname(type='text', name='surname', placeholder='surname', required='')
 		label(for='email') Email:
 			span *
-		input#email(type='email', name='email', placeholder='email', required='')
+		input#email(type='email', name='email', placeholder='email', required='', pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}")
 		label(for='username') Username:
 			span *
 		input#username(type='text', name='username', placeholder='username', required='')
 		label(for='password') Password:
 			span *
-		input#password(type='password', name='password', placeholder='password', required='')
+		input#password(type='password', name='password', placeholder='password', required='', pattern="(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
 		br
 		input.nice-button(type='submit', name='submit', value='Send form')

@@ -13,16 +13,16 @@ section
 				input#surname_update(type='text', name='surname', placeholder=' change your surname', required='', value=user.surname)
 				label(for='email_update') Email 
 					span *
-				input#email_update(type='email', name='email', placeholder=' change your email', required='', value=user.email)
+				input#email_update(type='email', name='email', placeholder=' change your email', required='', pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}", value=user.email)
 				br
 				label(for='username_update') Username 
 					span *
 				input#username_update(type='text', name='username', placeholder=' change your username', required='', value=user.username)
 				label(for='password_update') New Password:
-				input#password_update(type='password', name='password', placeholder=' change your password')
+				input#password_update(type='password', name='password', placeholder=' change your password', pattern="(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
 				br
 				label(for='password_actual') Your password is required for accept changes:
-				input#password_actual(type='password', name='password_provided', placeholder='password', required='')
+				input#password_actual(type='password', name='password_provided', placeholder='password', required='', pattern="(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
 				br
 				a.nice-button(href='/cancel') Cancel
 				input.nice-button(type='submit', name='submit', value='Send form')

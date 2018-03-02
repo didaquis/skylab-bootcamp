@@ -9,7 +9,7 @@ main, header, section {
 
 .nice-button {
 	margin: 20px;
-	padding: 18px;
+	padding: 12px;
 	font-size: 1.1em;
 	background-color: #2ECC40;
 	border-radius: 4px;
@@ -26,6 +26,14 @@ main, header, section {
 
 input {
 	margin: 12px;
+}
+
+input:valid {
+    border-color: #0074D9;
+}
+
+input:invalid {
+    border-color: #FF4136;
 }
 
 li {
