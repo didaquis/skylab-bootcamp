@@ -17,6 +17,7 @@ main, header, section {
 	text-decoration: none;
 	color: black;
 	text-transform: uppercase;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .nice-button:hover {

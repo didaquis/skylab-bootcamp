@@ -11,6 +11,8 @@ html(lang='en')
 		header
 			h1 User register Aplication
 		main
-if idOfDocument === ""
-	include register.pug
-include list.pug
+			if idOfDocument === ""
+				include register.pug
+
+			if userList.length > 0
+				include list.pug
