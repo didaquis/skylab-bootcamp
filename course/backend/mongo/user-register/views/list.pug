@@ -6,3 +6,5 @@ section
 			li
 				p #{user.name} #{user.surname}
 				| #{user.email} #{user.username}
+				br
+				a.button-link(href='/delete/'+user.id) 🗑

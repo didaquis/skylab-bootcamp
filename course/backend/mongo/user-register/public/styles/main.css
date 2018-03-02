@@ -25,3 +25,9 @@ li {
 	box-shadow: 1px 1px 1px 2px #AAAAAA;
 	padding: 2px 12px 12px 12px;
 }
+
+.button-link {
+	text-decoration: none;
+	display: inline-block;
+	margin: 16px 8px 4px 2px;
+}

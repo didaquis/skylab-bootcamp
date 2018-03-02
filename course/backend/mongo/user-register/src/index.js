@@ -33,11 +33,21 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 	});
 
 
+	app.get('/delete/:id', (req, res) => {
+		const idOfUser = req.params.id;
+
+		// Elimino un documento
+		db.collection('users').remove({id: idOfUser})
+			.then(res.redirect('/'))
+			.catch(error => console.log(error))
+	});
+
+
 	const formBodyParser = bodyParser.urlencoded({ extended: false });
 	app.post('/register', formBodyParser, (req, res) => {
 		const { name , surname, email, username, password } = req.body;
 
-		// Inserto en mi base de datos un nuevo usuario:
+		// Inserto en mi base de datos un nuevo documento:
 		db.collection('users').insert({ id: uuidv4(), name: name, surname: surname, email: email, username: username, password: md5(password)})
 			.then(res.redirect('/'))
 			.catch(error => console.log(error));
