@@ -1,0 +1,5 @@
+# Este es un fichero de variables de entorno.
+# Puedo almacenar configuraciones para usarlas en mis scripts gracias a 'dotenv'
+# Renombra el fichero para que sea oculto ".env"
+
+PORT=4501
