@@ -1,0 +1,20 @@
+{
+  "name": "users-api",
+  "version": "3.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src",
+    "debug": "devtool src --watch",
+    "watch": "nodemon src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2"
+  }
+}

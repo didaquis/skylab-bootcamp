@@ -1,0 +1,101 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Document
+    body
+        h1 USER-APP
+        if (!error || id)
+            form#register(action="/register" method="post")
+                fieldset(form="register")
+                    legend New user
+                    label(for="name") Name
+                    input#name(type="text" name="name")
+                    label(for="surname") Surname
+                    input#surname(type="text" name="surname")
+                    label(for="email") E-mail
+                    input#email(type="text" name="email")
+                    br
+                    label(for="username") Username
+                    input#username(type="text" name="username")
+                    label(for="password") Password
+                    input(type="password" name="password")
+                    input(type="submit" value="Register")
+        else
+            - const { name, surname, email, username } = user
+            form#register(action="/register" method="post")
+                fieldset(form="register")
+                    legend New user
+                    label(for="name") Name
+                    input#name(type="text" name="name" value=name)
+                    label(for="surname") Surname
+                    input#surname(type="text" name="surname" value=surname)
+                    label(for="email") E-mail
+                    input#email(type="text" name="email" value=email)
+                    br
+                    label(for="username") Username
+                    input#username(type="text" name="username" value=username)
+                    label(for="password") Password
+                    input(type="password" name="password")
+                    input(type="submit" value="Register")
+            h3(style="color: red")= error
+            
+        if users.length
+            h2 USERS
+            ul
+                - function edit(user) { return user.id === id }
+                each _user in users
+                    - const { id, name, surname, email, username } = _user
+                    if (!edit(_user))
+                        li
+                            form(action=`/edit/${id}`, method='get')
+                                | #{name} #{surname} (#{email}) [#{username}] 
+                                |
+                                input(type="submit", value='Edit')
+                    else
+                        li
+                            if (!error)
+                                form#edit(action=`/save/${id}`, method='post')
+                                    fieldset(form="edit")
+                                        legend Edit
+                                        label(for="name") Name
+                                        input#name(type="text" name="name" value=name)
+                                        label(for="surname") Surname
+                                        input#surname(type="text" name="surname" value=surname)
+                                        label(for="email") E-mail
+                                        input#email(type="text" name="email" value=email)
+                                        br
+                                        label(for="newUsername") New username
+                                        input#newUsername(type="text" name="newUsername" value=username)
+                                        label(for="newPassword") New password
+                                        input#newPassword(type="password" name="newPassword")
+                                        br
+                                        label(for="username") Current username
+                                        input#username(type="text" name="username" value=username)
+                                        label(for="password") Current password
+                                        input#password(type="password" name="password")
+                                        input(type="submit" value="Save")
+                            else
+                                - const { name, surname, email, username, newUsername } = user
+                                form#edit(action=`/save/${id}`, method='post')
+                                    fieldset(form="edit")
+                                        legend Edit
+                                        label(for="name") Name
+                                        input#name(type="text" name="name" value=name)
+                                        label(for="surname") Surname
+                                        input#surname(type="text" name="surname" value=surname)
+                                        label(for="email") E-mail
+                                        input#email(type="text" name="email" value=email)
+                                        br
+                                        label(for="newUsername") New username
+                                        input#newUsername(type="text" name="newUsername" value=newUsername)
+                                        label(for="newPassword") New password
+                                        input#newPassword(type="password" name="newPassword")
+                                        br
+                                        label(for="username") Current username
+                                        input#username(type="text" name="username" value=username)
+                                        label(for="password") Current password
+                                        input#password(type="password" name="password")
+                                        input(type="submit" value="Save")
+                                h3(style="color: red")= error
