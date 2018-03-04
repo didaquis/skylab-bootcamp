@@ -7,7 +7,7 @@ function init(host, port, dbname, callback) {
         console.log(`running mongo in address ${host}:${port}`)
     
         process.on('SIGINT', () => {
-            console.log('stopping mongo')
+            console.log('\nStopping mongo...')
     
             conn.close()
     
