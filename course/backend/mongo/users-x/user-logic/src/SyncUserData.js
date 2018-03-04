@@ -10,6 +10,8 @@ class SyncUserData extends UserData {
      * Constructs an instance (not allowed in this interface)
      */
     constructor() {
+        super()
+
         if (new.target === SyncUserData)
             throw Error('cannot instantiate')
     }
