@@ -33,12 +33,12 @@ function checkValidPassword(password){
  * @return {String} Return str without spaces
  */
 function cleanSpacesFromString(str){
-	return str.replace(/\s/g, '').trim()
+	return str.replace(/\s/g, '').trim();
 }
 
 
 function checkIfEmailAlreadyExist(db, emailToCheck){
-	return db.collection('users').findOne({email: emailToCheck}).then(function(result){
+	db.collection('users').findOne({email: emailToCheck}).then(function(result){
 		return result !== null;
 	});
 }
@@ -79,7 +79,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 			.catch(error => {
 				console.log(error);
 				res.redirect('/');
-			})
+			});
 	});
 
 
@@ -109,7 +109,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 		errorsInForm = false;
 		errorFormList = [];
 
-		username = cleanSpacesFromString(username);
+		let usernameValidated = cleanSpacesFromString(username);
 
 		if(!checkValidPassword(password)){
 			errorsInForm = true;
@@ -131,7 +131,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 					let newIdentifier = uuidv4();
 					let newTimestamp = new Date().getTime().toString();
 
-					db.collection('users').insert({ id: newIdentifier, name: name, surname: surname, email: email, username: username, password: md5(password), dateRegister: newTimestamp})
+					db.collection('users').insert({ id: newIdentifier, name: name, surname: surname, email: email, username: usernameValidated, password: md5(password), dateRegister: newTimestamp})
 						.then( res.redirect('/') )
 						.catch(error => console.log(error));
 				}
@@ -157,7 +157,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 				if(md5(passwordProvided) !== data.password){
 					// Han introducido el password incorrecto
 					idOfDocument = "";
-					res.redirect('/');
+					return res.redirect('/');
 				}else{
 					// El password es válido, por lo que le dejo modificar los datos:
 					
@@ -168,19 +168,19 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 					db.collection('users').update({id: identifier}, { $set: {name: newName, surname: newSurname, email: newEmail, username: newUsername, password: md5(passwordToSet)} })
 						.then(() => {
 							idOfDocument = "";
-							res.redirect('/');
+							return res.redirect('/');
 							})
 						.catch(error => {
 							console.log(error);
-							res.redirect('/');
+							return res.redirect('/');
 						});
 
 				}
 			})
 			.catch(error => {
 				console.log(error);
-				res.redirect('/');
-			})
+				return res.redirect('/');
+			});
 	});
 
 
