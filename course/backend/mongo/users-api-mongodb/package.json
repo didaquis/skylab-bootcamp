@@ -1,9 +1,11 @@
 {
-  "name": "users-api-server-0",
-  "version": "1.0.0",
-  "description": "",
+  "name": "users-api-mongodb",
+  "version": "1.0.1",
+  "description": "API json for manage users. Storeg is based on MongoDB",
   "main": "src/index.js",
   "scripts": {
+    "start": "node .",
+    "develop": "nodemon .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

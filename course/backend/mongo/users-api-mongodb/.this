@@ -1,5 +1,5 @@
 {
-  "title": "Users API server",
+  "title": "User API server with MongoDB",
   "description": "REST API for managing users.",
   "tags": [
     "node",
@@ -8,10 +8,9 @@
     "api",
     "mongo",
     "db",
-    "users",
+    "user",
     "manager",
-    "server",
-    "challenge"
+    "server"
   ],
-  "created": "2018-03-05T16:48:19.169Z"
+  "created": "2018-03-05T22:33:19.169Z"
 }
