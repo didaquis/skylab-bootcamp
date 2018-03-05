@@ -33,7 +33,7 @@ function checkValidPassword(password){
  * @return {String} Return str without spaces
  */
 function cleanSpacesFromString(str){
-	return str.replace(/\s/g, '').trim()
+	return str.replace(/\s/g, '').trim();
 }
 
 
@@ -52,9 +52,10 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 	const db = connection.db('user-register'); /* base de datos */
 
 	app.set('view engine', 'pug');
+
 	app.use(express.static('public'));
 
-	/* Lo siguiente no se debería hacer, ya que si hubiera múltiples usuarios conectados podría existir un cruce de datos (aunque es improbable debido a los hilos de ejecución) */
+	/* Lo siguiente no se debería hacer, ya que si hubiera múltiples usuarios conectados podría existir un cruce de datos (aunque es improbable debido a los hilos de ejecución). Lo correcto es pasar la información hasheada por URL y que el método get('/') la recoja y construya la salida adecuada. */
 	let idOfDocument = "";
 	let errorsInForm = false;
 	let errorFormList = [];
@@ -79,7 +80,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 			.catch(error => {
 				console.log(error);
 				res.redirect('/');
-			})
+			});
 	});
 
 
@@ -101,6 +102,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 	});
 
 
+	// Registrar nuevos documentos
 	const formBodyParser = bodyParser.urlencoded({ extended: false });
 	app.post('/register', formBodyParser, (req, res) => {
 		const { name, surname, email, username, password } = req.body;
@@ -109,7 +111,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 		errorsInForm = false;
 		errorFormList = [];
 
-		username = cleanSpacesFromString(username);
+		let usernameValidated = cleanSpacesFromString(username);
 
 		if(!checkValidPassword(password)){
 			errorsInForm = true;
@@ -131,7 +133,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 					let newIdentifier = uuidv4();
 					let newTimestamp = new Date().getTime().toString();
 
-					db.collection('users').insert({ id: newIdentifier, name: name, surname: surname, email: email, username: username, password: md5(password), dateRegister: newTimestamp})
+					db.collection('users').insert({ id: newIdentifier, name: name, surname: surname, email: email, username: usernameValidated, password: md5(password), dateRegister: newTimestamp})
 						.then( res.redirect('/') )
 						.catch(error => console.log(error));
 				}
@@ -157,7 +159,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 				if(md5(passwordProvided) !== data.password){
 					// Han introducido el password incorrecto
 					idOfDocument = "";
-					res.redirect('/');
+					return res.redirect('/');
 				}else{
 					// El password es válido, por lo que le dejo modificar los datos:
 					
@@ -165,22 +167,22 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 					const passwordToSet = (newPassword !== "") ? newPassword: passwordProvided;
 
 					// Actualizo un documento
-					db.collection('users').update({id: identifier}, { $set: {name: newName, surname: newSurname, email: newEmail, username: newUsername, password: md5(passwordToSet)} })
+					db.collection('users').updateOne({id: identifier}, { $set: {name: newName, surname: newSurname, email: newEmail, username: newUsername, password: md5(passwordToSet)} })
 						.then(() => {
 							idOfDocument = "";
-							res.redirect('/');
+							return res.redirect('/');
 							})
 						.catch(error => {
 							console.log(error);
-							res.redirect('/');
+							return res.redirect('/');
 						});
 
 				}
 			})
 			.catch(error => {
 				console.log(error);
-				res.redirect('/');
-			})
+				return res.redirect('/');
+			});
 	});
 
 
