@@ -58,22 +58,22 @@ html(lang='en')
                         form#edit(action=`/save/${_user.id}`, method='post')
                             fieldset(form='edit')
                                 legend Edit
-                                label(for='name') Name
-                                input#name(type='text', name='name', value=name)
-                                label(for='surname') Surname
-                                input#surname(type='text', name='surname', value=surname)
-                                label(for='email') E-mail
-                                input#email(type='text', name='email', value=email)
+                                label(for='edit-name') Name
+                                input#edit-name(type='text', name='name', value=name)
+                                label(for='edit-surname') Surname
+                                input#edit-surname(type='text', name='surname', value=surname)
+                                label(for='edit-email') E-mail
+                                input#edit-email(type='text', name='email', value=email)
                                 br
-                                label(for='newUsername') New username
-                                input#newUsername(type='text', name='newUsername', value=username)
-                                label(for='newPassword') New password
-                                input#newPassword(type='password', name='newPassword')
+                                label(for='edit-newUsername') New username
+                                input#edit-newUsername(type='text', name='newUsername', value=username)
+                                label(for='edit-newPassword') New password
+                                input#edit-newPassword(type='password', name='newPassword')
                                 br
-                                label(for='username') Current username
-                                input#username(type='text', name='username', value=username)
-                                label(for='password') Current password
-                                input#password(type='password', name='password')
+                                label(for='edit-username') Current username
+                                input#edit-username(type='text', name='username', value=username)
+                                label(for='edit-password') Current password
+                                input#edit-password(type='password', name='password')
                                 input(type='submit', value='Save')
                 else
                     - const { name, surname, email, username, newUsername } = user
@@ -81,22 +81,22 @@ html(lang='en')
                         form#edit(action=`/save/${_user.id}`, method='post')
                             fieldset(form='edit')
                                 legend Edit
-                                label(for='name') Name
-                                input#name(type='text', name='name', value=name)
-                                label(for='surname') Surname
-                                input#surname(type='text', name='surname', value=surname)
-                                label(for='email') E-mail
-                                input#email(type='text', name='email', value=email)
+                                label(for='edit-name') Name
+                                input#edit-name(type='text', name='name', value=name)
+                                label(for='edit-surname') Surname
+                                input#edit-surname(type='text', name='surname', value=surname)
+                                label(for='edit-email') E-mail
+                                input#edit-email(type='text', name='email', value=email)
                                 br
-                                label(for='newUsername') New username
-                                input#newUsername(type='text', name='newUsername', value=newUsername)
-                                label(for='newPassword') New password
-                                input#newPassword(type='password', name='newPassword')
+                                label(for='edit-newUsername') New username
+                                input#edit-newUsername(type='text', name='newUsername', value=newUsername)
+                                label(for='edit-newPassword') New password
+                                input#edit-newPassword(type='password', name='newPassword')
                                 br
-                                label(for='username') Current username
-                                input#username(type='text', name='username', value=username)
-                                label(for='password') Current password
-                                input#password(type='password', name='password')
+                                label(for='edit-username') Current username
+                                input#edit-username(type='text', name='username', value=username)
+                                label(for='edit-password') Current password
+                                input#edit-password(type='password', name='password')
                                 input(type='submit', value='Save')
                             h3(style='color: red')
                                 | #{error}
