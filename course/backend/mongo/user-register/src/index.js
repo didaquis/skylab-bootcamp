@@ -38,7 +38,7 @@ function cleanSpacesFromString(str){
 
 
 function checkIfEmailAlreadyExist(db, emailToCheck){
-	db.collection('users').findOne({email: emailToCheck}).then(function(result){
+	return db.collection('users').findOne({email: emailToCheck}).then(function(result){
 		return result !== null;
 	});
 }
@@ -52,9 +52,10 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 	const db = connection.db('user-register'); /* base de datos */
 
 	app.set('view engine', 'pug');
+
 	app.use(express.static('public'));
 
-	/* Lo siguiente no se debería hacer, ya que si hubiera múltiples usuarios conectados podría existir un cruce de datos (aunque es improbable debido a los hilos de ejecución) */
+	/* Lo siguiente no se debería hacer, ya que si hubiera múltiples usuarios conectados podría existir un cruce de datos (aunque es improbable debido a los hilos de ejecución). Lo correcto es pasar la información hasheada por URL y que el método get('/') la recoja y construya la salida adecuada. */
 	let idOfDocument = "";
 	let errorsInForm = false;
 	let errorFormList = [];
@@ -101,6 +102,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 	});
 
 
+	// Registrar nuevos documentos
 	const formBodyParser = bodyParser.urlencoded({ extended: false });
 	app.post('/register', formBodyParser, (req, res) => {
 		const { name, surname, email, username, password } = req.body;
@@ -165,7 +167,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 					const passwordToSet = (newPassword !== "") ? newPassword: passwordProvided;
 
 					// Actualizo un documento
-					db.collection('users').update({id: identifier}, { $set: {name: newName, surname: newSurname, email: newEmail, username: newUsername, password: md5(passwordToSet)} })
+					db.collection('users').updateOne({id: identifier}, { $set: {name: newName, surname: newSurname, email: newEmail, username: newUsername, password: md5(passwordToSet)} })
 						.then(() => {
 							idOfDocument = "";
 							return res.redirect('/');
