@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>USER-APP</h1>
+    <form id="register" action="/register" method="post">
+        <fieldset form="register">
+            <legend>New user</legend>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" />
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" name="surname" />
+            <label for="email">E-mail</label>
+            <input type="text" id="email" name="email" />
+            <br>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" />
+            <label for="password">Password</label>
+            <input type="password" name="password" />
+            <input type="submit" value="Register" />
+        </fieldset>
+    </form>
+    <h3 style="color: red">Error on register</h2>
+    <h2>USERS</h2>
+    <ul>
+        <li>
+            <form action="/edit/062c8937-a287-46de-996a-c785cadc9e25" method="get">Name Surname (e-mail) [username]
+                <input type="submit" value="Edit" />
+            </form>
+        </li>
+        <li>
+            <form id="edit" action="/save/062c8937-a287-46de-996a-c785cadc9e25" method="post">
+                <fieldset form="edit">
+                    <legend>Edit</legend>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" />
+                    <label for="surname">Surname</label>
+                    <input type="text" id="surname" name="surname" />
+                    <label for="email">E-mail</label>
+                    <input type="text" id="email" name="email" />
+                    <br>
+                    <label for="newUsername">New username</label>
+                    <input type="text" id="newUsername" name="newUsername" />
+                    <label for="newPassword">New password</label>
+                    <input id="newPassword" type="password" name="newPassword" />
+                    <br>
+                    <label for="username">Current username</label>
+                    <input type="text" id="username" name="username" />
+                    <label for="password">Current password</label>
+                    <input id="password" type="password" name="password" />
+                    <input type="submit" value="Save" />
+                </fieldset>
+            </form>
+            <h3 style="color: red">Error on edit</h2>
+        </li>
+        <li>
+            <form action="/edit/062c8937-a287-46de-996a-c785cadc9e25" method="get">Name Surname (e-mail) [username]
+                <input type="submit" value="Edit" />
+            </form>
+        </li>
+    </ul>
+</body>
+
+</html>
