@@ -46,5 +46,13 @@
         "email": "e",
         "username": "u1",
         "password": "p"
+    },
+    {
+        "id": "3f20794c-be60-4d60-86f6-d750b28d3256",
+        "name": "n",
+        "surname": "s",
+        "email": "e",
+        "username": "u6",
+        "password": "p"
     }
 ]

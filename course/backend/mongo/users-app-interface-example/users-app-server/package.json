@@ -2,9 +2,8 @@
   "name": "users-app-server",
   "version": "1.0.0",
   "description": "",
-  "main": "src/runAppMongo.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "echo \"Recuerda encender el servicio de MongoDB\" && node src/runAppMongo.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

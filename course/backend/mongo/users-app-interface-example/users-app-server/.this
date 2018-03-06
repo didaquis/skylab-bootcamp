@@ -1,5 +1,5 @@
 {
-  "title": "User App server",
+  "title": "Users App server",
   "description": "Server-side rendering application for managing users.",
   "tags": [
     "node",
@@ -8,9 +8,13 @@
     "pug",
     "mongo",
     "db",
-    "user",
+    "users",
     "app",
-    "register"
+    "server-side",
+    "rendering",
+    "web",
+    "server",
+    "challenge"
   ],
   "created": "2018-03-01T13:48:19.169Z"
 }

@@ -1,11 +1,12 @@
 {
-  "title": "User Data (storage manager)",
+  "title": "Users Data (storage manager)",
   "description": "Storage manager for users data.",
   "tags": [
     "node",
     "js",
-    "user",
+    "users",
     "data",
+    "layer",
     "storage",
     "object",
     "manager"
