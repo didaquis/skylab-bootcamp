@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const cors = require('cors');
 
 const mongoose = require('mongoose');
 
@@ -21,6 +22,7 @@ db.once('open', function() {
 function initAPI(){
 	const app = express();
 
+	app.use(cors()); /* Gracias a esto evitaremos problemas de CORS */
 	app.use('', userRouter);
 
 	app.use(function(req, res){
