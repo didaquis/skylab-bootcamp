@@ -155,3 +155,7 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# Istanbul
+.nyc_output
+.nyc_output/*
