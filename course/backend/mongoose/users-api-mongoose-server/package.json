@@ -1,5 +1,5 @@
 {
-  "name": "users-api-mongoose",
+  "name": "users-api-mongoose-server",
   "version": "1.1.5",
   "description": "API json for manage users. Storage is based on MongoDB using MongoDB",
   "main": "src/index.js",
