@@ -17,6 +17,9 @@ router.get('/api/user/:id', (req, res) => {
 		.then(user => {
 			if (!user) throw Error('user does not exist');
 
+			return user;
+		})
+		.then(user =>{
 			res.json(success(user));
 		})
 		.catch(err => {
