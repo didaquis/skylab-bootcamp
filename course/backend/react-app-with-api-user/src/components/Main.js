@@ -1,25 +1,48 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import List from './List';
 import Register from './Register';
 //import Services from './Services';
 //import Service_selected from './Service_selected';
 import Error_404 from './Error_404';
+import ModalToInform from './ModalToInform';
 
 import { Switch, Route } from 'react-router-dom';
 
-function Main(props) {
-	return (
-		<main className="py-5">
-			<Switch>
-				<Route exact path='/' component={List} />
-				<Route path='/register' component={Register} />
-				{/*<Route exact path='/services' component={Services} />
-				<Route path='/services/:value_selected' component={Service_selected} />*/}
-				<Route component={Error_404} />
-			</Switch>
-		</main>
-	);
+class Main extends Component {
+	constructor(){
+		super();
+		this.state = {
+			showModalToInform: false,
+			textForTitleModal: '',
+			textForBodyModal: ''
+		}
+	}
+
+	handlerSuccefullApiResponse = (value) => {
+		this.setState({textForTitleModal:value, showModalToInform:true});
+	}
+
+	render(){
+		return (
+			<main className="py-5">
+				<ModalToInform textForTitle={this.state.textForTitleModal} textForBody={this.state.textForBodyModal} />
+				<Switch>
+					{/*
+					<Route exact path='/' render={() => <List onSuccefullApiResponse={this.handlerSuccefullApiResponse} />} />
+				*/}
+				
+					<Route exact path='/' component={List} />
+					<Route path='/register' render={ () => <Register onSuccefullApiResponse={this.handlerSuccefullApiResponse} />} />
+					{/*
+					<Route exact path='/services' component={Services} />
+					<Route path='/services/:value_selected' component={Service_selected} />
+				*/}
+					<Route component={Error_404} />
+				</Switch>
+			</main>
+		);
+	}
 }
 
 export default Main;

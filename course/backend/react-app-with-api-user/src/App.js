@@ -6,6 +6,21 @@ import Footer from './components/Footer';
 
 import { BrowserRouter } from 'react-router-dom';
 
+/**
+ * Estructura de componentes:
+ * 
+ *		APP
+ *		BrowserRouter
+ *			Nav
+ *			Main
+ *				ModalToInform
+ *				List
+ *				Register
+ *				Error_404
+ *			Footer
+ */
+
+
 class App extends Component {
 	render() {
 		return (

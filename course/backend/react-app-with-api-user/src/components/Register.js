@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import usersApi from '../utils/users-api-client';
 
 
-class Register extends Component {
+class Register extends React.Component {
 	constructor(){
 		super();
 
@@ -26,7 +26,7 @@ class Register extends Component {
 	handlerResponseApi = (result) =>{
 		if(result.status === 'OK'){
 			this.setState({inputName: "", inputSurname: "", inputEmail: "", inputUsername:"", inputPassword: ""});
-			alert('User registered!');
+			this.props.onSuccefullApiResponse('User registered!');
 		}else{
 			alert('Something went wrong!');
 		}
