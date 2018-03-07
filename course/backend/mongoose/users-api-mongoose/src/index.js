@@ -10,8 +10,15 @@ const userRouter = require('./routes/user/userRouter');
 const host = process.env.MONGO_HOST;
 const port = process.env.MONGO_PORT;
 const database = process.env.MONGO_DB;
+const mongoUser = process.env.MONGO_USER;
+const mongoPass = process.env.MONGO_PASS;
 
-mongoose.connect(`mongodb://${host}:${port}/${database}`);
+if(mongoUser !== '' && mongoPass !== ''){
+	// Si me especifican usuario y password...
+	mongoose.connect(`mongodb://${mongoUser}:${mongoPass}@${host}:${port}/${database}`);
+}else{
+	mongoose.connect(`mongodb://${host}:${port}/${database}`);
+}
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
