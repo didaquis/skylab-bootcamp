@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const mongoose = require('mongoose');
 
-const userRouter = require('./routes/user/index');
+const userRouter = require('./routes/user/userRouter');
 
 const host = process.env.MONGO_HOST;
 const port = process.env.MONGO_PORT;
@@ -15,7 +15,7 @@ mongoose.connect(`mongodb://${host}:${port}/${database}`);
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-	console.log(`Connected at "${host}" in port "${port}" using database "${database}"`);
+	console.log(`\nConnected with mongodb at "${host}" in port "${port}" using database "${database}"`);
 	initAPI();
 });
 
