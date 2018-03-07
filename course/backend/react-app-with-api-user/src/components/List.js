@@ -6,7 +6,7 @@ import UserEditingPanel from './UserEditingPanel';
 import usersApi from '../utils/users-api-client';
 
 
-class Home extends Component {
+class List extends Component {
 	constructor() {
 		super();
 		this.state = {
@@ -56,4 +56,4 @@ class Home extends Component {
 	}
 }
 
-export default Home;
+export default List;

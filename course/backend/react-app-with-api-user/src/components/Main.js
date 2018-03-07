@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Home from './Home';
+import List from './List';
 import Register from './Register';
 //import Services from './Services';
 //import Service_selected from './Service_selected';
@@ -12,7 +12,7 @@ function Main(props) {
 	return (
 		<main className="py-5">
 			<Switch>
-				<Route exact path='/' component={Home} />
+				<Route exact path='/' component={List} />
 				<Route path='/register' component={Register} />
 				{/*<Route exact path='/services' component={Services} />
 				<Route path='/services/:value_selected' component={Service_selected} />*/}
