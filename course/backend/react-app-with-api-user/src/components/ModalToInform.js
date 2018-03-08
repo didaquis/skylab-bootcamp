@@ -50,13 +50,16 @@ class ModalToInform extends Component {
 	componentWillReceiveProps(nextProps){
 		if(nextProps.showModalToInform === false){
 			this.setState({viewModal:false})
-			alert('mostrar modal => usuario registrado correctamente')
-			console.log('mostrar modal => usuario registrado correctamente')
 			//document.getElementById('modalToInform').modal('hide');
 		}else{
 			this.setState({viewModal:true})
+			console.log('mostrar modal => usuario registrado correctamente')
 			//document.getElementById('modalToInform').modal('show');
 		}
+	}
+
+	componentDidMount(){
+		//$(this.getDOMNode()).modal('show');
 	}
 
 

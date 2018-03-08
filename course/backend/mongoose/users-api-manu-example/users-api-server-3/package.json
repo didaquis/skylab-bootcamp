@@ -1,11 +1,9 @@
 {
-  "name": "users-api-mongoose-server",
-  "version": "1.1.6",
-  "description": "API json for manage users. Storage is based on MongoDB using MongoDB",
+  "name": "users-app-server-0",
+  "version": "1.0.0",
+  "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "node .",
-    "develop": "nodemon .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,7 +14,7 @@
     "cors": "^2.8.4",
     "dotenv": "^5.0.1",
     "express": "^4.16.2",
-    "mongodb": "^3.0.3",
+    "jsonwebtoken": "^8.2.0",
     "mongoose": "^5.0.9",
     "uuid": "^3.2.1"
   }

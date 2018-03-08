@@ -1,0 +1,28 @@
+{
+  "title": "Users API server with Auth (JWT)",
+  "description": "REST API for managing users in storage through Mongoose, with separation of concerns (layers and components) and auth through JWT.",
+  "tags": [
+    "node",
+    "js",
+    "express",
+    "api",
+    "mongo",
+    "mongoose",
+    "db",
+    "users",
+    "manager",
+    "layers",
+    "separation",
+    "concerns",
+    "server",
+    "auth",
+    "authentication",
+    "authorization",
+    "jwt",
+    "json",
+    "web",
+    "token",
+    "json-web-token"
+  ],
+  "created": "2018-03-08T12:42:19.169Z"
+}
