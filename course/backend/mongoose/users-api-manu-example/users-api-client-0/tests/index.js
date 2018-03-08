@@ -13,17 +13,17 @@ token = API_TOKEN;
 describe('api', () => {
 
     true && it('should login', done => {
-        api.register('n', 's', 'e', 'username', 'password')
+        api.register('n', 's', 'e', 'username2', 'Password2')
             .then(res => {
                 assert.equal(res.status, 'OK', 'results should be OK')
 
                 assert(res.data && res.data.id, 'should return data id')
 
                 // TODO delete
-                return api.login('username', 'password')
+                return api.login('username2', 'Password2')
             }).then((res) => {
                 assert.equal(res.status, 'OK', 'results should be OK')
-                assert.equal(res.data.token.length > 100, true, 'results should be true')
+                assert(res.data.token.length > 100, 'results should be true')
                 done()
             })
             .catch(done)
