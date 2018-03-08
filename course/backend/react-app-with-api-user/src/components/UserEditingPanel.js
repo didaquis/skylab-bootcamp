@@ -4,7 +4,7 @@ function UserEditingPanel(props){
 	return(
 		<div className="row">
 			<div className="col-sm-12">
-				<form className="form-signin border border-primary rounded p-3 mb-5">
+				<form className="mb-4">
 					<h1 className="h3 mb-3 font-weight-normal">Edit user</h1>
 
 					<label htmlFor="inputName" className="sr-only">Name</label>
@@ -25,13 +25,13 @@ function UserEditingPanel(props){
 					<div className="form-group">
 						<label htmlFor="inputNewUsername" className="sr-only">New username</label>
 						<input type="text" id="inputNewUsername" className="form-control" placeholder="New username" required pattern="^[a-zA-Z0-9]{6,18}$" />
-						<small id="emailHelp" className="form-text text-muted">Min 6 chars. Max 18 chars. You can use minus chars, mayus chars and numbers.</small>
+						<p id="usernameHelp" className="form-text text-muted">Min 6 chars. Max 18 chars. You can use minus chars, mayus chars and numbers.</p>
 					</div>
 
 					<div className="form-group">
 						<label htmlFor="inputNewPassword" className="sr-only">New password</label>
 						<input type="password" id="inputNewPassword" className="form-control" placeholder="New password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required/>
-						<small id="emailHelp" className="form-text text-muted">At least of 8 chars. Must include minus chars, mayus chars and numbers.</small>
+						<p id="emailHelp" className="form-text text-muted">At least of 8 chars. Must include minus chars, mayus chars and numbers.</p>
 					</div>
 
 					<button className="btn btn-lg btn-primary btn-block" type="submit">Edit user!</button>

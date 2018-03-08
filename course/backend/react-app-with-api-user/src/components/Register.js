@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
 import usersApi from '../utils/users-api-client';
@@ -54,11 +54,11 @@ class Register extends React.Component {
 
 	render(){
 		return (
-			<section className="py-2">
+			<section className="">
 				<div className="container">
 					<div className="row">
-						<div className="col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-							<form className="form-signin" onSubmit={(e) => { e.preventDefault(); this.handlerSubmit() }}>
+						<div className="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+							<form className="" onSubmit={(e) => { e.preventDefault(); this.handlerSubmit() }}>
 								<h1 className="h3 mb-3 font-weight-normal">Register new user</h1>
 
 								<label htmlFor="inputName" className="sr-only">Name</label>
@@ -73,13 +73,13 @@ class Register extends React.Component {
 								<div className="form-group">
 									<label htmlFor="inputUsername" className="sr-only">Username</label>
 									<input type="text" id="inputUsername" className="form-control" placeholder="Username" required pattern="^[a-zA-Z0-9]{6,18}$" onChange={e => this.fillInput(e.target)} value={this.state.inputUsername} />
-									<small id="emailHelp" className="form-text text-muted">Min 6 chars. Max 18 chars. You can use minus chars, mayus chars and numbers.</small>
+									<p id="usernameHelp" className="form-text text-muted">Min 6 chars. Max 18 chars. You can use minus chars, mayus chars and numbers.</p>
 								</div>
 
 								<div className="form-group">
 									<label htmlFor="inputPassword" className="sr-only">Password</label>
 									<input type="password" id="inputPassword" className="form-control" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required onChange={e => this.fillInput(e.target)} value={this.state.inputPassword} />
-									<small id="emailHelp" className="form-text text-muted">At least of 8 chars. Must include minus chars, mayus chars and numbers.</small>
+									<p id="emailHelp" className="form-text text-muted">At least of 8 chars. Must include minus chars, mayus chars and numbers.</p>
 								</div>
 								<button className="btn btn-lg btn-primary btn-block" type="submit">Create new user!</button>
 							</form>

@@ -1,15 +1,16 @@
 import React from 'react';
 
+
 function UserDetails(props){
 	return(
-		<li className="media mb-2 mt-5">
-			<div className="media-body">
-				<h5 className="mt-0 mb-1">{props.dataName} {props.dataSurname}</h5>
-				<p>Email: {props.dataEmail}</p>
-				<p>Username: {props.dataUsername}</p>
-				<p>Id: {props.dataId}</p>
-				<a className="m-2 text-primary" href="#"><i className="far fa-edit"></i></a>
-				<a className="m-2 text-danger" href="#"><i className="far fa-trash-alt"></i></a>
+		<li className="media">
+			<div className="media-body list-group-item">
+				<h4 className="list-group-item-heading">{props.dataName} {props.dataSurname}</h4>
+				<p className="list-group-item-text">Email: {props.dataEmail}</p>
+				<p className="list-group-item-text">Username: {props.dataUsername}</p>
+				<p className="list-group-item-text">Id: {props.dataId}</p>
+				{/*	<a className="m-2 text-primary" href="#"><i className="far fa-edit"></i></a>*/}	
+				<button className="text-danger mt-2" onClick={() => props.onClick(props.dataId)}><i className="far fa-trash-alt"></i></button>
 			</div>
 		</li>
 	);

@@ -13,8 +13,8 @@ import { BrowserRouter } from 'react-router-dom';
  *		BrowserRouter
  *			Nav
  *			Main
- *				ModalToInform
  *				List
+ *					ModalDelete
  *				Register
  *				Error_404
  *			Footer

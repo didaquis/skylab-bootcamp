@@ -2,11 +2,13 @@ import React from 'react';
 
 function Footer(props) {
 	return (
-		<footer className="py-3 bg-dark fixed-bottom">
-      		<div className="container">
-        		<p className="m-0 text-center text-white">#SkylabRocks</p>
-      		</div>
-    	</footer>
+		<div className="mt-8">
+			<footer className="bg-info navbar-fixed-bottom">
+	      		<div className="container">
+	        		<p className="text-center text-danger mt-2 mb-2">#SkylabRocks</p>
+	      		</div>
+	    	</footer>
+    	</div>
 	);
 }
 

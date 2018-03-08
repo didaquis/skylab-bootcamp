@@ -5,33 +5,25 @@ import Register from './Register';
 //import Services from './Services';
 //import Service_selected from './Service_selected';
 import Error_404 from './Error_404';
-import ModalToInform from './ModalToInform';
 
-import { Switch, Route } from 'react-router-dom';
+
+import { Switch, Route, withRouter } from 'react-router-dom';
 
 class Main extends Component {
 	constructor(){
 		super();
 		this.state = {
-			showModalToInform: false,
-			textForTitleModal: '',
-			textForBodyModal: ''
 		}
 	}
 
 	handlerSuccefullApiResponse = (value) => {
-		this.setState({textForTitleModal:value, showModalToInform:true});
+		this.props.history.push("/");// Hago un redirect
 	}
 
 	render(){
 		return (
-			<main className="py-5">
-				<ModalToInform textForTitle={this.state.textForTitleModal} textForBody={this.state.textForBodyModal} />
+			<main className="">
 				<Switch>
-					{/*
-					<Route exact path='/' render={() => <List onSuccefullApiResponse={this.handlerSuccefullApiResponse} />} />
-				*/}
-				
 					<Route exact path='/' component={List} />
 					<Route path='/register' render={ () => <Register onSuccefullApiResponse={this.handlerSuccefullApiResponse} />} />
 					{/*
@@ -45,11 +37,11 @@ class Main extends Component {
 	}
 }
 
-export default Main;
+export default withRouter(Main);// Fíjate que esto e importar 'withRouter' me permiten hacer redirect
 
 /**
  * He importo 'Switch' y 'Router'
  * Observa que mostraré un u otro componente dependiendo de la URL
- * Fíjate que el de 'Home' he añadido la palabra 'exact'
+ * Fíjate que el de 'List' he añadido la palabra 'exact'
  * Observa también el último 'Route', es una página 404. Por si ninguno de los parametros anteriores es válido
  */
