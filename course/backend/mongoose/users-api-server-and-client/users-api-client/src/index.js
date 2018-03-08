@@ -51,6 +51,6 @@ const usersApi = {
 	updateUser(id, name, surname, email, newUsername, newPassword, username, password){
 		return this._call('put', `api/user/${id}`, { name, surname, email, newUsername, newPassword, username, password });
 	}
-}
+};
 
 module.exports = usersApi;
