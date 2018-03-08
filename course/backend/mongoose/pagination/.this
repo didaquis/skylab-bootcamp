@@ -1,0 +1,16 @@
+{
+  "title": "mongoose-paginate plugin",
+  "description": "Plugin that paginates a model in Mongoose.",
+  "tags": [
+    "mongo",
+    "mongoose",
+    "node",
+    "js",
+    "paginate",
+    "pagination",
+    "model",
+    "schema",
+    "plugin"
+  ],
+  "created": "2018-03-08T15:08:18.958Z"
+}
