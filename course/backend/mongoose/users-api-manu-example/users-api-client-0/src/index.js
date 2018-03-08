@@ -22,7 +22,7 @@ const api = {
             uri: `${this._baseUrl()}/${path}`,
             body,
             auth: {
-                    'bearer': token
+                    'Bearer': token
                 },
             json: true
         })
