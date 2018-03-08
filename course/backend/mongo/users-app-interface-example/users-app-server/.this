@@ -1,0 +1,20 @@
+{
+  "title": "Users App server",
+  "description": "Server-side rendering application for managing users.",
+  "tags": [
+    "node",
+    "js",
+    "express",
+    "pug",
+    "mongo",
+    "db",
+    "users",
+    "app",
+    "server-side",
+    "rendering",
+    "web",
+    "server",
+    "challenge"
+  ],
+  "created": "2018-03-01T13:48:19.169Z"
+}

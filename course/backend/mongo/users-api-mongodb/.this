@@ -1,0 +1,16 @@
+{
+  "title": "User API server with MongoDB",
+  "description": "REST API for managing users.",
+  "tags": [
+    "node",
+    "js",
+    "express",
+    "api",
+    "mongo",
+    "db",
+    "user",
+    "manager",
+    "server"
+  ],
+  "created": "2018-03-05T22:33:19.169Z"
+}

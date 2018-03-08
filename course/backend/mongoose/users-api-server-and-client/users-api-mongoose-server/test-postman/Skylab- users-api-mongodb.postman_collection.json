@@ -1,0 +1,149 @@
+{
+	"info": {
+		"name": "Skylab: users-api-mongodb",
+		"_postman_id": "e0da4a81-af00-4b40-a79d-311b24d4b2a4",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "insert user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"John\",\n\t\"surname\": \"Doe\",\n\t\"email\": \"john@doe.com\",\n\t\"username\": \"JohnDoe123\",\n\t\"password\": \"JohnDoe123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "list all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5000/api/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "editar un usuario",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"John\",\n\t\"surname\": \"Doe\",\n\t\"email\": \"john@doe.com\",\n\t\"username\": \"JohnDoe123\",\n\t\"password\": \"JohnDoe123\",\n\t\"newUsername\": \"JohnDoe123\", \n\t\"newPassword\": \"JohnDoe123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/446b5682-9071-49c8-a1d0-f854b92cf732",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"446b5682-9071-49c8-a1d0-f854b92cf732"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"ChWhite75\",\n\t\"password\": \"ChWhite75\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/e40a5684-99cf-4afb-a151-430e20f69913",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"e40a5684-99cf-4afb-a151-430e20f69913"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "retrieve one user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5000/api/user/446b5682-9071-49c8-a1d0-f854b92cf732",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"446b5682-9071-49c8-a1d0-f854b92cf732"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

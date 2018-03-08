@@ -11,6 +11,11 @@ const { MongoClient } = require('mongodb');
 
 const app = express();
 
+const mongo_host = process.env.MONGO_HOST;
+const mongo_port = process.env.MONGO_PORT;
+const mongo_db = process.env.MONGO_DB;
+const mongo_collection = process.env.MONGO_COLLECTION;
+
 
 /**
  * Check if password have numbers, minus chars, mayús chars and at least a length of 8
@@ -38,31 +43,32 @@ function cleanSpacesFromString(str){
 
 
 function checkIfEmailAlreadyExist(db, emailToCheck){
-	return db.collection('users').findOne({email: emailToCheck}).then(function(result){
+	return db.collection(mongo_collection).findOne({email: emailToCheck}).then(function(result){
 		return result !== null;
 	});
 }
 
 
 /* Conectamos con el servidor */
-MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
+MongoClient.connect(`mongodb://${mongo_host}:${mongo_port}/`, (err, connection) => {
 	if(err) {
 		throw err;
 	}
-	const db = connection.db('user-register'); /* base de datos */
+	const db = connection.db(mongo_db); /* base de datos */
 
-	app.set('view engine', 'pug');
+	app.set('view engine', 'pug'); /* Especificamos que vamos a usar Pug */
 
 	app.use(express.static('public'));
 
 	/* Lo siguiente no se debería hacer, ya que si hubiera múltiples usuarios conectados podría existir un cruce de datos (aunque es improbable debido a los hilos de ejecución). Lo correcto es pasar la información hasheada por URL y que el método get('/') la recoja y construya la salida adecuada. */
+	/* Para ver un ejemplo mejor construido => "users-app-server-0" */
 	let idOfDocument = "";
 	let errorsInForm = false;
 	let errorFormList = [];
 
 	app.get('/', (req, res) => {
 		// Listar los documentos de una determinada colección
-		db.collection('users').find().sort({ dateRegister: -1}).toArray((err, data) => {
+		db.collection(mongo_collection).find().sort({ dateRegister: -1}).toArray((err, data) => {
 			if(err) {
 				throw err;
 			}
@@ -75,7 +81,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 		const idOfUser = req.params.id;
 
 		// Elimino un documento
-		db.collection('users').remove({id: idOfUser})
+		db.collection(mongo_collection).remove({id: idOfUser})
 			.then(res.redirect('/'))
 			.catch(error => {
 				console.log(error);
@@ -133,7 +139,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 					let newIdentifier = uuidv4();
 					let newTimestamp = new Date().getTime().toString();
 
-					db.collection('users').insert({ id: newIdentifier, name: name, surname: surname, email: email, username: usernameValidated, password: md5(password), dateRegister: newTimestamp})
+					db.collection(mongo_collection).insert({ id: newIdentifier, name: name, surname: surname, email: email, username: usernameValidated, password: md5(password), dateRegister: newTimestamp})
 						.then( res.redirect('/') )
 						.catch(error => console.log(error));
 				}
@@ -154,7 +160,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 		// Si el usuario no ha establecido el password correcto no le dejo actualizar los datos. Voy a comprobarlo:
 
 		// Recuperar un documento
-		db.collection('users').findOne({id: identifier})
+		db.collection(mongo_collection).findOne({id: identifier})
 			.then(data =>{
 				if(md5(passwordProvided) !== data.password){
 					// Han introducido el password incorrecto
@@ -167,7 +173,7 @@ MongoClient.connect('mongodb://localhost:27017/', (err, connection) => {
 					const passwordToSet = (newPassword !== "") ? newPassword: passwordProvided;
 
 					// Actualizo un documento
-					db.collection('users').updateOne({id: identifier}, { $set: {name: newName, surname: newSurname, email: newEmail, username: newUsername, password: md5(passwordToSet)} })
+					db.collection(mongo_collection).updateOne({id: identifier}, { $set: {name: newName, surname: newSurname, email: newEmail, username: newUsername, password: md5(passwordToSet)} })
 						.then(() => {
 							idOfDocument = "";
 							return res.redirect('/');

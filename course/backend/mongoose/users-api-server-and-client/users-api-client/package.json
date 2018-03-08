@@ -1,0 +1,26 @@
+{
+  "name": "users-api-client",
+  "version": "1.0.0",
+  "description": "API client for manage users",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha tests",
+    "test:coverage": "nyc mocha tests",
+    "coverage": "nyc --reporter=html --reporter=text mocha tests"
+  },
+  "keywords": [
+    "users",
+    "api",
+    "client"
+  ],
+  "author": "Dídac G",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "nyc": "^11.4.1",
+    "dotenv": "^5.0.1"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Users Data (storage manager)",
+  "description": "Storage manager for users data.",
+  "tags": [
+    "node",
+    "js",
+    "users",
+    "data",
+    "layer",
+    "storage",
+    "object",
+    "manager"
+  ],
+  "created": "2018-03-01T15:10:00.256Z"
+}

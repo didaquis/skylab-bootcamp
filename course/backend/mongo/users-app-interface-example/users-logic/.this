@@ -1,0 +1,15 @@
+{
+  "title": "User Logic (business object)",
+  "description": "Business logic for managing users.",
+  "tags": [
+    "node",
+    "js",
+    "user",
+    "logic",
+    "layer",
+    "business",
+    "object",
+    "manager"
+  ],
+  "created": "2018-03-01T15:10:00.256Z"
+}
