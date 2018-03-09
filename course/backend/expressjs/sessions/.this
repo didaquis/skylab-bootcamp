@@ -1,0 +1,20 @@
+{
+  "title": "express-session",
+  "description": "Express middleware that manage sessions server-side and keeps track of them through a session cookie (a cookie that stores session id only and is shared automatically between server and client)",
+  "tags": [
+    "express-session",
+    "express",
+    "js",
+    "node",
+    "session",
+    "cookie",
+    "store",
+    "file",
+    "mongo",
+    "db",
+    "mongoose",
+    "memory"
+  ],
+  "created": "2018-03-09T11:30:45.965Z",
+  "modified": "2018-03-09T12:20:01.559Z"
+}

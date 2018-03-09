@@ -16,7 +16,7 @@ class Main extends Component {
 		}
 	}
 
-	handlerSuccefullApiResponse = (value) => {
+	handlerSuccefullApiResponse = () => {
 		this.props.history.push("/");// Hago un redirect
 	}
 

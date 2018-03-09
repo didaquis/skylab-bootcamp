@@ -25,14 +25,13 @@ class List extends Component {
 
 	refreshUserList = (results) => {
 		if(results.status === 'OK'){
-			this.setState({usersList:results.data})
+			this.setState({usersList:results.data});
 		}
 	}
 
 	handlerOnClickDeleteButton = (idOfData) => {
 		this.setState({idOfUserForDeleteModal:idOfData});
 	}
-
 
 	render(){
 		return (

@@ -26,7 +26,7 @@ class Register extends React.Component {
 	handlerResponseApi = (result) =>{
 		if(result.status === 'OK'){
 			this.setState({inputName: "", inputSurname: "", inputEmail: "", inputUsername:"", inputPassword: ""});
-			this.props.onSuccefullApiResponse('User registered!');
+			this.props.onSuccefullApiResponse();
 		}else{
 			alert('Something went wrong!');
 		}
