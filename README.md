@@ -50,7 +50,7 @@ Este repositorio contiene los ejercicios realizados durante el bootcamp en [Skyl
 | 2018-03-06 | 37/55 | Arquitectura de software, interfaces y contratros. Mongoose (ODM tool) |
 | 2018-03-07 | 38/55 | Arquitectura de software y separación de responsabilidades. Mocha + Istanbul |
 | 2018-03-08 | 39/55 | Autentificación & tokens. Mongoose-paginate |
-| 2018-03-09 | 40/55 | Passport |
+| 2018-03-09 | 40/55 | Passport. Sessions & cookies & tokens |
 | 2018-03-12 | 41/55 |                 |
 | 2018-03-13 | 42/55 |                 |
 | 2018-03-14 | 43/55 |                 |
