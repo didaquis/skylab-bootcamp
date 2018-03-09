@@ -3,8 +3,18 @@
 🚀 Full-Stack Web-Development Bootcamp 
 ======================================
 
-Este repositorio contiene los ejercicios realizados durante el bootcamp en [Skylab Coders Academy](http://www.skylabcoders.com/es).  
+Este repositorio contiene los ejercicios realizados durante el bootcamp en [Skylab Coders Academy](http://www.skylabcoders.com/es).   
 
+  
+
+> "Chicos chicos! Los tipos, revisad siempre los tipos!"
+>
+> -- _Robert Sallent_  
+  
+> "Horas de vuelo"
+>
+> -- _Manuel Barzi_  
+  
 
 ## Changelog & progress  
 
