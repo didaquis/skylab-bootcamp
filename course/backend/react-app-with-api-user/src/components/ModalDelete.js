@@ -1,7 +1,9 @@
 import React from 'react';
+import usersApi from '../utils/users-api-client';
+
 
 import { Modal } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
+
 
 class ModalDelete extends React.Component {
 	constructor(props, context) {
@@ -35,11 +37,23 @@ class ModalDelete extends React.Component {
 
 	fillInput = (input) => {
 		if(input.id === 'inputUsername'){
-			this.setState({ inputUsername: input.value })
+			this.setState({ inputUsername: input.value });
 		}
 		if(input.id === 'inputPassword'){
-			this.setState({ inputPassword: input.value })
+			this.setState({ inputPassword: input.value });
 		}
+	}
+
+	handlerSubmit = () => {
+		usersApi.deleteUser(this.state.idOfUser, this.state.inputUsername, this.state.inputPassword)
+		.then(res => {
+			if(res.status === 'OK'){
+				window.location.reload();
+			}else{
+				console.log(res)
+			}
+		})
+		.catch(error => {throw new Error(error);});
 	}
 
 	render() {
@@ -54,13 +68,13 @@ class ModalDelete extends React.Component {
 						<div className="form-group">
 							<label htmlFor="inputUsername" className="sr-only">Username</label>
 							<input type="text" id="inputUsername" className="form-control" placeholder="Username" required pattern="^[a-zA-Z0-9]{6,18}$" onChange={e => this.fillInput(e.target)} value={this.state.inputUsername} />
-							<small id="emailHelp" className="form-text text-muted">Min 6 chars. Max 18 chars. You can use minus chars, mayus chars and numbers.</small>
+							<p id="emailHelp" className="form-text text-muted">Min 6 chars. Max 18 chars. You can use minus chars, mayus chars and numbers.</p>
 						</div>
 
 						<div className="form-group">
 							<label htmlFor="inputPassword" className="sr-only">Password</label>
 							<input type="password" id="inputPassword" className="form-control" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required onChange={e => this.fillInput(e.target)} value={this.state.inputPassword} />
-							<small id="emailHelp" className="form-text text-muted">At least of 8 chars. Must include minus chars, mayus chars and numbers.</small>
+							<p id="emailHelp" className="form-text text-muted">At least of 8 chars. Must include minus chars, mayus chars and numbers.</p>
 						</div>
 						<button className="btn btn-lg btn-danger btn-block" type="submit">Delete user!</button>
 					</form>
