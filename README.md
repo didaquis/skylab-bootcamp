@@ -3,8 +3,18 @@
 🚀 Full-Stack Web-Development Bootcamp 
 ======================================
 
-Este repositorio contiene los ejercicios realizados durante el bootcamp en [Skylab Coders Academy](http://www.skylabcoders.com/es).  
+Este repositorio contiene los ejercicios realizados durante el bootcamp en [Skylab Coders Academy](http://www.skylabcoders.com/es).   
 
+  
+
+> "Chicos chicos! Los tipos, revisad siempre los tipos!"
+>
+> -- _Robert Sallent_  
+  
+> "Horas de vuelo"
+>
+> -- _Manuel Barzi_  
+  
 
 ## Changelog & progress  
 
@@ -35,7 +45,7 @@ Este repositorio contiene los ejercicios realizados durante el bootcamp en [Skyl
 | 2018-02-13 | 22/55 | One Week Hackathon: creación app Tiki Ticket |
 | 2018-02-14 | 23/55 | One Week Hackathon: creación app Tiki Ticket |
 | 2018-02-15 | 24/55 | One Week Hackathon: creación app Tiki Ticket |
-| 2018-02-16 | 25/55 | One Week Hackathon: creación app Tiki Ticket |
+| 2018-02-16 | 25/55 | One Week Hackathon: creación app Tiki Ticket. Repositorio del proyecto: [Tiki-ticket](https://github.com/didaquis/skylab-bootcamp-one-week-hackathon) |
 | 2018-02-19 | 26/55 | Node.js. Devtool (debugging tool) |
 | 2018-02-20 | 27/55 | Node.js |
 | 2018-02-21 | 28/55 | Node.js |
@@ -51,18 +61,18 @@ Este repositorio contiene los ejercicios realizados durante el bootcamp en [Skyl
 | 2018-03-07 | 38/55 | Arquitectura de software y separación de responsabilidades. Mocha + Istanbul |
 | 2018-03-08 | 39/55 | Autentificación & tokens. Mongoose-paginate |
 | 2018-03-09 | 40/55 | Passport. Sessions & cookies & tokens |
-| 2018-03-12 | 41/55 |                 |
-| 2018-03-13 | 42/55 |                 |
-| 2018-03-14 | 43/55 |                 |
-| 2018-03-15 | 44/55 |                 |
-| 2018-03-16 | 45/55 |                 |
-| 2018-03-19 | 46/55 |                 |
-| 2018-03-20 | 47/55 |                 |
-| 2018-03-21 | 48/55 |                 |
-| 2018-03-22 | 49/55 |                 |
-| 2018-03-23 | 50/55 |                 |
-| 2018-03-26 | 51/55 |                 |
-| 2018-03-27 | 52/55 |                 |
-| 2018-03-28 | 53/55 |                 |
-| 2018-03-29 | 54/55 |                 |
-| 2018-03-30 | 55/55 |                 |
+| 2018-03-12 | 41/55 | Proyecto: Until Now, sprint 1 |
+| 2018-03-13 | 42/55 | Proyecto: Until Now, sprint 1 |
+| 2018-03-14 | 43/55 | Proyecto: Until Now, sprint 1 |
+| 2018-03-15 | 44/55 | Proyecto: Until Now, sprint 1 |
+| 2018-03-16 | 45/55 | Proyecto: Until Now, sprint 1 |
+| 2018-03-19 | 46/55 | Proyecto: Until Now, sprint 2 |
+| 2018-03-20 | 47/55 | Proyecto: Until Now, sprint 2 |
+| 2018-03-21 | 48/55 | Proyecto: Until Now, sprint 2 |
+| 2018-03-22 | 49/55 | Proyecto: Until Now, sprint 2 |
+| 2018-03-23 | 50/55 | Proyecto: Until Now, sprint 2 |
+| 2018-03-26 | 51/55 | Proyecto: Until Now, sprint 3 |
+| 2018-03-27 | 52/55 | Proyecto: Until Now, sprint 3 |
+| 2018-03-28 | 53/55 | Proyecto: Until Now, sprint 3 |
+| 2018-03-29 | 54/55 | Proyecto: Until Now, sprint 3 |
+| 2018-03-30 | 55/55 | Presentación proyecto [Until Now](https://github.com/didaquis/until-now-frontend) |
