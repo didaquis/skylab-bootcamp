@@ -1,0 +1,2 @@
+PORT=8080
+HELLO_ENV='Esto es una variable de entorno definida en mi equipo'
