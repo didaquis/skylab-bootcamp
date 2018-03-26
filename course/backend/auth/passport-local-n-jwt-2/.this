@@ -1,0 +1,21 @@
+{
+  "title": "passport-demo-0.0.0",
+  "description": "Passport demo with local and jwt strategies, and mongoose data handling.",
+  "tags": [
+    "passport",
+    "js",
+    "node",
+    "strategies",
+    "strategy",
+    "local",
+    "jwt",
+    "auth",
+    "authentication",
+    "authorization",
+    "api",
+    "app",
+    "web",
+    "mongoose"
+  ],
+  "created": "2018-03-09T09:30:18.753Z"
+}
