@@ -11,3 +11,5 @@ Algunos proyectos con ejemplos sencillos para entender como funcionan internamen
 ## Ciclo de vida de los componentes  
 
 ![React](lifecycle_react.png "React")  
+
+![React](lifecycle.png "React")  
