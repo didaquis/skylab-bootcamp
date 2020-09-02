@@ -4,7 +4,7 @@
   "description": "",
   "main": "helloworld.js",
   "dependencies": {
-    "bl": "^1.2.1",
+    "bl": "^2.2.1",
     "concat-stream": "^1.6.0",
     "through2-map": "^3.0.0"
   },
